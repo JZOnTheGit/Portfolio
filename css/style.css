@@ -2,6 +2,10 @@
 body {
     background-color: #868282;
     font-family: Arial, Helvetica, sans-serif;
+    display: table;
+    height: 100%;
+    width: 100%;
+    margin: 0;
 }
 
 * {
@@ -108,17 +112,19 @@ body {
 /*resize img class FolderIcon to a smaller size*/
 .FolderIcon {
     width: 30px;
-    height: 30px;
+    height: 23px;
     float: left;
     text-align: left;
     margin-left: 1px;
     margin-right: 1px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 /*resize img class InfoIcon to a smaller size*/
 .InfoIcon {
     width: 30px;
-    height: 30px;
+    height: 25px;
     float: right;
     text-align: right;
     margin-left: 1px;
@@ -129,7 +135,7 @@ body {
     text-align: center;
     color: rgb(0, 159, 221);
     /*add margins to the left and right*/
-    margin-left: 30px;
+    margin-left: 15px;
     margin-right: 100px;
     margin-top: 1px;
     margin-bottom: 2px;
@@ -140,7 +146,7 @@ body {
     text-align: center;
     color: rgb(0, 159, 221);
     /*add margins to the left and right*/
-    margin-left: 30px;
+    margin-left: 15px;
     margin-right: 100px;
     margin-top: 1px;
     margin-bottom: 1px;
@@ -151,7 +157,7 @@ body {
     text-align: center;
     color: rgb(0, 159, 221);
     /*add margins to the left and right*/
-    margin-left: 30px;
+    margin-left: 15px;
     margin-right: 100px;
     margin-top: 1px;
     margin-bottom: 1px;
@@ -228,7 +234,7 @@ p {
     text-align: center;
     color: rgb(0, 159, 221);
     /*add margins to the left and right*/
-    margin-left: 30px;
+    margin-left: 15px;
     margin-right: 100px;
     margin-top: 1px;
     margin-bottom: 1px;
@@ -244,3 +250,55 @@ p {
     margin-right: 1px;
 }
 
+/*FOOTER CSS*/
+.FooterIcon{
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display:inline-block;
+}
+
+Footer{
+    text-align: center;
+   
+   
+    display:inline-block;
+}
+
+.ProjectsNames{
+    text-align: center;
+    color: rgb(0, 159, 221);
+    /*add margins to the left and right*/
+    margin-left: 15px;
+    margin-right: 100px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    display:inline-block;
+}
+
+/*CSS for the projects*/
+
+
+.ProjectEXEName{
+    text-align: center;
+    color: rgb(0, 159, 221);
+    /*add margins to the left and right*/
+    margin-left: 15px;
+    margin-right: 100px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    display:inline-block;
+}
+
+.ProjectIcon{
+    width: 30px;
+    height: 26px;
+    float: left;
+    text-align: left;
+    margin-left: 1px;
+    margin-right: 1px;
+}

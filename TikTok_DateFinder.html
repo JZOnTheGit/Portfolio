@@ -1,11 +1,10 @@
-<!-- basc html template-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Projects</title>
+    <title>TTDF</title>
     <!-- css -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <!-- bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- font awesome -->
@@ -27,7 +26,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>My Projects</h1>
+            <h1>TikTok Date Finder</h1>
         </div>
     </div>
 </div>
@@ -35,7 +34,7 @@
 <div class="TopBar">
     <div>
     <h4 class="Back"><a href="index.html">&lt;&sol;</a></h4>
-    <h4 class="TopMenu1">Projects</h4>
+    <h4 class="TopMenu1">TTDF</h4>
     <h4 class="TopMenuRight">Edit</h4>
     </div>
     
@@ -52,12 +51,11 @@
 
 <hr>
 
-
-
-<div class="TikTokDateFinder"> 
+<!--ABOUT-->
+<div class="About"> 
     <div>
-        <img src="images/FolderIcon.png" class="FolderIcon">
-        <h4 class="ProjectsNames"><a href="TikTok_DateFinder.html">TikTok_Date_Finder</a></h4>
+        <img src="images/TxtIcon.png" class="TxtIcon">
+        <h4 class="AboutText"><a href="#TTDFAbout">About_Project.txt </a></h4>
         <img src="images/InfoIcon.png" class="InfoIcon">
     </div>
 
@@ -65,7 +63,30 @@
 
 <hr>
 
+<div class="ProjectEXE">
+    <div>
+        <img src="images/ProjectIcons/Screenshot 2023-07-05 164100.png" class="ProjectIcon">
+        <h4 class="ProjectEXEName"><a target=”_blank” href="https://tiktok-video-date-finder.onrender.com/">TTDF.exe</a></h4>
+        <img src="images/InfoIcon.png" class="InfoIcon">
+    </div>
+</div>
 
+<hr>
+
+<div id="TTDFAbout" class="modal">
+    <div class="content">
+        <h2 style="color: rgb(218, 67, 33);">
+            TTDF
+        </h2>
+        <b>
+            <p>This project was made at random, mainly because i had nothing else to do 😅 <br> It started when i was going through TikTok, like many people, and i stumbled accross a video explaining how the ID in TikTok videos can be used to find the Exact date the Video was uploaded<br><br> So, using the idea from this TikTok, Hes credited ofc, I have created a website that allows users to enter a Link to get the Date of the TikTok Video. <br><br> Long story short, Take the ID, Convert to Binary, Take the first 32 Didgits, Convert to Denary then finally convert using the UNIX timestamp converter, I made my own.<br><br> Hope you link this mini Web App of mine 😎</p>
+        </b>
+        <a href="#"
+           class="box-close">
+            ×
+        </a>
+    </div>
+</div>
 
 
 <footer style="position: fixed; bottom: 0; width: 100%;"> 
@@ -79,7 +100,7 @@
     </div>
     <hr>
     
-</footer>
+    </footer>
 
 
 
