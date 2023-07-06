@@ -12,16 +12,44 @@ body {
     box-sizing: border-box;
 }
 
+
+
+
 /* Add padding to containers */
 .container {
-    padding: 12px;
-    background-color: rgb(100, 98, 98);
+    /*padding: 1px;
+    background-color: rgb(100, 98, 98);*/
+
+    inline-size: var(--size-content-1);
+    aspect-ratio: var(--ratio-widescreen);
+    border: solid var(--size-2) transparent;
+    border-radius: var(--radius-4);
+    background: 
+      linear-gradient(var(--surface-1), var(--surface-1)) padding-box, 
+      var(--gradient-1) border-box;
 }
 
 /*center the div class col-md-12*/
 .col-md-12 {
+   
     text-align: center;
+
+    border-style: solid;
+    border-width: 3px;
+    border-color: #cac3c3;
+
+    
+   
 }
+
+.Title{
+   
+    text-align: center;
+    font-size: 15px;
+    font-stretch: ultra-expanded;
+}
+
+
 
 
 
@@ -34,6 +62,8 @@ body {
     margin-left: 5px;
     margin-right: 100px;
    /* display:inline-block;*/
+    margin-top: 10px;
+    margin-bottom: 5px;
     
     
 }
@@ -45,8 +75,9 @@ body {
     /*add margins to the left and right*/
     margin-left: 100px;
     margin-right: 5px;
+    margin-top: 10px;
     
-    /*display:inline-block;*/
+    margin-bottom: 5px;
     
     
 }
@@ -60,12 +91,17 @@ body {
     margin-right: 100px;
     
     display:inline-block;
+    margin-top: 10px;
+    margin-bottom: 5px;
 
 }
 
 /*center div class TopBar*/
 .TopBar {
     text-align: center;
+    background-color: rgb(100, 98, 98);
+    /*make the height of the background smaller*/
+    height: 43px;
 
 
 }
@@ -77,6 +113,7 @@ body {
     float: left;
     text-align: left;
     margin-left: 5px;
+    margin-top: 8px;
     
 }
 
@@ -87,6 +124,7 @@ body {
     float: right;
     text-align: right;
     margin-right: 5px;
+    margin-top: 8px;
 
 }
 
@@ -96,7 +134,7 @@ body {
     /*add margins to the left and right*/
     margin-left: 100px;
     margin-right: 100px;
-    margin-top: 1px;
+    margin-top: 10px;
     margin-bottom: 5px;
     display:inline-block;
 }
