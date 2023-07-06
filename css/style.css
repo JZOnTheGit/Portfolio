@@ -302,3 +302,14 @@ Footer{
     margin-left: 1px;
     margin-right: 1px;
 }
+
+.InfoText{
+    text-align: center;
+    color: rgb(0, 159, 221);
+    /*add margins to the left and right*/
+    margin-left: 15px;
+    margin-right: 100px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    display:inline-block;
+}
