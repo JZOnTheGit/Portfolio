@@ -1,6 +1,6 @@
 /*basic css template from index.html*/
 body {
-    background-color: #eae3e3;
+    background-color: #868282;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -11,7 +11,7 @@ body {
 /* Add padding to containers */
 .container {
     padding: 16px;
-    background-color: white;
+    background-color: rgb(100, 98, 98);
 }
 
 /*center the div class col-md-12*/
@@ -184,7 +184,7 @@ p {
 }
 .box a {
     display: inline-block;
-    background-color: #fff;
+    background-color: #767272;
     padding: 15px;
     border-radius: 3px;
 }
@@ -204,7 +204,7 @@ p {
 }
 .content {
     position: absolute;
-    background: white;
+    background: rgb(116, 113, 113);
     width: 400px;
     padding: 1em 2em;
     border-radius: 4px;
@@ -221,3 +221,26 @@ p {
     text-decoration: none;
     font-size: 30px;
 }
+
+/*CSS for socials*/
+
+.SocialName{
+    text-align: center;
+    color: rgb(0, 159, 221);
+    /*add margins to the left and right*/
+    margin-left: 30px;
+    margin-right: 100px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    display:inline-block;
+}
+
+.SocialIcon{
+    width: 30px;
+    height: 26px;
+    float: left;
+    text-align: left;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
