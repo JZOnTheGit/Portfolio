@@ -60,7 +60,7 @@ body {
     color: rgb(0, 159, 221);
     /*add margins to the left and right*/
     margin-left: 5px;
-    margin-right: 100px;
+    margin-right: 5px;
    /* display:inline-block;*/
     margin-top: 10px;
     margin-bottom: 5px;
@@ -73,7 +73,7 @@ body {
     text-align: right;
     color: rgb(0, 159, 221);
     /*add margins to the left and right*/
-    margin-left: 100px;
+    margin-left: 5px;
     margin-right: 5px;
     margin-top: 10px;
     
@@ -87,8 +87,8 @@ body {
     text-align: center;
     color: rgb(199, 204, 206);
     /*add margins to the left and right*/
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 5px;
+    margin-right: 5px;
     
     display:inline-block;
     margin-top: 10px;
@@ -110,31 +110,35 @@ body {
 .MagnifyingGlass {
     width: 20px;
     height: 20px;
+    
     float: left;
     text-align: left;
     margin-left: 5px;
-    margin-top: 8px;
+    margin-top: 5px;
+    margin-right: 5px;
     
 }
 
 /*resize img class ServerIcon to a smaller size and position right*/
 .ServerIcon {
     width: 30px;
-    height: 30px;
+    height: 4vh;
     float: right;
     text-align: right;
     margin-right: 5px;
-    margin-top: 8px;
+    margin-top: 2px;
+    margin-left: 5px;
 
 }
 
 .SortBy{
     text-align: center;
-   
+    font-size: 2vw;
+    font-size: 2vh;
     /*add margins to the left and right*/
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 5px;
+    margin-top: 5px;
     margin-bottom: 5px;
     display:inline-block;
 }
@@ -163,7 +167,7 @@ body {
 
 /*resize img class InfoIcon to a smaller size*/
 .InfoIcon {
-    width: 30px;
+    width: 25px;
     height: 25px;
     float: right;
     text-align: right;
@@ -295,8 +299,8 @@ p {
     width: 25px;
     height: 25px;
     text-align: center;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 5vw;
+    margin-right: 5vw;
     margin-top: 0px;
     margin-bottom: 0px;
     display:inline-block;
