@@ -381,7 +381,7 @@ a:link, a:visited {
     position: relative;
     text-decoration: none;
 }
-  a::before {
+  a::before, a:visited {
     content: '';
     position: absolute;
     width: 100%;
@@ -395,7 +395,7 @@ a:link, a:visited {
     transition: transform .3s ease-in-out;
   }
   
-  a:hover::before {
+  a:hover::before, a:visited {
     transform-origin: left;
     transform: scaleX(1);
   }
