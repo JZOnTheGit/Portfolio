@@ -39,10 +39,12 @@ window.onload = function() {
                   clearInterval(id);
                   /*make bar disappear when page is loaded*/
                   elem.style.display = "none";
-                  
+                  console.log("page loaded");
+
             } else {
                   width++;
                   elem.style.width = width + "%";
+                  console.log("loading");
             }
       }
       

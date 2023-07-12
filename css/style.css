@@ -364,6 +364,10 @@ a {
     position: relative;
     text-decoration: none;
   }
+  a:visited
+{
+  color: inherit;
+}
   
   a::before {
     content: '';
