@@ -364,11 +364,23 @@ a {
     position: relative;
     text-decoration: none;
   }
-  a:visited
-{
-  color: inherit;
+
+  a:link{
+    color: #18272F;
+    position: relative;
+    text-decoration: none;
+  }
+
+a:visited{
+    color: #18272F;
+    position: relative;
+    text-decoration: none;
 }
-  
+a:link, a:visited {
+    color: #18272F;
+    position: relative;
+    text-decoration: none;
+}
   a::before {
     content: '';
     position: absolute;
