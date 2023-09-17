@@ -266,10 +266,11 @@ p {
 .box-close {
     position: absolute;
     top: 0;
+    bottom: 0px;
     right: 15px;
     color: #fe0606;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 /*CSS for socials*/
