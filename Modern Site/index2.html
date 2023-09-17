@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/uikit.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/uikit.js"></script>
+    <script src="./js/uikit-icons.js"></script>
+
+    <title>Portfolio</title>
+</head>
+<body>
+<!-- Navigation Bar -->
+    <nav class="uk-navbar-container uk-margin-small-left uk-margin-small-right uk-visible@m uk-margin-xlarge-left uk-margin-xlarge-right" uk-navbar uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+    
+    <div class="uk-navbar-left">
+        <a href="" class="uk-navbar-item uk-logo uk-light">Jainesh Singh.</a>
+    </div>
+    <div class="uk-navbar-right">
+
+        <ul class="uk-navbar-nav uk-light">
+            <li><a class="uk-button-text uk-text-capitalize" href="#about" uk-scroll>About</a></li>
+            <li><a class="uk-button-text uk-text-capitalize" href="#projects" uk-scroll>Projects</a></li>
+            <li><a class="uk-button-text uk-text-capitalize" href="https://www.jz-apps.net/index.html" uk-scroll>OLD UI</a></li>
+
+        </ul>
+
+    </div>
+</nav>
+<!-- Navigation Bar Ends  -->
+
+<!-- Navigation Bar Mobile -->
+<nav class="uk-navbar-container uk-margin-small-left uk-margin-small-right uk-hidden@m uk-margin-xlarge-left uk-margin-xlarge-right" uk-navbar uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+    
+    <div class="uk-navbar-left">
+        <a href="" class="uk-navbar-item uk-logo uk-light">Jainesh Singh.</a>
+    </div>
+    <div class="uk-navbar-right">
+
+        <ul class="uk-navbar-nav uk-light">
+            <li><button uk-toggle="target: #offcanvas-nav" type="button" uk-navbar-toggle-icon></button></li>
+
+        </ul>
+
+    </div>
+</nav>
+<!-- Change This -->
+<div id="offcanvas-nav" uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+
+        <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+            <li class="uk-active"><a href="#" uk-scroll>Home</a></li>
+            <li class="uk-active"><a href="#about" uk-scroll>About</a></li>
+            <li class="uk-active"><a href="#projects" uk-scroll>Projects</a></li>
+            <li class="uk-active"><a href="mailto:">Contact</a></li> <!--- change to ur email-->
+
+        </ul>
+
+
+
+
+    </div>
+</div>
+
+<!-- Navigation Bar Mobile Ends -->
+<!-- Home -->
+<section class="uk-margin-small-left uk-margin-small-right uk-margin-xlarge-top uk-margin-xlarge-bottom">
+    <h1 class="uk-margin-xlarge-left uk-light uk-text-left uk-margin-xlarge-right">I'm Jainesh Singh, a Software Engineer, <br>Music Artist, and a Gamer from time to time.</h1>
+    <a href="#about" class="uk-margin-xlarge-left uk-text-capitalize uk-button uk-button-secondary" uk-scroll>About Me</a>
+
+
+</section>
+
+<!-- Home Ends -->
+<br>
+
+
+<hr class="uk-margin-xlarge-top uk-margin-xlarge-left uk-margin-xlarge-right">
+
+<!-- About Me -->
+<section id="about" class="uk-margin-small-left uk-margin-small-right uk-margin-xlarge-top uk-margin-xlarge-bottom">
+<h3 class="uk-margin-xlarge-left uk-light">About Me</h3>
+<!-- Change here to ur paragraph -->
+<p class="uk-margin-xlarge-left uk-margin-xlarge-right">My name is Jainesh Singh and im a Software Engineering Student. <br> In the past years, i have done a lot of things to see where i fit in, things such as, start a YT channel, Game Professionally, Coach people, Streaming and many other activites that are based online <br><br> As of Now i develop games using Unity Game Engine and im currently learning to use Unreal Engine aswell. I also create music which is released on all platforms, and ofc as a hobby i develop random apps that will help me in my programing, as you can see from this website i created and the projects listed. <br><br> I have spent about 4 years now programming and learning, bare in mind i am 18 as of writing this, and i wont stop now. <br> contact details and other info can be found throughout the site, reach me on my socials and ill help if you ever need help programming!</p>
+<a href="https://www.instagram.com/__jainesh__" class="uk-margin-xlarge-left uk-light uk-button-text" uk-icon="instagram"></a> &nbsp;<a href="https://www.twitter.com/JZ_On_Top" class="uk-light uk-button-text" uk-icon="twitter"></a> &nbsp;<a href="https://github.com/JZOnTheGit" class="uk-button-text uk-light" uk-icon="github"></a> &nbsp;<a href="https://open.spotify.com/artist/7G1bImnu2fv1L4xbUEWyuB?si=seSOtfi-RJ-_Haasa3wgRw" class=" uk-light uk-button-text" uk-icon="soundcloud"></a>
+
+<!-- About Me Ends -->
+
+
+
+
+</section>
+
+<!-- Projects Section -->
+<hr class="uk-margin-xlarge-left uk-margin-xlarge-right">
+<section id="projects" class="uk-margin-small-left uk-margin-small-right uk-margin-xlarge-top uk-margin-xlarge-bottom">
+<h3 class="uk-margin-xlarge-left uk-light">Projects</h3>
+<p class="uk-margin-xlarge-left">Projects that i've been working on</p>
+
+<div class="uk-margin-xlarge-left uk-margin-xlarge-right">
+    <!-- Change all of this to ur projects -->
+    
+        <div class="uk-margin uk-card uk-card-secondary uk-card-body ">
+            <h4>TikTok Video Date Finder</h4>
+            <p>This project was made at random, mainly because i had nothing else to do 😅
+                It started when i was going through TikTok, like many people, and i stumbled accross a video explaining how the ID in TikTok videos can be used to find the Exact date the Video was uploaded
+                
+                So, using the idea from this TikTok, Hes credited ofc, I have created a website that allows users to enter a Link to get the Date of the TikTok Video.
+                
+                Long story short, Take the ID, Convert to Binary, Take the first 32 Didgits, Convert to Denary then finally convert using the UNIX timestamp converter, I made my own.
+                
+                Hope you link this mini Web App of mine 😎</p>
+            <a class="uk-button-text uk-text-decoration-none" href="">
+                <span uk-icon="icon: link">
+                </span>https://tiktok-video-date-finder.onrender.com/</a>
+            </div></div>
+
+
+
+    <br>
+
+
+</section>
+<hr class="uk-margin-xlarge-left uk-margin-xlarge-right">
+</div>
+<!-- Projects Section Ends -->
+    
+</body>
+</html>
