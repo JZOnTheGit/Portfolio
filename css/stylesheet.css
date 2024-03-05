@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+body {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: normal;
+    background-color: #181414;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+/* Navbar */
+.whole-header{
+    
+    padding: 30px 100px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #181414;
+    padding: 15px;
+
+   
+
+    
+    
+    /*border: 1px solid white; */
+    
+}
+
+.navbar-left {
+    flex:1;
+}
+
+.navbar-right {
+    flex: 2;
+    text-align: right;
+}
+
+.name {
+    font-size: 25px;
+    font-weight: normal;
+    color: #efefef;
+}
+
+.navigation {
+    list-style-type: none;
+    margin: 5;
+    padding: 0;
+}
+
+.navigation li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.navigation li a {
+    text-decoration: none;
+    color: #efefef;
+}
+
+
+
+
+
+
+
+
+/*header*/
+.heading {
+    
+    background-color: #181414;
+    color: #efefef;
+    margin: 30px 100px;
+    margin-bottom: 0;
+    text-align: left;
+    font-size: 50px;
+}
+
+.dot{
+    color: #efefef;
+    font-size: 50px;
+    margin: 0 100px;
+}
+
+
+/*images*/
+.stackImagesC{
+    margin-left: auto;
+    margin-right: auto;
+    display: inline;
+    justify-content: center;
+    text-align: center;
+  
+  }
+  
+  .StackImagesM{
+    width: auto;
+    height: auto;
+  }
+
+
+.button-padding{
+    padding: 20px 100px;
+    text-align: center;
+}
+
+
+
+.about-button {
+    background-color: transparent;
+    color: rgb(234, 228, 228);
+    border: 1px solid grey;
+    border-radius: 20px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+
+    
+}
+
+.about-button:hover {
+    background-color: lightgrey;
+}
+
+/*section divider*/
+
+.section-divider {
+    border: none;
+    border-top: 2px solid rgb(97, 94, 94);
+    margin: 50px 70px;
+
+    margin-bottom: 0;
+    
+    padding: 30px 100px;
+}
+
+/*about*/
+
+.about-section {
+    margin: 30px 100px;
+    text-align: left;
+    color: #efefef;
+}
+
+.about-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #706d6d;
+}
+
+.social-icon{
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline;
+    justify-content: center;
+    text-align: center;
+
+    width: 20px;
+
+    color: #ffffff;
+}
+
+/*projects*/
+
+.project-section {
+    margin: 30px 100px;
+    text-align: left;
+    color: #efefef;
+}
+
+.project-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.project-content {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #706d6d;
+}
+
+
+
+/*projects*/
+
+.project-card-section{
+    padding: 15px 100px;
+}
+
+.project-card {
+    border: 1px solid grey;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #181414;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.project-description {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+
+
+
+
+  
+
+
+
+
