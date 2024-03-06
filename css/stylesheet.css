@@ -294,6 +294,12 @@ html {
         font-size: 40px;
         
     }
+
+    /*images*/
+    .SingleStackImages{
+        width: 40px;
+        height: 40px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -357,6 +363,11 @@ html {
     .dot§{
         font-size: 30px;
       
+    }
+
+    .SingleStackImages{
+        width: 35px;
+        height: 35px;
     }
 }
 
