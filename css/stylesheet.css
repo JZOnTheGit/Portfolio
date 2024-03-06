@@ -311,9 +311,9 @@ html {
     }
 
     /* projects */
-    .project-section {
+   /* .project-section {
         margin: 10px 40px;
-    }
+    }*/
 
     .project-title {
         font-size: 16px;
@@ -324,9 +324,9 @@ html {
     }
 
     /* project cards */
-    .project-card-section {
+   /* .project-card-section {
         padding: 5px 40px;
-    }
+    }*/
 
     .project-card {
         padding: 10px;
