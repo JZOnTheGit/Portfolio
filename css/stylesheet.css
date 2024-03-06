@@ -94,21 +94,30 @@ html {
     display: inline;
     justify-content: center;
     text-align: center;
-  
+    padding: 20px 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+ 
   }
   
   .StackImagesM{
     width: auto;
     height: auto;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    
   }
 
 
+
+
+
+/*about button*/
 .button-padding{
     padding: 20px 100px;
     text-align: center;
 }
-
-
 
 .about-button {
     background-color: transparent;
@@ -123,6 +132,7 @@ html {
 
 .about-button:hover {
     background-color: lightgrey;
+    color: #333333;
 }
 
 /*section divider*/
@@ -349,6 +359,49 @@ html {
       
     }
 }
+
+
+/*Hover link animation*/
+a {
+    color: #5a6e79;
+    position: relative;
+    text-decoration: none;
+  }
+
+  a:link{
+    color: #5a6e79;
+    position: relative;
+    text-decoration: none;
+  }
+
+a:visited{
+    color: #5a6e79;
+    position: relative;
+    text-decoration: none;
+}
+a:link, a:visited {
+    color: #5a6e79;
+    position: relative;
+    text-decoration: none;
+}
+  a::before, a:visited {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #5a6e79;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+  }
+  
+  a:hover::before, a:visited {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
 
 
 
