@@ -220,6 +220,137 @@ html {
     color: #ffffff;
 }
 
+@media (max-width: 1200px) {
+    
+    /* about */
+    .about-section {
+        margin: 20px 80px;
+    }
+
+    .about-title {
+        font-size: 18px;
+    }
+
+    .about-content {
+        font-size: 14px;
+    }
+
+    /* projects */
+    .project-section {
+        margin: 20px 80px;
+    }
+
+    .project-title {
+        font-size: 18px;
+    }
+
+    .project-content {
+        font-size: 14px;
+    }
+
+    /* project cards */
+    .project-card-section {
+        padding: 10px 80px;
+    }
+
+    .project-card {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .project-title {
+        font-size: 18px;
+    }
+
+    .project-description {
+        font-size: 14px;
+    }
+
+    /* navbar and header */
+    .name {
+        font-size: 20px;
+    }
+
+    .navigation {
+        font-size: 15px;
+    }
+
+
+    .heading {
+        font-size: 40px;
+    }
+
+    .dot{
+        font-size: 40px;
+        
+    }
+}
+
+@media (max-width: 768px) {
+    /* about */
+   /* .about-section {
+        margin: 10px 40px;
+    }*/
+
+    .about-title {
+        font-size: 16px;
+    }
+
+    .about-content {
+        font-size: 12px;
+    }
+
+    /* projects */
+    .project-section {
+        margin: 10px 40px;
+    }
+
+    .project-title {
+        font-size: 16px;
+    }
+
+    .project-content {
+        font-size: 12px;
+    }
+
+    /* project cards */
+    .project-card-section {
+        padding: 5px 40px;
+    }
+
+    .project-card {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .project-title {
+        font-size: 16px;
+    }
+
+    .project-description {
+        font-size: 12px;
+    }
+
+    /* navbar and header */
+    .name {
+        font-size: 16px;
+    }
+
+    .navigation {
+        font-size: 14px;
+    }
+
+    .heading {
+        font-size: 30px;
+    }
+
+    .dot§{
+        font-size: 30px;
+      
+    }
+}
+
+
 
 
 
