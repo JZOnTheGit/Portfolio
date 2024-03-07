@@ -164,7 +164,7 @@ html {
     font-size: 15px;
     line-height: 1.5;
     margin-bottom: 20px;
-    color: #807c7c;
+    color: #aaa5a5;
 }
 
 .social-icon{
@@ -197,7 +197,7 @@ html {
     font-size: 15px;
     line-height: 1.5;
     margin-bottom: 20px;
-    color: #706d6d;
+    color: #aaa5a5;
 }
 
 
@@ -369,6 +369,15 @@ html {
         width: 35px;
         height: 35px;
     }
+}
+
+@media (max-width: 530px){
+
+    .whole-header{
+    
+        padding: 30px 35px;
+    }
+    
 }
 
 
