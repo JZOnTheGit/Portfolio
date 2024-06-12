@@ -135,6 +135,31 @@ html {
     color: #333333;
 }
 
+/*MoreProjects Button*/
+.ProjectBtn-padding{
+    padding: 1px 1px;
+    text-align: left;
+}
+
+.ProjectBtn-button {
+    background-color: transparent;
+    color: rgb(234, 228, 228);
+    font-size: medium;
+    border: 1px solid grey;
+    border-radius: 20px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+
+    
+}
+
+.ProjectBtn-button:hover {
+    background-color: lightgrey;
+    color: #333333;
+}
+
+
+
 /*section divider*/
 
 .section-divider {
@@ -205,7 +230,7 @@ html {
 /*projects*/
 
 .project-card-section{
-    padding: 15px 100px;
+    padding: 5px 100px;
 }
 
 .project-card {
@@ -229,6 +254,12 @@ html {
     margin-bottom: 20px;
     color: #ffffff;
 }
+
+/*Project Button Padding*/
+.ProjectBtnPadding{
+    padding: 5px 100px;
+}
+
 
 @media (max-width: 1200px) {
     
@@ -260,7 +291,7 @@ html {
 
     /* project cards */
     .project-card-section {
-        padding: 10px 80px;
+        padding: 3px 80px;
     }
 
     .project-card {
@@ -274,6 +305,11 @@ html {
 
     .project-description {
         font-size: 14px;
+    }
+
+    /*Project Button Padding*/
+    .ProjectBtnPadding{
+        padding: 3px 80px;
     }
 
     /* navbar and header */
