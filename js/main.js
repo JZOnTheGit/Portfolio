@@ -11,5 +11,5 @@ function MoreProjects(){
 
 function Back_Home(){
     //function than sends user back to the home page
-    window.location.href = "https://j-singh.net/";
+    window.location.href = "https://j-singh.net/#projects";
 }
