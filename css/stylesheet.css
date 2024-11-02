@@ -192,33 +192,49 @@ html {
     color: #aaa5a5;
 }
 
+.social_section{
+    margin: 30px 100px;
+    text-align: left;
+    color: #efefef;
+}
+
+.social_nest{
+    
+    font-size: 15px;
+    line-height: 1.5;
+    
+    
+    margin-bottom: 20px;
+    color: #aaa5a5;
+}
+
 .social-icon{
     margin-top: 5px;
     margin-left: auto;
     margin-right: auto;
-    display: inline;
+    display: inline-block;
     justify-content: center;
     text-align: center;
 
-    width: 20px;
+    width: 25px;
 
     color: #ffffff;
 }
 
 /*projects*/
 
-.project-section {
+.heading-section {
     margin: 30px 100px;
     text-align: left;
     color: #efefef;
 }
 
-.project-title {
+.heading-title {
     font-size: 20px;
     margin-bottom: 20px;
 }
 
-.project-content {
+.heading-content {
     font-size: 15px;
     line-height: 1.5;
     margin-bottom: 20px;
@@ -276,16 +292,25 @@ html {
         font-size: 14px;
     }
 
-    /* projects */
-    .project-section {
+    /*Socials*/
+    .social_section{
         margin: 20px 80px;
     }
 
-    .project-title {
+    .social_nest{
+        font-size: 14px;
+    }
+
+    /* projects */
+    .heading-section {
+        margin: 20px 80px;
+    }
+
+    .heading-title {
         font-size: 18px;
     }
 
-    .project-content {
+    .heading-content {
         font-size: 14px;
     }
 
@@ -352,16 +377,29 @@ html {
         font-size: 12px;
     }
 
+     /*Socials*/
+     .social_section{
+        margin: 20px 80px;
+    }
+
+    .social_nest{
+        font-size: 14px;
+    }
+
+    .social-icon{
+        width: 20px;
+    }
+
     /* projects */
    /* .project-section {
         margin: 10px 40px;
     }*/
 
-    .project-title {
+    .heading-title {
         font-size: 16px;
     }
 
-    .project-content {
+    .heading-content {
         font-size: 12px;
     }
 

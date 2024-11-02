@@ -12,13 +12,16 @@ This is the source code of my Portfolio which lists most of my projects and info
 
 
 ## 🚀 About Me
-My name is Jainesh Singh and im a Software Engineering Student.
+My name is Jasstej Singh and im a Software Engineering Student. 
 
-In the past years i have dabbled in all sorts of projects and hobbies such as, Starting a "YouTube" channel, Gaming professionally, Coaching in multiple games, and many other aspects of Online Activities.
-I have experience in Programming for around 5 years and 3 of those i have experience in Game Development using engines like Unity.
+In the past years i have dabbled in all sorts of projects and hobbies such as, Creating music, Starting a "YouTube" channel, Gaming professionally, Coaching E-Sports, and many other interests that fine tuned my goals.
+I have experience in Programming for around 5 years and 3 of those I have experience in Game Development using engines like Unity. 
 
-As of early 2024, i am currently a Software Engineering Student and am planning to get a Bachelor Degree then a Masters and maybe a PhD, depending on what im doing after a few years.
-I have created a few projects which will be listed below and many on Public on my "Github" page.
+As of late 2024, I am currently a Software Engineering Student and am planning to get a Bachelors Degree and strongly considering takeing my education further upto PhD. 
+
+
+
+
 
 
 ## 🔗 Links
