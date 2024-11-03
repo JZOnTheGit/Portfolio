@@ -8,6 +8,7 @@
     
 
     <script src="./js/main.js"></script>
+    <script src="./js/testing.js"></script>
     
     
     
@@ -30,7 +31,7 @@
     <div class="whole-header">
         <div class="navbar">
             <div class="navbar-left">
-                <span class="name">Jass Singh</span>
+                <span class="name" onclick="Back_Home()">Jass Singh</span>
             </div>
             <div class="navbar-right">
                 <ul class="navigation">
@@ -38,6 +39,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#Web_Dev">Web_Dev</a></li>
+                    <li><a href="#Algorithms">Algorithms</a></li>
                     
                 </ul>
             </div>
@@ -229,9 +231,29 @@
 
 </div>
 
-<hr class="section-divider">
+<hr class="section-divider" id="Section_divider" onclick="handleHrClick()">
 
-   
+<div id="Algorithms">
+    <div class="heading-section">
+        <div class="heading-title">
+            <h3>Sorting Algorithms Visualized</h3>
+            </div>
+        
+        <div class="heading-content">
+            <p>I have made it easier for users to visualize how different types of sorting algorithmswork, theck them out here.</p>
+    
+            </div>
+    </div>
+
+
+    <div class="ProjectBtnPadding">   
+        <div class="ProjectBtn-padding">
+            <button class="ProjectBtn-button" id="WebsiteBtn-button" onclick="SortingAlgorithms()" >View Sorting Algorithms</button>
+        </div>  
+    
+    </div>
+
+<hr class="section-divider">
 
 
     

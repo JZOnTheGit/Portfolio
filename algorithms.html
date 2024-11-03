@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/algorithms_page.css">
+    <link rel="icon" href="images/Favicon/favicon.ico">
+    
+
+    <script src="./js/algorithms_page.js"></script>
+    
+    
+    
+    <title>Sorting_algorithm</title>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-REH4188X2L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-REH4188X2L');
+</script>
+
+<body>
+
+<nav>
+    <div class="whole-header">
+        <div class="navbar">
+            <div class="navbar-left">
+                <span class="name" onclick=Back_Home()>Jass Singh</span>
+            </div>
+            <div class="navbar-right">
+                <ul class="navigation">
+                    <li><a href="index.html">Home</a></li>
+                    
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</nav>
+
+<div>
+<div class="header"></div>
+    <p class="heading">Algorithms Visulized</p>
+    <p class="dot">.</p>
+</div>
+
+
+<!--Algorithm Buttons-->
+
+<div class="button-padding">
+    <button class="about-button" id="about-button" onclick="scrollToBubbleSort()">Bubble_Sort</button>
+    <button class="about-button" id="about-button" onclick="scrollToMergeSort()">Merge_Sort</button>
+    <button class="about-button" id="about-button" onclick="scrollToInsertionSort()">Insertion_Sort</button>
+    <button class="about-button" id="about-button" onclick="scrollToSelectionSort()">Selection_Sort</button>
+    <button class="about-button" id="about-button" onclick="scrollToQuickSort()">Quick_Sort</button>
+    <button class="about-button" id="about-button" onclick="scrollToHeapSort()">Heap_Sort</button>
+</div>
+
+
+<hr class="section-divider">
+
+
+
+
+<!--Bubble Sort----------------------------------------->
+
+<!--Heading Section-->
+<div class="heading-section" id="bubble_sort">
+    <div class="heading-title">
+        <h3>[1]  Bubble_Sort</h3>
+        </div>
+    
+    <div class="heading-content">
+        <p>Bubble sort repeatedly swaps adjacent out-of-order elements until sorted.</p>
+        
+
+        </div>
+</div>
+
+
+<div class="Sorting_algorithm" >
+    <canvas class="SortingCanvas" id="sortingCanvas" width="800" height="400"></canvas>
+    <div class="button-padding-testing">
+        <button class="test-button" id="stopButton">Stop</button>
+        <button class="test-button" id="sortButton">Sort Bars</button>
+        <button class="test-button" id="resetButton">Reset</button>
+    </div>
+    
+    <div class="range-label">
+        <label for="speedRange">Speed:</label>
+        <input type="range" id="speedRange" min="1" max="100" value="50">
+    </div>
+</div>
+
+<!--Bubble Sort Script----------------------------------------->
+<script>
+    const canvas = document.getElementById('sortingCanvas');
+    const ctx = canvas.getContext('2d');
+    let bars = Array.from({ length: 100 }, () => Math.floor(Math.random() * canvas.height));
+    let speed = 50;
+    let sorting = false;
+
+    function drawBars() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'lightgray';
+        bars.forEach((height, index) => {
+            ctx.fillRect(index * (canvas.width / bars.length), canvas.height - height, canvas.width / bars.length, height);
+        });
+    }
+
+    async function bubbleSort() {
+        sorting = true;
+        let swapped;
+        do {
+            swapped = false;
+            for (let i = 0; i < bars.length - 1; i++) {
+                if (!sorting) return;
+                if (bars[i] > bars[i + 1]) {
+                    [bars[i], bars[i + 1]] = [bars[i + 1], bars[i]];
+                    swapped = true;
+                    drawBars();
+                    await new Promise(resolve => setTimeout(resolve, 101 - speed)); // Pause to visualize the swap
+                }
+            }
+        } while (swapped);
+    }
+
+    function resetBars() {
+        sorting = false;
+        bars = Array.from({ length: 100 }, () => Math.floor(Math.random() * canvas.height));
+        drawBars();
+    }
+
+    document.getElementById('sortButton').onclick = bubbleSort;
+    document.getElementById('stopButton').onclick = function() {
+        sorting = false;
+    };
+    document.getElementById('resetButton').onclick = resetBars;
+    document.getElementById('speedRange').oninput = function() {
+        speed = this.value;
+    };
+
+    drawBars();
+</script>
+
+
+
+
+
+<!--Merge Sort---------------->
+<div class="heading-section" id="merge_sort">
+    <div class="heading-title">
+        <h3>[2]  Merge_Sort</h3>
+    </div>
+    
+    <div class="heading-content">
+        <p>Merge sort divides the array in half, sorts each half, and then merges the sorted halves.</p>
+    </div>
+</div>
+
+<div class="Sorting_algorithm">
+    <canvas class="SortingCanvas" id="sortingCanvas2" width="800" height="400"></canvas>
+    <div class="button-padding-testing">
+        <button class="test-button" id="stopButton2">Stop</button>
+        <button class="test-button" id="sortButton2">Sort Bars</button>
+        <button class="test-button" id="resetButton2">Reset</button>
+    </div>
+    
+    <div class="range-label">
+        <label for="speedRange2">Speed:</label>
+        <input type="range" id="speedRange2" min="1" max="100" value="50">
+    </div>
+</div>
+
+<!--Merge Sort Script----------------------------------------->
+<script>
+    const canvas2 = document.getElementById('sortingCanvas2');
+    const ctx2 = canvas2.getContext('2d');
+    let bars2 = Array.from({ length: 100 }, () => Math.floor(Math.random() * canvas2.height));
+    let speed2 = 50;
+    let sorting2 = false;
+
+    function drawBars2() {
+        ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
+        ctx2.fillStyle = 'lightgray';
+        bars2.forEach((height, index) => {
+            ctx2.fillRect(index * (canvas2.width / bars2.length), canvas2.height - height, canvas2.width / bars2.length, height);
+        });
+    }
+
+    async function mergeSort() {
+        sorting2 = true;
+        await mergeSortHelper(0, bars2.length - 1);
+    }
+
+    async function mergeSortHelper(start, end) {
+        if (start >= end) return;
+        const middle = Math.floor((start + end) / 2);
+        await mergeSortHelper(start, middle);
+        await mergeSortHelper(middle + 1, end);
+        await merge(start, middle, end);
+    }
+
+    async function merge(start, middle, end) {
+        const left = bars2.slice(start, middle + 1);
+        const right = bars2.slice(middle + 1, end + 1);
+        let i = 0, j = 0, k = start;
+        while (i < left.length && j < right.length) {
+            if (!sorting2) return;
+            if (left[i] <= right[j]) {
+                bars2[k++] = left[i++];
+            } else {
+                bars2[k++] = right[j++];
+            }
+            drawBars2();
+            await new Promise(resolve => setTimeout(resolve, 101 - speed2)); // Pause to visualize the merge
+        }
+        while (i < left.length) {
+            bars2[k++] = left[i++];
+            drawBars2();
+            await new Promise(resolve => setTimeout(resolve, 101 - speed2)); // Pause to visualize the merge
+        }
+        while (j < right.length) {
+            bars2[k++] = right[j++];
+            drawBars2();
+            await new Promise(resolve => setTimeout(resolve, 101 - speed2)); // Pause to visualize the merge
+        }
+    }
+
+    function resetBars2() {
+        sorting2 = false;
+        bars2 = Array.from({ length: 100 }, () => Math.floor(Math.random() * canvas2.height));
+        drawBars2();
+    }
+
+    document.getElementById('sortButton2').onclick = mergeSort;
+    document.getElementById('stopButton2').onclick = function() {
+        sorting2 = false;
+    };
+    document.getElementById('resetButton2').onclick = resetBars2;
+    document.getElementById('speedRange2').oninput = function() {
+        speed2 = this.value;
+    };
+
+    drawBars2();
+</script>
+    
+    
+
+    <!--Insertion Sort---------------->
+    <div class="heading-section" id="insertion_sort">
+        <div class="heading-title">
+            <h3>[3]  Insertion_Sort</h3>
+        </div>
+        
+        <div class="heading-content">
+            <p>Insertion sort builds the sorted array one item at a time, inserting each new item into its proper place.</p>
+        </div>
+    </div>
+
+    <div class="Sorting_algorithm">
+        <canvas class="SortingCanvas" id="sortingCanvas3" width="800" height="400"></canvas>
+        <div class="button-padding-testing">
+            <button class="test-button" id="stopButton3">Stop</button>
+            <button class="test-button" id="sortButton3">Sort Bars</button>
+            <button class="test-button" id="resetButton3">Reset</button>
+        </div>
+        
+        <div class="range-label">
+            <label for="speedRange3">Speed:</label>
+            <input type="range" id="speedRange3" min="1" max="100" value="50">
+        </div>
+    </div>
+
+    <!--Insertion Sort Script----------------------------------------->
+    <script>
+        const canvas3 = document.getElementById('sortingCanvas3');
+        const ctx3 = canvas3.getContext('2d');
+        let bars3 = Array.from({ length: 100 }, () => Math.floor(Math.random() * canvas3.height));
+        let speed3 = 50;
+        let sorting3 = false;
+
+        function drawBars3() {
+            ctx3.clearRect(0, 0, canvas3.width, canvas3.height);
+            ctx3.fillStyle = 'lightgray';
+            bars3.forEach((height, index) => {
+                ctx3.fillRect(index * (canvas3.width / bars3.length), canvas3.height - height, canvas3.width / bars3.length, height);
+            });
+        }
+
+        async function insertionSort() {
+            sorting3 = true;
+            for (let i = 1; i < bars3.length; i++) {
+                if (!sorting3) return;
+                let key = bars3[i];
+                let j = i - 1;
+                while (j >= 0 && bars3[j] > key) {
+                    bars3[j + 1] = bars3[j];
+                    j = j - 1;
+                    drawBars3();
+                    await new Promise(resolve => setTimeout(resolve, 101 - speed3)); // Pause to visualize the insertion
+                }
+                bars3[j + 1] = key;
+                drawBars3();
+                await new Promise(resolve => setTimeout(resolve, 101 - speed3)); // Pause to visualize the insertion
+            }
+        }
+
+        function resetBars3() {
+            sorting3 = false;
+            bars3 = Array.from({ length: 100 }, () => Math.floor(Math.random() * canvas3.height));
+            drawBars3();
+        }
+
+        document.getElementById('sortButton3').onclick = insertionSort;
+        document.getElementById('stopButton3').onclick = function() {
+            sorting3 = false;
+        };
+        document.getElementById('resetButton3').onclick = resetBars3;
+        document.getElementById('speedRange3').oninput = function() {
+            speed3 = this.value;
+        };
+
+        drawBars3();
+    </script>
+
+    <!--Selection Sort---------------->
+    <div class="heading-section" id="selection_sort">
+        <div class="heading-title">
+            <h3>[4]  Selection_Sort</h3>
+        </div>
+        
+        <div class="heading-content">
+            <p>Selection sort repeatedly selects the smallest remaining element and swaps it with the current element.</p>
+        </div>
+    </div>
+
+    <div class="Sorting_algorithm">
+        <canvas class="SortingCanvas" id="sortingCanvas4" width="800" height="400"></canvas>
+        <div class="button-padding-testing">
+            <button class="test-button" id="stopButton4">Stop</button>
+            <button class="test-button" id="sortButton4">Sort Bars</button>
+            <button class="test-button" id="resetButton4">Reset</button>
+        </div>
+        
+        <div class="range-label">
+            <label for="speedRange4">Speed:</label>
+            <input type="range" id="speedRange4" min="1" max="100" value="50">
+        </div>
+    </div>
+
+    <!--Selection Sort Script----------------------------------------->
+    <script>
+        const canvas4 = document.getElementById('sortingCanvas4');
+        const ctx4 = canvas4.getContext('2d');
+        let bars4 = Array.from({ length: 100 }, () => Math.floor(Math.random() * canvas4.height));
+        let speed4 = 50;
+        let sorting4 = false;
+
+        function drawBars4() {
+            ctx4.clearRect(0, 0, canvas4.width, canvas4.height);
+            ctx4.fillStyle = 'lightgray';
+            bars4.forEach((height, index) => {
+                ctx4.fillRect(index * (canvas4.width / bars4.length), canvas4.height - height, canvas4.width / bars4.length, height);
+            });
+        }
+
+        async function selectionSort() {
+            sorting4 = true;
+            for (let i = 0; i < bars4.length; i++) {
+                if (!sorting4) return;
+                let minIndex = i;
+                for (let j = i + 1; j < bars4.length; j++) {
+                    if (bars4[j] < bars4[minIndex]) {
+                        minIndex = j;
+                    }
+                }
+                if (minIndex !== i) {
+                    [bars4[i], bars4[minIndex]] = [bars4[minIndex], bars4[i]];
+                    drawBars4();
+                    await new Promise(resolve => setTimeout(resolve, 101 - speed4)); // Pause to visualize the swap
+                }
+            }
+        }
+
+        function resetBars4() {
+            sorting4 = false;
+            bars4 = Array.from({ length: 100 }, () => Math.floor(Math.random() * canvas4.height));
+            drawBars4();
+        }
+
+        document.getElementById('sortButton4').onclick = selectionSort;
+        document.getElementById('stopButton4').onclick = function() {
+            sorting4 = false;
+        };
+        document.getElementById('resetButton4').onclick = resetBars4;
+        document.getElementById('speedRange4').oninput = function() {
+            speed4 = this.value;
+        };
+
+        drawBars4();
+    </script>
+
+    <!--Quick Sort---------------->
+    <div class="heading-section" id="quick_sort">
+        <div class="heading-title">
+            <h3>[5]  Quick_Sort</h3>
+        </div>
+        
+        <div class="heading-content">
+            <p>Quick sort selects a pivot element and partitions the array around the pivot, sorting the elements.</p>
+        </div>
+    </div>
+
+    <div class="Sorting_algorithm">
+        <canvas class="SortingCanvas" id="sortingCanvas5" width="800" height="400"></canvas>
+        <div class="button-padding-testing">
+            <button class="test-button" id="stopButton5">Stop</button>
+            <button class="test-button" id="sortButton5">Sort Bars</button>
+            <button class="test-button" id="resetButton5">Reset</button>
+        </div>
+        
+        <div class="range-label">
+            <label for="speedRange5">Speed:</label>
+            <input type="range" id="speedRange5" min="1" max="100" value="50">
+        </div>
+    </div>
+
+    <!--Quick Sort Script----------------------------------------->
+    <script>
+        const canvas5 = document.getElementById('sortingCanvas5');
+        const ctx5 = canvas5.getContext('2d');
+        let bars5 = Array.from({ length: 100 }, () => Math.floor(Math.random() * canvas5.height));
+        let speed5 = 50;
+        let sorting5 = false;
+
+        function drawBars5() {
+            ctx5.clearRect(0, 0, canvas5.width, canvas5.height);
+            ctx5.fillStyle = 'lightgray';
+            bars5.forEach((height, index) => {
+                ctx5.fillRect(index * (canvas5.width / bars5.length), canvas5.height - height, canvas5.width / bars5.length, height);
+            });
+        }
+
+        async function quickSort(start = 0, end = bars5.length - 1) {
+            if (!sorting5) return;
+            if (start < end) {
+                const pivotIndex = await partition(start, end);
+                await quickSort(start, pivotIndex - 1);
+                await quickSort(pivotIndex + 1, end);
+            }
+        }
+
+        async function partition(start, end) {
+            const pivotValue = bars5[end];
+            let pivotIndex = start;
+            for (let i = start; i < end; i++) {
+                if (bars5[i] < pivotValue) {
+                    [bars5[i], bars5[pivotIndex]] = [bars5[pivotIndex], bars5[i]];
+                    pivotIndex++;
+                    drawBars5();
+                    await new Promise(resolve => setTimeout(resolve, 101 - speed5)); // Pause to visualize the partition
+                }
+            }
+            [bars5[pivotIndex], bars5[end]] = [bars5[end], bars5[pivotIndex]];
+            drawBars5();
+            await new Promise(resolve => setTimeout(resolve, 101 - speed5)); // Pause to visualize the partition
+            return pivotIndex;
+        }
+
+        function resetBars5() {
+            sorting5 = false;
+            bars5 = Array.from({ length: 100 }, () => Math.floor(Math.random() * canvas5.height));
+            drawBars5();
+        }
+
+        document.getElementById('sortButton5').onclick = function() {
+            sorting5 = true;
+            quickSort();
+        };
+        document.getElementById('stopButton5').onclick = function() {
+            sorting5 = false;
+        };
+        document.getElementById('resetButton5').onclick = resetBars5;
+        document.getElementById('speedRange5').oninput = function() {
+            speed5 = this.value;
+        };
+
+        drawBars5();
+    </script>
+
+    <!--Heap Sort---------------->
+    <div class="heading-section" id="heap_sort">
+        <div class="heading-title">
+            <h3>[6]  Heap_Sort</h3>
+        </div>
+        
+        <div class="heading-content">
+            <p>Heap sort converts the array into a heap, then repeatedly extracts the maximum element to sort the array.</p>
+        </div>
+    </div>
+
+    <div class="Sorting_algorithm">
+        <canvas class="SortingCanvas" id="sortingCanvas6" width="800" height="400"></canvas>
+        <div class="button-padding-testing">
+            <button class="test-button" id="stopButton6">Stop</button>
+            <button class="test-button" id="sortButton6">Sort Bars</button>
+            <button class="test-button" id="resetButton6">Reset</button>
+        </div>
+        
+        <div class="range-label">
+            <label for="speedRange6">Speed:</label>
+            <input type="range" id="speedRange6" min="1" max="100" value="50">
+        </div>
+    </div>
+
+    <!--Heap Sort Script----------------------------------------->
+    <script>
+        const canvas6 = document.getElementById('sortingCanvas6');
+        const ctx6 = canvas6.getContext('2d');
+        let bars6 = Array.from({ length: 100 }, () => Math.floor(Math.random() * canvas6.height));
+        let speed6 = 50;
+        let sorting6 = false;
+
+        function drawBars6() {
+            ctx6.clearRect(0, 0, canvas6.width, canvas6.height);
+            ctx6.fillStyle = 'lightgray';
+            bars6.forEach((height, index) => {
+                ctx6.fillRect(index * (canvas6.width / bars6.length), canvas6.height - height, canvas6.width / bars6.length, height);
+            });
+        }
+
+        async function heapSort() {
+            sorting6 = true;
+            await buildMaxHeap();
+            for (let i = bars6.length - 1; i > 0; i--) {
+                if (!sorting6) return;
+                [bars6[0], bars6[i]] = [bars6[i], bars6[0]];
+                drawBars6();
+                await new Promise(resolve => setTimeout(resolve, 101 - speed6)); // Pause to visualize the swap
+                await heapify(0, i);
+            }
+        }
+
+        async function buildMaxHeap() {
+            for (let i = Math.floor(bars6.length / 2) - 1; i >= 0; i--) {
+                await heapify(i, bars6.length);
+            }
+        }
+
+        async function heapify(i, max) {
+            let index = i;
+            let leftChild = 2 * i + 1;
+            let rightChild = 2 * i + 2;
+
+            if (leftChild < max && bars6[leftChild] > bars6[index]) {
+                index = leftChild;
+            }
+
+            if (rightChild < max && bars6[rightChild] > bars6[index]) {
+                index = rightChild;
+            }
+
+            if (index !== i) {
+                [bars6[i], bars6[index]] = [bars6[index], bars6[i]];
+                drawBars6();
+                await new Promise(resolve => setTimeout(resolve, 101 - speed6)); // Pause to visualize the heapify
+                await heapify(index, max);
+            }
+        }
+
+        function resetBars6() {
+            sorting6 = false;
+            bars6 = Array.from({ length: 100 }, () => Math.floor(Math.random() * canvas6.height));
+            drawBars6();
+        }
+
+        document.getElementById('sortButton6').onclick = heapSort;
+        document.getElementById('stopButton6').onclick = function() {
+            sorting6 = false;
+        };
+        document.getElementById('resetButton6').onclick = resetBars6;
+        document.getElementById('speedRange6').oninput = function() {
+            speed6 = this.value;
+        };
+
+        drawBars6();
+    </script>
+
+<hr class="section-divider">
+
+
+    
+</body>
+</html>

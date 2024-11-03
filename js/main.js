@@ -19,5 +19,10 @@ function MoreSites(){
     window.location.href = "more_sites.html";
 }
 
+function SortingAlgorithms(){
+    //function that sends the user to the More Algorithms page
+    window.location.href = "algorithms.html";
+}
+
 
 
