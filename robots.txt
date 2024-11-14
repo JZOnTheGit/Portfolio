@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Allow specific resources that are important for indexing and rendering
+Allow: /css/
+Allow: /js/
+
+# Disallow pages that are irrelevant for search engines
+Disallow: /images/icons/
+Disallow: /images/social_icons/
+Disallow: /js/testing.js
+
+

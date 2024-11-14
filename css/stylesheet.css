@@ -116,7 +116,7 @@ html {
 .about-section {
     margin: 30px 100px;
     text-align: left;
-    color: #efefef;
+    color: #d8d3d3;
 }
 .about-title {
     font-size: 20px;
@@ -126,12 +126,12 @@ html {
     font-size: 15px;
     line-height: 1.5;
     margin-bottom: 20px;
-    color: #aaa5a5;
+    color: #d8d3d3;
 }
 .social_section{
     margin: 30px 100px;
     text-align: left;
-    color: #efefef;
+    color: #d8d3d3;
 }
 .social_nest{
     font-size: 15px;
@@ -163,7 +163,7 @@ html {
     font-size: 15px;
     line-height: 1.5;
     margin-bottom: 20px;
-    color: #aaa5a5;
+    color: #d8d3d3;
 }
 /*projects*/
 .project-card-section{
