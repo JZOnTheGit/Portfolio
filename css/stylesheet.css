@@ -1,92 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
-
 body {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: normal;
     background-color: #181414;
 }
-
 html {
     scroll-behavior: smooth;
-  }
-
+}
 /* Navbar */
 .whole-header{
-    
     padding: 30px 100px;
 }
-
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #181414;
     padding: 15px;
-
-   
-
-    
-    
-    /*border: 1px solid white; */
-    
+   /*border: 1px solid white;
+    */
 }
-
 .navbar-left {
     flex:1;
 }
-
 .navbar-right {
     flex: 2;
     text-align: right;
 }
-
 .name {
     font-size: 25px;
     font-weight: normal;
     color: #efefef;
 }
-
 .navigation {
     list-style-type: none;
     margin: 5;
     padding: 0;
 }
-
 .navigation li {
     display: inline-block;
     margin-right: 10px;
 }
-
 .navigation li a {
     text-decoration: none;
     color: #efefef;
 }
-
-
-
-
-
-
-
-
 /*header*/
-.heading {
-    
-    background-color: #181414;
-    color: #efefef;
-    margin: 30px 100px;
-    margin-bottom: 0;
-    text-align: left;
-    font-size: 50px;
-}
+.heading{background-color:#181414;color:#efefef;margin:30px 100px 0;text-align:left;font-size:50px;}
 
 .dot{
     color: #efefef;
     font-size: 50px;
     margin: 0 100px;
 }
-
-
 /*images*/
 .stackImagesC{
     margin-left: auto;
@@ -97,28 +62,18 @@ html {
     padding: 20px 100px;
     padding-left: 20px;
     padding-right: 20px;
- 
-  }
-  
-  .StackImagesM{
+}
+.StackImagesM{
     width: auto;
     height: auto;
-
     padding-left: 20px;
     padding-right: 20px;
-    
-  }
-
-
-
-
-
+}
 /*about button*/
 .button-padding{
     padding: 20px 100px;
     text-align: center;
 }
-
 .about-button {
     background-color: transparent;
     color: rgb(234, 228, 228);
@@ -126,21 +81,16 @@ html {
     border-radius: 20px;
     padding: 10px 20px;
     transition: background-color 0.3s ease;
-
-    
 }
-
 .about-button:hover {
     background-color: lightgrey;
     color: #333333;
 }
-
 /*MoreProjects Button*/
 .ProjectBtn-padding{
     padding: 1px 1px;
     text-align: left;
 }
-
 .ProjectBtn-button {
     background-color: transparent;
     color: rgb(234, 228, 228);
@@ -149,65 +99,46 @@ html {
     border-radius: 20px;
     padding: 10px 20px;
     transition: background-color 0.3s ease;
-
-    
 }
-
 .ProjectBtn-button:hover {
     background-color: lightgrey;
     color: #333333;
 }
-
-
-
 /*section divider*/
-
 .section-divider {
     border: none;
     border-top: 2px solid rgb(97, 94, 94);
     margin: 50px 70px;
-
     margin-bottom: 0;
-    
     padding: 30px 100px;
 }
-
 /*about*/
-
 .about-section {
     margin: 30px 100px;
     text-align: left;
     color: #efefef;
 }
-
 .about-title {
     font-size: 20px;
     margin-bottom: 20px;
 }
-
 .about-content {
     font-size: 15px;
     line-height: 1.5;
     margin-bottom: 20px;
     color: #aaa5a5;
 }
-
 .social_section{
     margin: 30px 100px;
     text-align: left;
     color: #efefef;
 }
-
 .social_nest{
-    
     font-size: 15px;
     line-height: 1.5;
-    
-    
     margin-bottom: 20px;
     color: #aaa5a5;
 }
-
 .social-icon{
     margin-top: 5px;
     margin-left: auto;
@@ -215,40 +146,29 @@ html {
     display: inline-block;
     justify-content: center;
     text-align: center;
-
     width: 25px;
-
     color: #ffffff;
 }
-
 /*projects*/
-
 .heading-section {
     margin: 30px 100px;
     text-align: left;
     color: #efefef;
 }
-
 .heading-title {
     font-size: 20px;
     margin-bottom: 20px;
 }
-
 .heading-content {
     font-size: 15px;
     line-height: 1.5;
     margin-bottom: 20px;
     color: #aaa5a5;
 }
-
-
-
 /*projects*/
-
 .project-card-section{
     padding: 5px 100px;
 }
-
 .project-card {
     border: 1px solid grey;
     border-radius: 20px;
@@ -257,217 +177,168 @@ html {
     background-color: #181414;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .project-title {
     font-size: 20px;
     margin-bottom: 20px;
     color: #ffffff;
 }
-
 .project-description {
     font-size: 15px;
     line-height: 1.5;
     margin-bottom: 20px;
     color: #ffffff;
 }
-
 /*Project Button Padding*/
 .ProjectBtnPadding{
     padding: 5px 100px;
 }
-
-
 @media (max-width: 1200px) {
-    
-    /* about */
+   /* about */
     .about-section {
         margin: 20px 80px;
-    }
-
+   }
     .about-title {
         font-size: 18px;
-    }
-
+   }
     .about-content {
         font-size: 14px;
-    }
-
-    /*Socials*/
+   }
+   /*Socials*/
     .social_section{
         margin: 20px 80px;
-    }
-
+   }
     .social_nest{
         font-size: 14px;
-    }
-
-    /* projects */
+   }
+   /* projects */
     .heading-section {
         margin: 20px 80px;
-    }
-
+   }
     .heading-title {
         font-size: 18px;
-    }
-
+   }
     .heading-content {
         font-size: 14px;
-    }
-
-    /* project cards */
+   }
+   /* project cards */
     .project-card-section {
         padding: 3px 80px;
-    }
-
+   }
     .project-card {
         padding: 15px;
         margin-bottom: 15px;
-    }
-
+   }
     .project-title {
         font-size: 18px;
-    }
-
+   }
     .project-description {
         font-size: 14px;
-    }
-
-    /*Project Button Padding*/
+   }
+   /*Project Button Padding*/
     .ProjectBtnPadding{
         padding: 3px 80px;
-    }
-
-    /* navbar and header */
+   }
+   /* navbar and header */
     .name {
         font-size: 20px;
-    }
-
+   }
     .navigation {
         font-size: 15px;
-    }
-
-
+   }
     .heading {
         font-size: 40px;
-    }
-
+   }
     .dot{
         font-size: 40px;
-        
-    }
-
-    /*images*/
+   }
+   /*images*/
     .SingleStackImages{
         width: 40px;
         height: 40px;
-    }
+   }
 }
-
 @media (max-width: 768px) {
-    /* about */
+   /* about */
    /* .about-section {
         margin: 10px 40px;
-    }*/
-
+   }
+   */
     .about-title {
         font-size: 16px;
-    }
-
+   }
     .about-content {
         font-size: 12px;
-    }
-
-     /*Socials*/
-     .social_section{
+   }
+   /*Socials*/
+    .social_section{
         margin: 20px 80px;
-    }
-
+   }
     .social_nest{
         font-size: 14px;
-    }
-
+   }
     .social-icon{
         width: 20px;
-    }
-
-    /* projects */
+   }
+   /* projects */
    /* .project-section {
         margin: 10px 40px;
-    }*/
-
+   }
+   */
     .heading-title {
         font-size: 16px;
-    }
-
+   }
     .heading-content {
         font-size: 12px;
-    }
-
-    /* project cards */
+   }
+   /* project cards */
    /* .project-card-section {
         padding: 5px 40px;
-    }*/
-
+   }
+   */
     .project-card {
         padding: 10px;
         margin-bottom: 10px;
-    }
-
+   }
     .project-title {
         font-size: 16px;
-    }
-
+   }
     .project-description {
         font-size: 12px;
-    }
-
-    /* navbar and header */
+   }
+   /* navbar and header */
     .name {
         font-size: 16px;
-    }
-
+   }
     .navigation {
         font-size: 14px;
-    }
-
+   }
     .heading {
         font-size: 30px;
-    }
-
+   }
     .dot§{
         font-size: 30px;
-      
-    }
-
+   }
     .SingleStackImages{
         width: 35px;
         height: 35px;
-    }
+   }
 }
-
 @media (max-width: 600px){
-
     .whole-header{
-    
         padding: 30px 35px;
-    }
-    
+   }
 }
-
-
 /*Hover link animation*/
 a {
     color: #5a6e79;
     position: relative;
     text-decoration: none;
-  }
-
-  a:link{
+}
+a:link{
     color: #5a6e79;
     position: relative;
     text-decoration: none;
-  }
-
+}
 a:visited{
     color: #5a6e79;
     position: relative;
@@ -478,7 +349,7 @@ a:link, a:visited {
     position: relative;
     text-decoration: none;
 }
-  a::before, a:visited {
+a::before, a:visited {
     content: '';
     position: absolute;
     width: 100%;
@@ -490,20 +361,8 @@ a:link, a:visited {
     transform-origin: right;
     transform: scaleX(0);
     transition: transform .3s ease-in-out;
-  }
-  
-  a:hover::before, a:visited {
+}
+a:hover::before, a:visited {
     transform-origin: left;
     transform: scaleX(1);
-  }
-
-
-
-
-
-
-  
-
-
-
-
+}
