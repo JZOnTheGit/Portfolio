@@ -265,6 +265,7 @@ html {
    */
     .about-title {
         font-size: 16px;
+      
    }
     .about-content {
         font-size: 12px;
@@ -327,6 +328,21 @@ html {
     .whole-header{
         padding: 30px 35px;
    }
+
+   .about-section{
+         margin: 20px 30px;
+   }
+
+   .project-card-section{
+        padding: 5px 30px;
+   }
+   .heading-section{
+        margin: 20px 30px;
+   }
+
+   
+
+
 }
 /*Hover link animation*/
 a {
