@@ -7,7 +7,7 @@ html {
     scroll-behavior: smooth;
 }
 /* Navbar */
-.whole-header{
+.whole-header {
     padding: 30px 100px;
 }
 .navbar {
@@ -16,20 +16,23 @@ html {
     align-items: center;
     background-color: #181414;
     padding: 15px;
-   /*border: 1px solid white;
-    */
 }
 .navbar-left {
-    flex:1;
+    flex: 1;
 }
 .navbar-right {
-    flex: 2;
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-right: 50px; /* Matches the left margin of the logo */
 }
+
 .name {
     font-size: 25px;
     font-weight: normal;
     color: #efefef;
+    padding-right: 100px;
 }
 .navigation {
     list-style-type: none;
@@ -44,16 +47,42 @@ html {
     text-decoration: none;
     color: #efefef;
 }
-/*header*/
-.heading{background-color:#181414;color:#efefef;margin:30px 100px 0;text-align:left;font-size:50px;}
 
-.dot{
+/* Hamburger button */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #efefef;
+}
+
+/* Header */
+.heading {
+    background-color: #181414;
+    color: #efefef;
+    margin: 30px 100px 0;
+    text-align: left;
+    font-size: 50px;
+}
+
+.dot {
     color: #efefef;
     font-size: 50px;
     margin: 0 100px;
 }
-/*images*/
-.stackImagesC{
+
+/* Images */
+.stackImagesC {
     margin-left: auto;
     margin-right: auto;
     display: inline;
@@ -63,14 +92,15 @@ html {
     padding-left: 20px;
     padding-right: 20px;
 }
-.StackImagesM{
+.StackImagesM {
     width: auto;
     height: auto;
     padding-left: 20px;
     padding-right: 20px;
 }
-/*about button*/
-.button-padding{
+
+/* About Button */
+.button-padding {
     padding: 20px 100px;
     text-align: center;
 }
@@ -86,8 +116,9 @@ html {
     background-color: lightgrey;
     color: #333333;
 }
-/*MoreProjects Button*/
-.ProjectBtn-padding{
+
+/* More Projects Button */
+.ProjectBtn-padding {
     padding: 1px 1px;
     text-align: left;
 }
@@ -104,7 +135,8 @@ html {
     background-color: lightgrey;
     color: #333333;
 }
-/*section divider*/
+
+/* Section Divider */
 .section-divider {
     border: none;
     border-top: 2px solid rgb(97, 94, 94);
@@ -112,7 +144,8 @@ html {
     margin-bottom: 0;
     padding: 30px 100px;
 }
-/*about*/
+
+/* About Section */
 .about-section {
     margin: 30px 100px;
     text-align: left;
@@ -128,18 +161,20 @@ html {
     margin-bottom: 20px;
     color: #efefefed;
 }
-.social_section{
+
+/* Socials */
+.social_section {
     margin: 30px 100px;
     text-align: left;
     color: #efefefed;
 }
-.social_nest{
+.social_nest {
     font-size: 15px;
     line-height: 1.5;
     margin-bottom: 20px;
     color: #efefefed;
 }
-.social-icon{
+.social-icon {
     margin-top: 5px;
     margin-left: auto;
     margin-right: auto;
@@ -149,24 +184,14 @@ html {
     width: 25px;
     color: #ffffff;
 }
-/*projects*/
+
+/* Projects */
 .heading-section {
     margin: 30px 100px;
     text-align: left;
     color: #efefef;
 }
-.heading-title {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-.heading-content {
-    font-size: 15px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-    color: #efefefed;
-}
-/*projects*/
-.project-card-section{
+.project-card-section {
     padding: 5px 100px;
 }
 .project-card {
@@ -188,184 +213,124 @@ html {
     margin-bottom: 20px;
     color: #ffffff;
 }
-/*Project Button Padding*/
-.ProjectBtnPadding{
+
+/* Project Button Padding */
+.ProjectBtnPadding {
     padding: 5px 100px;
 }
+
+/* Responsive Styling */
 @media (max-width: 1200px) {
-   /* about */
     .about-section {
         margin: 20px 80px;
-   }
-    .about-title {
-        font-size: 18px;
-   }
-    .about-content {
-        font-size: 14px;
-   }
-   /*Socials*/
-    .social_section{
+    }
+    .social_section {
         margin: 20px 80px;
-   }
-    .social_nest{
-        font-size: 14px;
-   }
-   /* projects */
+    }
     .heading-section {
         margin: 20px 80px;
-   }
-    .heading-title {
-        font-size: 18px;
-   }
-    .heading-content {
-        font-size: 14px;
-   }
-   /* project cards */
+    }
     .project-card-section {
         padding: 3px 80px;
-   }
-    .project-card {
-        padding: 15px;
-        margin-bottom: 15px;
-   }
-    .project-title {
-        font-size: 18px;
-   }
-    .project-description {
-        font-size: 14px;
-   }
-   /*Project Button Padding*/
-    .ProjectBtnPadding{
-        padding: 3px 80px;
-   }
-   /* navbar and header */
+    }
     .name {
         font-size: 20px;
-   }
-    .navigation {
-        font-size: 15px;
-   }
+    }
     .heading {
         font-size: 40px;
-   }
-    .dot{
+    }
+    .dot {
         font-size: 40px;
-   }
-   /*images*/
-    .SingleStackImages{
+    }
+    .SingleStackImages {
         width: 40px;
         height: 40px;
-   }
+    }
 }
+
+/* Mobile view */
 @media (max-width: 768px) {
-   /* about */
-   /* .about-section {
+    .about-section {
         margin: 10px 40px;
-   }
-   */
-    .about-title {
-        font-size: 16px;
-      
-   }
-    .about-content {
-        font-size: 12px;
-   }
-   /*Socials*/
-    .social_section{
-        margin: 20px 80px;
-   }
-    .social_nest{
-        font-size: 14px;
-   }
-    .social-icon{
-        width: 20px;
-   }
-   /* projects */
-   /* .project-section {
+    }
+    .social_section {
+        margin: 20px 40px;
+    }
+    .heading-section {
         margin: 10px 40px;
-   }
-   */
-    .heading-title {
-        font-size: 16px;
-   }
-    .heading-content {
-        font-size: 12px;
-   }
-   /* project cards */
-   /* .project-card-section {
+    }
+    .project-card-section {
         padding: 5px 40px;
-   }
-   */
-    .project-card {
-        padding: 10px;
-        margin-bottom: 10px;
-   }
-    .project-title {
-        font-size: 16px;
-   }
-    .project-description {
-        font-size: 12px;
-   }
-   /* navbar and header */
+    }
     .name {
         font-size: 16px;
-   }
-    .navigation {
-        font-size: 14px;
-   }
+    }
     .heading {
         font-size: 30px;
-   }
-    .dot§{
+    }
+    .dot {
         font-size: 30px;
-   }
-    .SingleStackImages{
+    }
+    .SingleStackImages {
         width: 35px;
         height: 35px;
-   }
+    }
 }
-@media (max-width: 600px){
-    .whole-header{
-        padding: 30px 35px;
-   }
 
-   .about-section{
-         margin: 20px 30px;
-   }
+/* For smaller screens - hamburger menu */
+@media (max-width: 768px) {
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        background-color: #181414;
+        position: absolute;
+        top: 60px; /* Adjust based on navbar height */
+        right: 10px;
+        padding: 10px;
+        border-radius: 8px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease; /* Smooth transition */
+    }
 
-   .project-card-section{
-        padding: 5px 30px;
-   }
-   .heading-section{
-        margin: 20px 30px;
-   }
+    .navigation li {
+        display: block;
+        margin: 10px 0;
+    }
 
-   
+    .hamburger {
+        display: flex;
+    }
 
-
+    .navigation.show {
+        max-height: 300px; /* Adjust based on expected menu height */
+    }
 }
-/*Hover link animation*/
+
+/* Hover link animation */
 a {
     color: #5a6e79;
     position: relative;
     text-decoration: none;
 }
-a:link{
+a:link {
     color: #5a6e79;
     position: relative;
     text-decoration: none;
 }
-a:visited{
+a:visited {
     color: #5a6e79;
     position: relative;
     text-decoration: none;
 }
-a:link, a:visited {
+a:link,
+a:visited {
     color: #5a6e79;
     position: relative;
     text-decoration: none;
 }
-a::before, a:visited {
+a::before,
+a:visited {
     content: '';
     position: absolute;
     width: 100%;
@@ -378,7 +343,8 @@ a::before, a:visited {
     transform: scaleX(0);
     transition: transform .3s ease-in-out;
 }
-a:hover::before, a:visited {
+a:hover::before,
+a:visited {
     transform-origin: left;
     transform: scaleX(1);
 }

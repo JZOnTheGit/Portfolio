@@ -5,7 +5,9 @@
     margin: 20px 100px;
 }
 
-
+.SortingCanvas{
+    margin-bottom: 10px;
+}
 
 .button-padding{
     padding: 20px 100px;
@@ -19,6 +21,8 @@
     border-radius: 20px;
     padding: 10px 20px;
     transition: background-color 0.3s ease;
+
+    margin-bottom: 10px;
 
     
 }
@@ -49,6 +53,10 @@
             width: 100%;
             height: 100%;
         }
+        .button-padding{
+            padding: 20px 50px;
+           
+        }
 }
 
 
@@ -60,6 +68,8 @@
     border-radius: 20px;
     padding: 10px 20px;
     transition: background-color 0.3s ease;
+
+    margin-bottom: 8px;
 }
 
 .test-button:hover {
@@ -71,13 +81,16 @@
 .range-label {
     display: flex;
     align-items: center;
-    margin: 20px 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .range-label label {
     margin-right: 10px;
     font-size: 16px;
     color: #aaa5a5;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .range-label input[type="range"] {
@@ -88,6 +101,8 @@
     outline: none;
     opacity: 0.7;
     transition: opacity 0.2s;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .range-label input[type="range"]:hover {
@@ -102,6 +117,8 @@
     background: #aaa5a5;
     cursor: pointer;
     border-radius: 50%;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .range-label input[type="range"]::-moz-range-thumb {
@@ -110,4 +127,7 @@
     background: #4CAF50;
     cursor: pointer;
     border-radius: 50%;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
