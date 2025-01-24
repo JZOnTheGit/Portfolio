@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- Preload Critical Font -->
+        <!-- DNS prefetch for external domains -->
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="dns-prefetch" href="//fonts.gstatic.com">
+        
+        <!-- Preconnect to required origins -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <!-- Preload critical fonts -->
         <link rel="preload" href="https://fonts.gstatic.com/s/ibmplexmono/v7/0nBYorS0OyoH_x3CRpJgkCtfM9Dwxa1l.woff2" as="font" type="font/woff2" crossorigin>
         
-        <!-- Preconnect to Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- Preload Critical Font -->
+        <link rel="preload" href="https://fonts.gstatic.com/s/ibmplexmono/v7/0nBYorS0OyoH_x3CRpJgkCtfM9Dwxa1l.woff2" as="font" type="font/woff2" crossorigin>
         
         <!-- Link to Google Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
         
-        <!-- Inline Critical CSS -->
+        <!-- Inline critical CSS -->
         <style>
+            /* Critical styles that appear above the fold */
             body {
                 font-family: 'IBM Plex Mono', monospace;
-                font-weight: normal;
-                background-color: #181414;
+                background-color: var(--background-dark);
                 margin: 0;
-                padding: 0;
+            }
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px;
+            }
+            .heading {
+                color: var(--text-light);
+                font-size: 50px;
             }
             .heading {
                 color: #efefef;
@@ -64,23 +80,22 @@
                     margin: 20px 30px;
             }
         }
-
-            
         </style>
         
-        <!-- Link to External CSS -->
-        <link rel="stylesheet" href="css/stylesheet.css">
+        <!-- Preload critical CSS -->
+        <link rel="preload" href="css/stylesheet.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="css/stylesheet.css"></noscript>
         
         <!-- Meta Tags -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Jasstej Singh">
-        <meta name="keywords" content="Jasstej Singh, Software Engineer, Software Engineering Portfolio, Web Developer, Game Developer, Python, JavaScript, HTML, CSS, Unity, Open Source Projects, Programming Portfolio">
-        <meta name="description" content="Discover Jasstej's portfolio showcasing web development, Front/Backend, and programming in Python, JavaScript, and C#. Explore projects and tech expertise.">
+        <meta name="keywords" content="Jasstej Singh, Jass Singh, Software Engineer, Software Engineering Portfolio, Web Developer, Full Stack Developer, Python Developer, JavaScript Developer, HTML, CSS, Unity Developer, C# Developer, UK Software Engineer, Portfolio Website">
+        <meta name="description" content="Jasstej Singh's Software Engineering Portfolio - Experienced in Web Development, Python, JavaScript, and C#. View my projects including web applications, sorting algorithm visualizations, and game development work.">
         <meta name="robots" content="index, follow">
         
         <!-- Title -->
-        <title>Jasstej Singh | Software Engineer | Website Developer</title>
+        <title>Jasstej Singh | Software Engineer Portfolio | Web Developer</title>
         
         <!-- Deferred Scripts -->
         <script src="./js/main.js" defer></script>
@@ -88,231 +103,296 @@
         <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
         <!-- Favicon -->
-
         <link rel="icon" href="images/Favicon/favicon.ico">
         
-      
+        <!-- Add preload for critical resources -->
+        <link rel="preload" href="js/projects.js" as="script">
+
+        <!-- Add Open Graph tags for social media -->
+        <meta property="og:title" content="Jasstej Singh | Software Engineer | Portfolio">
+        <meta property="og:description" content="Jasstej Singh's Software Engineering Portfolio - View my projects and expertise in web development, programming, and software engineering.">
+        <meta property="og:url" content="https://j-singh.net">
+        <meta property="og:type" content="website">
+
+        <!-- Add Twitter Card tags -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Jasstej Singh - Software Engineer">
+        <meta name="twitter:description" content="Software Engineering Portfolio showcasing web development and programming projects.">
+
+        <!-- Add canonical URL -->
+        <link rel="canonical" href="https://j-singh.net" />
+
+        <!-- Web Vitals Monitoring -->
+        <script>
+        addEventListener('DOMContentLoaded', () => {
+            // Basic performance monitoring
+            const performanceObserver = new PerformanceObserver((list) => {
+                for (const entry of list.getEntries()) {
+                    if (entry.entryType === 'largest-contentful-paint') {
+                        console.log('LCP:', entry.startTime);
+                    }
+                    if (entry.entryType === 'first-input') {
+                        console.log('FID:', entry.processingStart - entry.startTime);
+                    }
+                }
+            });
+            
+            performanceObserver.observe({
+                entryTypes: ['largest-contentful-paint', 'first-input']
+            });
+        });
+        </script>
     </head>
 
-
-
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-
-
-<nav>
-    <div class="whole-header">
-        <div class="navbar">
-            <div class="navbar-left">
-                <span class="name" onclick="Back_Home()">Jass Singh</span>
+    <nav>
+        <div class="whole-header">
+            <div class="navbar">
+                <div class="navbar-left">
+                    <span class="name" onclick="Back_Home()">Jass Singh</span>
+                </div>
+                <div class="navbar-right">
+                    <button class="hamburger" aria-label="Navigation Button" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="navigation">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#Web_Dev">Web_Dev</a></li>
+                        <li><a href="#Algorithms">Algorithms</a></li>
+                    </ul>
+                </div>
+                
+                
             </div>
-            <div class="navbar-right">
-                <button class="hamburger" aria-label="Navigation Button" onclick="toggleMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul class="navigation">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#Web_Dev">Web_Dev</a></li>
-                    <li><a href="#Algorithms">Algorithms</a></li>
-                </ul>
+        </div>
+    </nav>
+
+    <main id="main-content" tabindex="-1">
+        <div class="header">
+            <h1 class="heading">I'm Jasstej Singh, a Software Engineer</h1>
+            <p class="dot">.</p>
+        </div>
+
+        <div class="button-padding">
+            <button class="about-button" id="about-button" onclick="scrollToAbout()" >Contact_Me</button>
+        </div>
+
+        <div class="stackImagesC">
+           
+            <div class="StackImagesM">
+                <img class="SingleStackImages" src='images/PythonIcon.webp' alt="Python Icon" loading="lazy">
+                <img class="SingleStackImages" src='images/cSharpiCON.webp' alt="C# Icon" loading="lazy">
+                <img class="SingleStackImages" src='images/htmlIcon.webp' alt="HTML Icon">
+                <img class="SingleStackImages" src='images/CSSicon.webp' alt="CSS Icon">
+                <img class="SingleStackImages" src='images/JSicon.webp' alt="JavaScript Icon">
+                <img class="SingleStackImages" src='images/unityIcon.webp' alt="Unity Icon">
+                <img class="SingleStackImages" src='images/d.jsLogo-removebg-preview.webp' alt="Discord.js Icon">
+
             </div>
+
+        </div>
+
+        <hr class="section-divider">
+
+        <!--About section-->
+
+        <div id="about" aria-label="About Me">
+        <div class="about-section">
+            <div class="about-title">
+                <h3>About_Me</h3>
+                </div>
             
+            <div class="about-content">
+                <p>My name is Jasstej Singh, and I am a Software Engineering student.<br><br> Over the past few years, I have explored a wide range of projects and hobbies, including creating music, launching a YouTube channel, gaming professionally, coaching e-sports, and pursuing various other interests that have helped refine my goals.<br> I have approximately five years of programming experience, including three years focused on website development using HTML, CSS, Javascript and backend services.<br><br> As of late 2024, I am pursuing a Bachelor's degree in Software Engineering, with strong aspirations to continue my education, potentially up to a PhD.<br> I have worked on several projects, many of which are open source and available on my GitHub page, which will be listed below.</p>
+
+                
+                </div>
+          
+        </div>
+
+        </div>
+
+        <!--Socials-->
+        <div class="social_section" aria-label="Social Media">
+
+            <div class="social_nest">
+
+                <a href="https://github.com/JZOnTheGit" target="_blank" style="text-decoration:none"> <img src="./images/social_icons/github.png" alt="Github Icon" class="social-icon"> </a>
+                <a href="https://www.instagram.com/__jainesh__" target="_blank" style="text-decoration:none"> <img src="./images/social_icons/instagram.png" alt="Instagram Icon" class="social-icon"> </a>
+                <a href="https://www.twitter.com/JZ_On_Top" target="_blank" style="text-decoration:none"> <img src="./images/social_icons/X-social.png" alt="Twitter Icon" class="social-icon"> </a>
+                <a href="mailto:jass150505@gmail.com" target="_blank" style="text-decoration: none;"><img src="./images/social_icons/EmailIcon.png" alt="Email Icon" class="social-icon"> </a>
+
+            </div>
+
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- Projects Section -->
+
+        <div id="projects" aria-label="Projects">
+            <div class="heading-section">
+                <div class="heading-title">
+                    <h3>Projects</h3>
+                </div>
+                <div class="heading-content">
+                    <p>Projects that I've been working on</p>
+                    <p class="project-count">Viewing 3 / ... (Press View More under the projects to view All Projects)</p>
+                </div>
+            </div>
+
+            <div id="projects-container">
+                <!-- Projects will be loaded here -->
+            </div>
+
+            <div class="ProjectBtnPadding">   
+                <div class="ProjectBtn-padding">
+                    <button class="ProjectBtn-button" id="ProjectBtn-button" onclick="MoreProjects()" aria-label="View more projects">More_Projects</button>
+                </div>  
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!--Website Development Section-->
+
+        <div id="Web_Dev" aria-label="Web Development Projects">
+            <div class="heading-section">
+                <div class="heading-title">
+                    <h3>Web_Development_Projects</h3>
+                    </div>
+                
+                <div class="heading-content">
+                    <p>Websites I have made for Myself & Companies</p>
             
-        </div>
-    </div>
-</nav>
+                    </div>
+                </div>
 
-<div class="header"></div>
-    <p class="heading"><h1 class="heading">I'm Jasstej Singh, a Software Engineer</h1></p>
-    <p class="dot">.</p>
-</div>
+                <!--Main Portfolio Site-->
+                <div class="project-card-section">
 
-<div class="button-padding">
-    <button class="about-button" id="about-button" onclick="scrollToAbout()" >Contact_Me</button>
-</div>
+                    <div class="project-card">
+                
+                        <h3 class="project-title">[1] My Portfolio [This Website]</h3>
+                
+                        <p class="project-description">This is my main portfolio website, which you are viewing right now.<br><br> This site provides companies with an overview of the projects I have worked on, the websites I have developed, information about me, and access to my open source code.<br><br> The website itself is open source.<br><br> <a href="https://j-singh.net" target="_blank" style="text-decoration: none;">Live Web Link</a> / / / <a href="https://github.com/JZOnTheGit/Portfolio" target="_blank" style="text-decoration: none;">Open Source Code</a> </p>
+                
+                    </div>
+                
+                </div>
 
+                <!--Krem Site-->
+                <div class="project-card-section">
 
+                    <div class="project-card">
+                
+                        <h3 class="project-title">[2] Krem Cafe Website</h3>
+                
+                        <p class="project-description">This is a test website I developed for a small café company, designed to provide customers with a modern and interactive experience.<br><br> Unfortunately, the café has since shut down, so the website was not fully completed, but it can still be viewed. [Best Viewed on Desktop]<br><br> The website is open source.<br><br> <a href="https://krem-draft.j-singh.net" target="_blank" style="text-decoration: none;">Live Web Link</a> / / / <a href="https://github.com/JZOnTheGit/KREM_Website_draft" target="_blank" style="text-decoration: none;">Open Source Code</a> </p>
+                
+                    </div>
+                
+                </div>
 
+                <!--ProjectMoreButton-->
+            <div class="ProjectBtnPadding">   
+                <div class="ProjectBtn-padding">
+                    <button class="ProjectBtn-button" id="WebsiteBtn-button" onclick="MoreSites()" >More_Websites</button>
+                </div>  
 
-
-<div class="stackImagesC">
-   
-    <div class="StackImagesM">
-        <img class="SingleStackImages" src='images/PythonIcon.webp' alt="Python Icon">
-        <img class="SingleStackImages" src='images/cSharpiCON.webp' alt="C# Icon">
-        <img class="SingleStackImages" src='images/htmlIcon.webp' alt="HTML Icon">
-        <img class="SingleStackImages" src='images/CSSicon.webp' alt="CSS Icon">
-        <img class="SingleStackImages" src='images/JSicon.webp' alt="JavaScript Icon">
-        <img class="SingleStackImages" src='images/unityIcon.webp' alt="Unity Icon">
-        <img class="SingleStackImages" src='images/d.jsLogo-removebg-preview.webp' alt="Discord.js Icon">
-
-    </div>
-
-
-    
-
-</div>
-
-<hr class="section-divider">
-
-<!--About section-->
-
-<div id="about">
-<div class="about-section">
-    <div class="about-title">
-        <h3>About_Me</h3>
-        </div>
-    
-    <div class="about-content">
-        <p>My name is Jasstej Singh, and I am a Software Engineering student.<br><br> Over the past few years, I have explored a wide range of projects and hobbies, including creating music, launching a YouTube channel, gaming professionally, coaching e-sports, and pursuing various other interests that have helped refine my goals.<br> I have approximately five years of programming experience, including three years focused on website development using HTML, CSS, Javascript and backend services.<br><br> As of late 2024, I am pursuing a Bachelor's degree in Software Engineering, with strong aspirations to continue my education, potentially up to a PhD.<br> I have worked on several projects, many of which are open source and available on my GitHub page, which will be listed below.</p>
-
-        
-        </div>
-  
-</div>
-
-</div>
-
-<!--Socials-->
-<div class="social_section">
-
-    <div class="social_nest">
-
-        <a href="https://github.com/JZOnTheGit" target="_blank" style="text-decoration:none"> <img src="./images/social_icons/github.png" alt="Github Icon" class="social-icon"> </a>
-        <a href="https://www.instagram.com/__jainesh__" target="_blank" style="text-decoration:none"> <img src="./images/social_icons/instagram.png" alt="Instagram Icon" class="social-icon"> </a>
-        <a href="https://www.twitter.com/JZ_On_Top" target="_blank" style="text-decoration:none"> <img src="./images/social_icons/X-social.png" alt="Twitter Icon" class="social-icon"> </a>
-        <a href="mailto:jass150505@gmail.com" target="_blank" style="text-decoration: none;"><img src="./images/social_icons/EmailIcon.png" alt="Email Icon" class="social-icon"> </a>
-
-    </div>
-
-</div>
-
-
-
-<hr class="section-divider">
-
-<!-- Projects Section -->
-
-<div id="projects">
-    <div class="heading-section">
-        <div class="heading-title">
-            <h3>Projects</h3>
-        </div>
-        <div class="heading-content">
-            <p>Projects that I've been working on</p>
-            <p>Viewing 3 / ${projects.length} (Press View More to view All Projects) </p>
-        </div>
-    </div>
-
-    <div id="projects-container">
-        <!-- Projects will be loaded here -->
-    </div>
-
-    <div class="ProjectBtnPadding">   
-        <div class="ProjectBtn-padding">
-            <button class="ProjectBtn-button" id="ProjectBtn-button" onclick="MoreProjects()">More_Projects</button>
-        </div>  
-    </div>
-</div>
-
-
-
-<hr class="section-divider">
-
-<!--Website Development Section-->
-
-<div id="Web_Dev">
-    <div class="heading-section">
-        <div class="heading-title">
-            <h3>Web_Development_Projects</h3>
             </div>
-        
-        <div class="heading-content">
-            <p>Websites I have made for Myself & Companies</p>
-    
-            </div>
-    </div>
 
-    <!--Main Portfolio Site-->
-    <div class="project-card-section">
+            <hr class="section-divider" id="Section_divider" onclick="handleHrClick()">
 
-        <div class="project-card">
-    
-            <h3 class="project-title">[1] My Portfolio [This Website]</h3>
-    
-            <p class="project-description">This is my main portfolio website, which you are viewing right now.<br><br> This site provides companies with an overview of the projects I have worked on, the websites I have developed, information about me, and access to my open source code.<br><br> The website itself is open source.<br><br> <a href="https://j-singh.net" target="_blank" style="text-decoration: none;">Live Web Link</a> / / / <a href="https://github.com/JZOnTheGit/Portfolio" target="_blank" style="text-decoration: none;">Open Source Code</a> </p>
-    
+            <div id="Algorithms" aria-label="Sorting Algorithms Visualized">
+                <div class="heading-section">
+                    <div class="heading-title">
+                        <h3>Sorting Algorithms Visualized</h3>
+                        </div>
+                    
+                    <div class="heading-content">
+                        <p>I have made it easier for users to visualize different types of sorting algorithms. Check them out here.</p>
+                
+                        </div>
+                    </div>
+
+
+                    <div class="ProjectBtnPadding">   
+                        <div class="ProjectBtn-padding">
+                            <button class="ProjectBtn-button" id="WebsiteBtn-button" onclick="SortingAlgorithms()" >View Sorting Algorithms</button>
+                        </div>  
+                    
+                    </div>
+
+            <hr class="section-divider">
+
+            <div class="social_section" id="social_section" aria-label="LinkedIn Profile">
+                <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="HORIZONTAL" data-vanity="jainesh-singh-page" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://uk.linkedin.com/in/jainesh-singh-page?trk=profile-badge"></a></div>
+
+                
+            </div> 
+
+
+            <hr class="section-divider">
+
         </div>
-    
-    </div>
+    </main>
 
-    <!--Krem Site-->
-    <div class="project-card-section">
+    <!-- Add before closing body tag -->
+    <script src="js/projects.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProjects('projects-container', 0, 3);
+        });
+    </script>
 
-        <div class="project-card">
-    
-            <h3 class="project-title">[2] Krem Cafe Website</h3>
-    
-            <p class="project-description">This is a test website I developed for a small café company, designed to provide customers with a modern and interactive experience.<br><br> Unfortunately, the café has since shut down, so the website was not fully completed, but it can still be viewed. [Best Viewed on Desktop]<br><br> The website is open source.<br><br> <a href="https://krem-draft.j-singh.net" target="_blank" style="text-decoration: none;">Live Web Link</a> / / / <a href="https://github.com/JZOnTheGit/KREM_Website_draft" target="_blank" style="text-decoration: none;">Open Source Code</a> </p>
-    
-        </div>
-    
-    </div>
+    <!-- Add structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Jasstej Singh",
+        "jobTitle": "Software Engineer",
+        "url": "https://j-singh.net",
+        "sameAs": [
+            "https://uk.linkedin.com/in/jainesh-singh-page",
+            "https://github.com/JZOnTheGit"
+        ],
+        "knowsAbout": [
+            "Web Development",
+            "Software Engineering",
+            "Python",
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Unity",
+            "C#",
+            "Sorting Algorithms"
+        ],
+        "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Software Engineer",
+            "skills": "Web Development, Programming, Python, JavaScript, HTML, CSS, Unity, C#"
+        },
+        "mainEntity": {
+            "@type": "WebSite",
+            "name": "Jasstej Singh Portfolio",
+            "url": "https://j-singh.net",
+            "description": "Discover Jasstej's portfolio showcasing web development, Front/Backend, and programming in Python, JavaScript, and C#. Explore projects and tech expertise."
+        }
+    }
+    </script>
 
-    <!--ProjectMoreButton-->
-<div class="ProjectBtnPadding">   
-    <div class="ProjectBtn-padding">
-        <button class="ProjectBtn-button" id="WebsiteBtn-button" onclick="MoreSites()" >More_Websites</button>
-    </div>  
-
-</div>
-
-<hr class="section-divider" id="Section_divider" onclick="handleHrClick()">
-
-<div id="Algorithms">
-    <div class="heading-section">
-        <div class="heading-title">
-            <h3>Sorting Algorithms Visualized</h3>
-            </div>
-        
-        <div class="heading-content">
-            <p>I have made it easier for users to visualize different types of sorting algorithms. Check them out here.</p>
-    
-            </div>
-    </div>
-
-
-    <div class="ProjectBtnPadding">   
-        <div class="ProjectBtn-padding">
-            <button class="ProjectBtn-button" id="WebsiteBtn-button" onclick="SortingAlgorithms()" >View Sorting Algorithms</button>
-        </div>  
-    
-    </div>
-
-<hr class="section-divider">
-
-<div class="social_section" id="social_section">
-    <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="HORIZONTAL" data-vanity="jainesh-singh-page" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://uk.linkedin.com/in/jainesh-singh-page?trk=profile-badge"></a></div>
-
-    
-</div> 
-
-
-<hr class="section-divider">
-
-
-    
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/js/service-worker.js');
+    }
+    </script>
 </body>
 </html>
-
-<!-- Add before closing body tag -->
-<script src="js/projects.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        loadProjects('projects-container', 0, 3);
-    });
-</script>

@@ -76,17 +76,52 @@ function generateProjectHTML(project) {
     </div>`;
 }
 
-// Function to load projects into container
+// Add this function to projects.js
+function updateProjectCount(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    const countElement = document.querySelector('.project-count');
+    if (countElement) {
+        countElement.textContent = `Viewing 3 / ${projects.length} (Press View More under the projects to view All Projects)`;
+    }
+}
+
+// Modify the loadProjects function to call updateProjectCount
 function loadProjects(containerId, start = 0, count = null) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
+    // Create document fragment for better performance
+    const fragment = document.createDocumentFragment();
+    
     const projectsToShow = count ? projects.slice(start, start + count) : projects.slice(start);
     
     projectsToShow.forEach(project => {
         const projectSection = document.createElement('div');
         projectSection.className = 'project-card-section';
         projectSection.innerHTML = generateProjectHTML(project);
-        container.appendChild(projectSection);
+        fragment.appendChild(projectSection);
     });
-} 
+    
+    // Single DOM update
+    container.appendChild(fragment);
+}
+
+// Debounce the project loading for better performance
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Use it for loading projects
+const debouncedLoadProjects = debounce((containerId, start, count) => {
+    loadProjects(containerId, start, count);
+}, 150); 

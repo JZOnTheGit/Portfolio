@@ -1,16 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
+    <!-- Main Pages -->
+    <url>
+        <loc>https://j-singh.net/</loc>
+        <lastmod>2025-01-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://j-singh.net/images/PythonIcon.webp</image:loc>
+            <image:title>Python Programming Icon</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://j-singh.net/images/cSharpiCON.webp</image:loc>
+            <image:title>C# Programming Icon</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://j-singh.net/images/htmlIcon.webp</image:loc>
+            <image:title>HTML Icon</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://j-singh.net/images/CSSicon.webp</image:loc>
+            <image:title>CSS Icon</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://j-singh.net/images/JSicon.webp</image:loc>
+            <image:title>JavaScript Icon</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://j-singh.net/images/unityIcon.webp</image:loc>
+            <image:title>Unity Development Icon</image:title>
+        </image:image>
+    </url>
 
-<url>
-  <loc>https://j-singh.net/</loc>
-  <lastmod>2024-11-14T08:52:33+00:00</lastmod>
-</url>
+    <!-- Projects Page -->
+    <url>
+        <loc>https://j-singh.net/more_projects.html</loc>
+        <lastmod>2025-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 
+    <!-- Algorithms Page -->
+    <url>
+        <loc>https://j-singh.net/algorithms.html</loc>
+        <lastmod>2025-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- More Sites Page -->
+    <url>
+        <loc>https://j-singh.net/more_sites.html</loc>
+        <lastmod>2025-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- External Project Links -->
+    <url>
+        <loc>https://ttudf.j-singh.net</loc>
+        <lastmod>2025-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://krem-draft.j-singh.net</loc>
+        <lastmod>2025-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Critical Resources -->
+    <url>
+        <loc>https://j-singh.net/css/stylesheet.css</loc>
+        <lastmod>2025-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://j-singh.net/js/projects.js</loc>
+        <lastmod>2025-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- Social Links -->
+    <url>
+        <loc>https://github.com/JZOnTheGit</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://uk.linkedin.com/in/jainesh-singh-page</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
 
 </urlset>

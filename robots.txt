@@ -1,13 +1,13 @@
 User-agent: *
 Allow: /
+Sitemap: https://j-singh.net/sitemap.xml
 
-# Allow specific resources that are important for indexing and rendering
-Allow: /css/
-Allow: /js/
+# Allow crawling of important content
+Allow: /css/stylesheet.css
+Allow: /js/projects.js
+Allow: /images/
 
-# Disallow pages that are irrelevant for search engines
-Disallow: /images/icons/
-Disallow: /images/social_icons/
+# Prevent crawling of development/test files
 Disallow: /js/testing.js
 
 

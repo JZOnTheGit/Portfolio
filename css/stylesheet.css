@@ -1,3 +1,13 @@
+/* Create CSS custom properties for consistent colors */
+:root {
+    --primary-color: #4a9eff;
+    --primary-hover: #5cacff;
+    --background-dark: #181414;
+    --text-light: #efefef;
+    --text-light-transparent: #efefefed;
+    --border-grey: #808080;
+}
+
 body {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: normal;
@@ -76,7 +86,7 @@ html {
 }
 
 .dot {
-    color: #efefef;
+    color: #4a9eff;
     font-size: 50px;
     margin: 0 100px;
 }
@@ -107,7 +117,7 @@ html {
 .about-button {
     background-color: transparent;
     color: rgb(234, 228, 228);
-    border: 1px solid grey;
+    border: 1px solid #4a9eff;
     border-radius: 20px;
     padding: 10px 20px;
     transition: background-color 0.3s ease;
@@ -139,7 +149,8 @@ html {
 /* Section Divider */
 .section-divider {
     border: none;
-    border-top: 2px solid rgb(97, 94, 94);
+    border-top: 2px solid #4a9eff;
+    opacity: 0.3; /* Makes it more subtle */
     margin: 50px 70px;
     margin-bottom: 0;
     padding: 30px 100px;
@@ -195,12 +206,17 @@ html {
     padding: 5px 100px;
 }
 .project-card {
-    border: 1px solid grey;
+    border: 1px solid var(--border-grey);
     border-radius: 20px;
     padding: 20px;
     margin-bottom: 20px;
-    background-color: #181414;
+    background-color: var(--background-dark);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    will-change: transform, box-shadow;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
 }
 .project-title {
     font-size: 20px;
@@ -217,6 +233,25 @@ html {
 /* Project Button Padding */
 .ProjectBtnPadding {
     padding: 5px 100px;
+}
+
+/* Hover effect for all project cards */
+.project-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-grey); /* Lighter grey */
+    box-shadow: 0 0 15px rgba(128, 128, 128, 0.2);
+}
+
+/* Style for the first project card */
+.project-card-section:first-child .project-card {
+    border: 1px solid #4a9eff; /* Modern blue that works with dark theme */
+    box-shadow: 0 0 10px rgba(74, 158, 255, 0.1); /* Subtle glow effect */
+}
+
+/* Hover effect for the first card */
+.project-card-section:first-child .project-card:hover {
+    border-color: #5cacff;
+    box-shadow: 0 0 15px rgba(74, 158, 255, 0.2);
 }
 
 /* Responsive Styling */
@@ -347,4 +382,86 @@ a:hover::before,
 a:visited {
     transform-origin: left;
     transform: scaleX(1);
+}
+
+/* Navigation hover effect */
+.navigation li a:hover {
+    color: #4a9eff;
+    transition: color 0.3s ease;
+}
+
+/* Section divider accent */
+.section-divider {
+    border: none;
+    border-top: 2px solid #4a9eff;
+    opacity: 0.3; /* Makes it more subtle */
+    margin: 50px 70px;
+    margin-bottom: 0;
+    padding: 30px 100px;
+}
+
+/* Section headings (like "Projects", "About_Me", etc.) */
+.heading-title h3 {
+    color: #4a9eff;
+}
+
+/* Links in project descriptions */
+.project-description a {
+    color: #4a9eff !important; /* Override the existing link color */
+}
+.project-description a:hover {
+    color: #5cacff !important;
+}
+
+/* Name in navbar */
+.name:hover {
+    color: #4a9eff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Add a medium breakpoint */
+@media (max-width: 992px) {
+    .project-card-section {
+        padding: 5px 60px;
+    }
+    
+    .whole-header {
+        padding: 20px 60px;
+    }
+}
+
+/* Improve mobile layout */
+@media (max-width: 480px) {
+    .heading {
+        font-size: 24px;
+        margin: 20px 30px 0;
+    }
+    
+    .project-card {
+        padding: 15px;
+    }
+}
+
+/* Reduce paint operations */
+.project-card {
+    will-change: transform;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+/* Add this to your stylesheet */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
 }
