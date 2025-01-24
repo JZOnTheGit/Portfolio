@@ -511,3 +511,64 @@ a:visited {
     transform: translateZ(0);
     will-change: transform;
 }
+
+/* Custom LinkedIn Badge */
+.linkedin-section {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.linkedin-custom-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: var(--background-dark);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+    min-width: 200px;
+    justify-content: center;
+}
+
+.linkedin-custom-badge:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 158, 255, 0.2);
+}
+
+.linkedin-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Responsive adjustments for social buttons */
+@media (max-width: 768px) {
+    .linkedin-section {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .linkedin-custom-badge {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Ensure consistent icon sizes */
+.linkedin-custom-badge img {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+}
+
+.linkedin-custom-badge span {
+    white-space: nowrap;
+}
