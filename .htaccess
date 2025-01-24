@@ -36,4 +36,8 @@
     Header set X-Content-Type-Options "nosniff"
     Header set X-Frame-Options "SAMEORIGIN"
     Header set X-XSS-Protection "1; mode=block"
-</IfModule> 
+</IfModule>
+
+# Add custom error page
+ErrorDocument 404 /404.html 
+
