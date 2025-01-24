@@ -514,33 +514,34 @@ a:visited {
 
 /* Custom LinkedIn Badge */
 .linkedin-section {
-    text-align: center;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    text-align: left;
     max-width: 800px;
     margin: 2rem auto;
     padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .linkedin-custom-badge {
     display: inline-flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem 2rem;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
     background: var(--background-dark);
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--border-grey);
     border-radius: 8px;
     color: var(--text-light);
     transition: all 0.3s ease;
-    min-width: 200px;
-    justify-content: center;
+    width: fit-content;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .linkedin-custom-badge:hover {
-    background: var(--primary-color);
+    background-color: lightgrey;
+    color: #333333;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(74, 158, 255, 0.2);
 }
 
 .linkedin-icon {
@@ -571,4 +572,25 @@ a:visited {
 
 .linkedin-custom-badge span {
     white-space: nowrap;
+}
+
+/* Update heading style */
+#linkedin-title {
+    color: var(--primary-color);
+    font-size: 20px;
+    margin-bottom: 1.5rem;
+    font-weight: normal;
+}
+
+/* Remove link underline animation for social buttons */
+.linkedin-link::before {
+    display: none;
+}
+
+/* Match other section headings */
+.heading-title h3,
+#linkedin-title {
+    color: var(--primary-color);
+    font-size: 20px;
+    margin-bottom: 20px;
 }
