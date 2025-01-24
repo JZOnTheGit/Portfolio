@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
     <head>
         <!-- DNS prefetch for external domains -->
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -16,7 +16,7 @@
         <link rel="preload" href="https://fonts.gstatic.com/s/ibmplexmono/v7/0nBYorS0OyoH_x3CRpJgkCtfM9Dwxa1l.woff2" as="font" type="font/woff2" crossorigin>
         
         <!-- Link to Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
         
         <!-- Inline critical CSS -->
         <style>
@@ -98,8 +98,8 @@
         <title>Jasstej Singh | Software Engineer Portfolio | Web Developer</title>
         
         <!-- Deferred Scripts -->
-        <script src="./js/main.js" defer></script>
-        <script src="./js/testing.js" defer></script>
+        <script src="./js/main.js" defer crossorigin="anonymous"></script>
+        <script src="./js/projects.js" defer crossorigin="anonymous"></script>
         <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
         <!-- Favicon -->
@@ -142,6 +142,31 @@
             });
         });
         </script>
+
+        <!-- Preload critical images -->
+        <link rel="preload" as="image" href="images/PythonIcon.webp" type="image/webp">
+        <link rel="preload" as="image" href="images/cSharpiCON.webp" type="image/webp">
+
+        <!-- Prefetch other pages -->
+        <link rel="prefetch" href="more_projects.html">
+        <link rel="prefetch" href="algorithms.html">
+
+        <!-- Font preload with crossorigin -->
+        <link rel="preload" 
+            href="https://fonts.gstatic.com/s/ibmplexmono/v7/0nBYorS0OyoH_x3CRpJgkCtfM9Dwxa1l.woff2" 
+            as="font" 
+            type="font/woff2" 
+            crossorigin>
+
+        <!-- Font display swap -->
+        <style>
+            @font-face {
+                font-family: 'IBM Plex Mono';
+                font-display: swap;
+                src: local('IBM Plex Mono'), 
+                     url('https://fonts.gstatic.com/s/ibmplexmono/v7/0nBYorS0OyoH_x3CRpJgkCtfM9Dwxa1l.woff2') format('woff2');
+            }
+        </style>
     </head>
 
 <body>
@@ -174,19 +199,30 @@
     </nav>
 
     <main id="main-content" tabindex="-1">
-        <div class="header">
+        <header>
             <h1 class="heading">I'm Jasstej Singh, a Software Engineer</h1>
             <p class="dot">.</p>
-        </div>
+        </header>
 
         <div class="button-padding">
-            <button class="about-button" id="about-button" onclick="scrollToAbout()" >Contact_Me</button>
+            <button 
+                class="about-button" 
+                id="about-button" 
+                onclick="scrollToAbout()" 
+                aria-label="Scroll to contact information">
+                Contact_Me
+            </button>
         </div>
 
         <div class="stackImagesC">
            
             <div class="StackImagesM">
-                <img class="SingleStackImages" src='images/PythonIcon.webp' alt="Python Icon" loading="lazy">
+                <img class="SingleStackImages" 
+                    src='images/PythonIcon.webp' 
+                    alt="Python Icon" 
+                    loading="lazy"
+                    width="50" 
+                    height="50">
                 <img class="SingleStackImages" src='images/cSharpiCON.webp' alt="C# Icon" loading="lazy">
                 <img class="SingleStackImages" src='images/htmlIcon.webp' alt="HTML Icon">
                 <img class="SingleStackImages" src='images/CSSicon.webp' alt="CSS Icon">
@@ -202,10 +238,10 @@
 
         <!--About section-->
 
-        <div id="about" aria-label="About Me">
+        <div id="about" aria-labelledby="about-title">
         <div class="about-section">
             <div class="about-title">
-                <h3>About_Me</h3>
+                <h2 id="about-title">About_Me</h2>
                 </div>
             
             <div class="about-content">
@@ -223,7 +259,12 @@
 
             <div class="social_nest">
 
-                <a href="https://github.com/JZOnTheGit" target="_blank" style="text-decoration:none"> <img src="./images/social_icons/github.png" alt="Github Icon" class="social-icon"> </a>
+                <a href="https://github.com/JZOnTheGit" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   aria-label="Visit Jasstej's GitHub Profile (opens in new tab)">
+                    <img src="./images/social_icons/github.png" alt="Github Icon" class="social-icon">
+                </a>
                 <a href="https://www.instagram.com/__jainesh__" target="_blank" style="text-decoration:none"> <img src="./images/social_icons/instagram.png" alt="Instagram Icon" class="social-icon"> </a>
                 <a href="https://www.twitter.com/JZ_On_Top" target="_blank" style="text-decoration:none"> <img src="./images/social_icons/X-social.png" alt="Twitter Icon" class="social-icon"> </a>
                 <a href="mailto:jass150505@gmail.com" target="_blank" style="text-decoration: none;"><img src="./images/social_icons/EmailIcon.png" alt="Email Icon" class="social-icon"> </a>
@@ -236,10 +277,10 @@
 
         <!-- Projects Section -->
 
-        <div id="projects" aria-label="Projects">
+        <div id="projects" aria-labelledby="projects-title">
             <div class="heading-section">
                 <div class="heading-title">
-                    <h3>Projects</h3>
+                    <h2 id="projects-title">Projects</h2>
                 </div>
                 <div class="heading-content">
                     <p>Projects that I've been working on</p>
@@ -332,12 +373,12 @@
 
             <hr class="section-divider">
 
-            <div class="social_section" id="social_section" aria-label="LinkedIn Profile">
-                <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="HORIZONTAL" data-vanity="jainesh-singh-page" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://uk.linkedin.com/in/jainesh-singh-page?trk=profile-badge"></a></div>
-
-                
-            </div> 
-
+            <section class="social_section" id="social_section" role="complementary" aria-labelledby="linkedin-title">
+                <h2 id="linkedin-title" class="visually-hidden">LinkedIn Profile</h2>
+                <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="HORIZONTAL" data-vanity="jainesh-singh-page" data-version="v1">
+                    <a class="badge-base__link LI-simple-link" href="https://uk.linkedin.com/in/jainesh-singh-page?trk=profile-badge" aria-label="View Jasstej Singh's LinkedIn Profile">View LinkedIn Profile</a>
+                </div>
+            </section>
 
             <hr class="section-divider">
 
@@ -345,7 +386,6 @@
     </main>
 
     <!-- Add before closing body tag -->
-    <script src="js/projects.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             loadProjects('projects-container', 0, 3);
@@ -393,6 +433,19 @@
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/js/service-worker.js');
     }
+    </script>
+
+    <!-- Move LinkedIn script to end of body -->
+    <script>
+        // Defer LinkedIn badge loading
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const script = document.createElement('script');
+                script.src = 'https://platform.linkedin.com/badges/js/profile.js';
+                script.async = true;
+                document.body.appendChild(script);
+            }, 2000);
+        });
     </script>
 </body>
 </html>

@@ -217,6 +217,8 @@ html {
     transform: translateZ(0);
     backface-visibility: hidden;
     perspective: 1000px;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
 }
 .project-title {
     font-size: 20px;
@@ -464,4 +466,48 @@ a:visited {
 
 .skip-link:focus {
     top: 0;
+}
+
+/* Accessibility - Visually hidden elements */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Improve focus visibility */
+:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Custom focus styles for interactive elements */
+.project-card:focus-within {
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.SingleStackImages {
+    width: 50px;
+    height: 50px;
+    aspect-ratio: 1;
+}
+
+/* Ensure LinkedIn badge has fixed dimensions */
+.LI-profile-badge {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    min-height: 200px;
+}
+
+/* Use GPU acceleration for animations */
+.project-card {
+    transform: translateZ(0);
+    will-change: transform;
 }

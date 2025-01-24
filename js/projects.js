@@ -106,6 +106,7 @@ function loadProjects(containerId, start = 0, count = null) {
     
     // Single DOM update
     container.appendChild(fragment);
+    updateProjectCount(containerId);
 }
 
 // Debounce the project loading for better performance
