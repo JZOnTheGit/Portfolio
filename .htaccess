@@ -1,9 +1,10 @@
 # Cache Control Headers
 <IfModule mod_expires.c>
     ExpiresActive On
+    ExpiresDefault "access plus 1 month"
     
     # Images
-    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 month"
     ExpiresByType image/png "access plus 1 year"
     
     # CSS, JavaScript

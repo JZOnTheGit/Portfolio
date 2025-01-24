@@ -10,7 +10,15 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         
         <!-- Link to Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" 
+              rel="stylesheet"
+              media="print" 
+              onload="this.media='all'">
+        <noscript>
+          <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+        </noscript>
         
         <!-- Inline critical CSS -->
         <style>
@@ -92,7 +100,7 @@
         <title>Jasstej Singh | Software Engineer Portfolio | Web Developer</title>
         
         <!-- Deferred Scripts -->
-        <script src="./js/main.js" defer crossorigin="anonymous"></script>
+        <script src="./js/main.js" defer></script>
 
         <!-- Favicon -->
         <link rel="icon" href="images/Favicon/favicon.ico">
@@ -145,6 +153,11 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" 
               rel="stylesheet">
+
+        <!-- Preload critical resources -->
+        <link rel="preload" href="css/stylesheet.css" as="style">
+        <link rel="preload" href="js/main.js" as="script">
+        <link rel="preload" href="js/projects.js" as="script">
     </head>
 
 <body>
@@ -195,12 +208,16 @@
         <div class="stackImagesC">
            
             <div class="StackImagesM">
-                <img class="SingleStackImages" 
-                    src='images/PythonIcon.webp' 
-                    alt="Python Icon" 
-                    loading="lazy"
-                    width="50" 
-                    height="50">
+                <picture>
+                    <source srcset="images/PythonIcon.webp" type="image/webp">
+                    <source srcset="images/PythonIcon.png" type="image/png">
+                    <img class="SingleStackImages" 
+                        src='images/PythonIcon.png' 
+                        alt="Python Icon" 
+                        loading="lazy"
+                        width="50"
+                        height="50">
+                </picture>
                 <img class="SingleStackImages" src='images/cSharpiCON.webp' alt="C# Icon" loading="lazy">
                 <img class="SingleStackImages" src='images/htmlIcon.webp' alt="HTML Icon">
                 <img class="SingleStackImages" src='images/CSSicon.webp' alt="CSS Icon">
@@ -460,6 +477,6 @@
     </script>
 
     <!-- Load projects.js once -->
-    <script src="./js/projects.js" defer crossorigin="anonymous"></script>
+    <script src="./js/projects.js" defer></script>
 </body>
 </html>

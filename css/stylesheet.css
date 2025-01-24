@@ -544,21 +544,16 @@ a:visited {
     transform: translateY(-2px);
 }
 
-.linkedin-icon {
-    width: 24px;
-    height: 24px;
-}
-
 /* Responsive adjustments for social buttons */
 @media (max-width: 768px) {
-    .linkedin-section {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+    .linkedin-section,
+    .project-card-section,
+    .heading-section {
         padding: 0 1rem;
     }
-
+    
+    .navigation,
     .linkedin-custom-badge {
-        padding: 0.8rem 1.5rem;
         font-size: 0.9rem;
     }
 }
