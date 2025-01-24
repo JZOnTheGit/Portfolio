@@ -209,17 +209,34 @@
            
             <div class="StackImagesM">
                 <picture>
-                    <source srcset="images/PythonIcon.webp" type="image/webp">
-                    <source srcset="images/PythonIcon.png" type="image/png">
+                    <source 
+                        srcset="images/PythonIcon.webp" 
+                        type="image/webp">
+                    <source 
+                        srcset="images/PythonIcon.png" 
+                        type="image/png">
                     <img class="SingleStackImages" 
                         src='images/PythonIcon.png' 
                         alt="Python Icon" 
                         loading="lazy"
                         width="50"
-                        height="50">
+                        height="50"
+                        decoding="async"
+                        fetchpriority="low">
                 </picture>
-                <img class="SingleStackImages" src='images/cSharpiCON.webp' alt="C# Icon" loading="lazy">
-                <img class="SingleStackImages" src='images/htmlIcon.webp' alt="HTML Icon">
+                <img class="SingleStackImages" 
+                    src='images/cSharpiCON.webp' 
+                    alt="C# Icon" 
+                    loading="lazy"
+                    width="50"
+                    height="50"
+                    decoding="async">
+                <img class="SingleStackImages" 
+                    src='images/htmlIcon.webp' 
+                    alt="HTML Icon"
+                    width="50"
+                    height="50"
+                    decoding="async">
                 <img class="SingleStackImages" src='images/CSSicon.webp' alt="CSS Icon">
                 <img class="SingleStackImages" src='images/JSicon.webp' alt="JavaScript Icon">
                 <img class="SingleStackImages" src='images/unityIcon.webp' alt="Unity Icon">
@@ -478,5 +495,11 @@
 
     <!-- Load projects.js once -->
     <script src="./js/projects.js" defer></script>
+
+    <!-- Move non-critical CSS to end of body -->
+    <link rel="stylesheet" href="css/stylesheet.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="css/stylesheet.css">
+    </noscript>
 </body>
 </html>

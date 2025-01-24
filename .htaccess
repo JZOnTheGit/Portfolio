@@ -22,16 +22,18 @@
 
 # Add Vary header for proper caching
 <IfModule mod_headers.c>
-    # Cache for 1 year
+    # Cache images for 1 month
     <FilesMatch "\.(webp|png|ico)$">
-        Header set Cache-Control "max-age=31536000, public"
+        Header set Cache-Control "max-age=2592000, public, immutable"
     </FilesMatch>
     
-    # Cache CSS/JS for 1 week
+    # Cache CSS/JS for 1 week with revalidation
     <FilesMatch "\.(css|js)$">
-        Header set Cache-Control "max-age=604800, public"
+        Header set Cache-Control "max-age=604800, public, must-revalidate"
     </FilesMatch>
     
-    # Add Vary header
-    Header append Vary: Accept-Encoding
+    # Add security headers
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
 </IfModule> 
