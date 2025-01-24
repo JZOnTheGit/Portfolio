@@ -22,21 +22,27 @@
         
         <!-- Inline critical CSS -->
         <style>
-            /* Critical styles that appear above the fold */
+            /* Critical CSS */
+            :root {
+                --primary-color: #4a9eff;
+                --background-dark: #181414;
+                --text-light: #efefef;
+            }
             body {
                 font-family: 'IBM Plex Mono', monospace;
                 background-color: var(--background-dark);
                 margin: 0;
+            }
+            .heading {
+                color: var(--text-light);
+                font-size: 50px;
+                margin: 30px 100px 0;
             }
             .navbar {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 padding: 15px;
-            }
-            .heading {
-                color: var(--text-light);
-                font-size: 50px;
             }
             .heading {
                 color: #efefef;
@@ -81,7 +87,6 @@
             .heading-section{
                     margin: 20px 30px;
             }
-        }
         </style>
         
         <!-- Preload critical CSS -->
@@ -158,6 +163,25 @@
         <link rel="preload" href="css/stylesheet.css" as="style">
         <link rel="preload" href="js/main.js" as="script">
         <link rel="preload" href="js/projects.js" as="script">
+
+        <!-- Move non-critical CSS to end of body -->
+        <link rel="stylesheet" href="css/stylesheet.css" media="print" onload="this.media='all'">
+        <noscript>
+            <link rel="stylesheet" href="css/stylesheet.css">
+        </noscript>
+
+        <!-- Preconnect to Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- Font loading optimization -->
+        <link rel="preload" 
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'">
+        <noscript>
+            <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" 
+                rel="stylesheet">
+        </noscript>
     </head>
 
 <body>
@@ -237,10 +261,34 @@
                     width="50"
                     height="50"
                     decoding="async">
-                <img class="SingleStackImages" src='images/CSSicon.webp' alt="CSS Icon">
-                <img class="SingleStackImages" src='images/JSicon.webp' alt="JavaScript Icon">
-                <img class="SingleStackImages" src='images/unityIcon.webp' alt="Unity Icon">
-                <img class="SingleStackImages" src='images/d.jsLogo-removebg-preview.webp' alt="Discord.js Icon">
+                <img class="SingleStackImages" 
+                    src='images/CSSicon.webp' 
+                    alt="CSS Icon"
+                    width="50"
+                    height="50"
+                    loading="lazy"
+                    decoding="async">
+                <img class="SingleStackImages" 
+                    src='images/JSicon.webp' 
+                    alt="JavaScript Icon"
+                    width="50"
+                    height="50"
+                    loading="lazy"
+                    decoding="async">
+                <img class="SingleStackImages" 
+                    src='images/unityIcon.webp' 
+                    alt="Unity Icon"
+                    width="50"
+                    height="50"
+                    loading="lazy"
+                    decoding="async">
+                <img class="SingleStackImages" 
+                    src='images/d.jsLogo-removebg-preview.webp' 
+                    alt="Discord.js Icon"
+                    width="50"
+                    height="50"
+                    loading="lazy"
+                    decoding="async">
 
             </div>
 
@@ -495,11 +543,5 @@
 
     <!-- Load projects.js once -->
     <script src="./js/projects.js" defer></script>
-
-    <!-- Move non-critical CSS to end of body -->
-    <link rel="stylesheet" href="css/stylesheet.css" media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="css/stylesheet.css">
-    </noscript>
 </body>
 </html>
