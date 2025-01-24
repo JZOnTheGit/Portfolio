@@ -1,5 +1,5 @@
 function scrollToAbout() {
-    const aboutSection = document.getElementById("about");
+    const aboutSection = document.getElementById("social_section");
     aboutSection.scrollIntoView({ behavior: "smooth" });
 }
 
