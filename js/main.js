@@ -100,11 +100,14 @@ function searchProjects(query) {
 // Animate skill bars when they come into view
 function animateSkillBars() {
     const bars = document.querySelectorAll('.progress-bar');
+    if (!bars.length) return;
+    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const bar = entry.target;
                 const level = bar.getAttribute('data-level');
+                if (!level) return;
                 bar.style.transform = `scaleX(${level / 100})`;
                 observer.unobserve(bar);
             }
@@ -117,9 +120,11 @@ function animateSkillBars() {
 // Animate statistics numbers
 function animateStats() {
     const stats = document.querySelectorAll('.stat-number');
+    if (!stats.length) return;
     
     stats.forEach(stat => {
         const target = parseInt(stat.getAttribute('data-count'));
+        if (isNaN(target)) return;
         let current = 0;
         const increment = target / 30; // Animate over 30 steps
         

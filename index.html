@@ -106,7 +106,7 @@
         <title>Jasstej Singh | Software Engineer Portfolio | Web Developer</title>
         
         <!-- Deferred Scripts -->
-        <script src="./js/main.js" defer></script>
+        <script src="./js/main.js?v=1.0" defer></script>
 
         <!-- Favicon -->
         <link rel="icon" href="images/Favicon/favicon.ico">
@@ -581,6 +581,16 @@
     <!-- Load projects.js once -->
     <script src="./js/projects.js" defer></script>
 
+    <script>
+        window.addEventListener('load', function() {
+            if (document.querySelector('.progress-bar')) {
+                animateSkillBars();
+            }
+            if (document.querySelector('.stat-number')) {
+                animateStats();
+            }
+        });
+    </script>
 
 </body>
 </html>
