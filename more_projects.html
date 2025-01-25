@@ -55,6 +55,7 @@
 
 <div class="button-padding">
     <button class="about-button" id="about-button" onclick="Back_Home()" >Back_Home</button>
+    <button class="about-button" onclick="scrollToJourney()">View_Journey</button>
 </div>
 
 
@@ -76,8 +77,46 @@
         </div>
     </div>
 
-    <div id="all-projects-container">
-        <!-- All projects will be loaded here -->
+    <!-- Project Statistics -->
+    <div class="stats-container">
+        <div class="stat-item">
+            <span class="stat-number" data-count="7">0</span>
+            <h4>Total Projects</h4>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" data-count="4">0</span>
+            <h4>Web Projects</h4>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" data-count="3">0</span>
+            <h4>Game Projects</h4>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" data-count="5">0</span>
+            <h4>API Projects</h4>
+        </div>
+    </div>
+
+    <!-- Project Filters -->
+    <div class="filter-container">
+        <button class="filter-btn active" onclick="filterProjects('All')">All</button>
+        <button class="filter-btn" onclick="filterProjects('Web')">Web</button>
+        <button class="filter-btn" onclick="filterProjects('Game')">Games</button>
+        <button class="filter-btn" onclick="filterProjects('API')">API</button>
+    </div>
+
+    <div id="projects-container">
+        <!-- Projects will be loaded here -->
+    </div>
+</div>
+
+<!-- Timeline Section -->
+<div class="timeline-section">
+    <div class="heading-title">
+        <h3>Development Journey</h3>
+    </div>
+    <div class="timeline">
+        <!-- Remove static timeline items -->
     </div>
 </div>
 
@@ -104,6 +143,6 @@
 <script src="js/projects.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        loadProjects('all-projects-container');
+        loadProjects('projects-container');
     });
 </script>

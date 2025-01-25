@@ -80,9 +80,72 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.appendChild(script);
     };
     
-    // Load after a slight delay
     setTimeout(loadSocialScripts, 2000);
+    animateSkillBars();
+    animateStats();
 });
+
+function searchProjects(query) {
+    const filtered = projects.filter(project => 
+        project.title.toLowerCase().includes(query.toLowerCase()) ||
+        project.description.toLowerCase().includes(query.toLowerCase())
+    );
+    updateProjectDisplay(filtered);
+}
+
+// Animate skill bars when they come into view
+function animateSkillBars() {
+    const bars = document.querySelectorAll('.progress-bar');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const bar = entry.target;
+                const level = bar.getAttribute('data-level');
+                bar.style.transform = `scaleX(${level / 100})`;
+                observer.unobserve(bar);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    bars.forEach(bar => observer.observe(bar));
+}
+
+// Animate statistics numbers
+function animateStats() {
+    const stats = document.querySelectorAll('.stat-number');
+    
+    stats.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-count'));
+        let current = 0;
+        const increment = target / 30; // Animate over 30 steps
+        
+        const updateCount = () => {
+            if (current < target) {
+                current += increment;
+                stat.textContent = Math.round(current);
+                requestAnimationFrame(updateCount);
+            } else {
+                stat.textContent = target;
+            }
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                updateCount();
+                observer.unobserve(stat);
+            }
+        });
+        
+        observer.observe(stat);
+    });
+}
+
+function scrollToJourney() {
+    const journeySection = document.querySelector('.timeline-section');
+    if (journeySection) {
+        journeySection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
 
 
 

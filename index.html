@@ -315,6 +315,39 @@
 
         </div>
 
+        <!--Skills Section -->
+        <div class="skills-section">
+            <div class="heading-title">
+                <h3>Technical Skills</h3>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-bar">
+                    <span class="skill-name">JavaScript</span>
+                    <div class="progress">
+                        <div class="progress-bar" data-level="83"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <span class="skill-name">Python</span>
+                    <div class="progress">
+                        <div class="progress-bar" data-level="72"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <span class="skill-name">HTML/CSS</span>
+                    <div class="progress">
+                        <div class="progress-bar" data-level="90"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <span class="skill-name">C#</span>
+                    <div class="progress">
+                        <div class="progress-bar" data-level="65"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!--Socials-->
         <div class="social_section" aria-label="Social Media">
 
@@ -336,27 +369,26 @@
 
         <hr class="section-divider">
 
-        <!-- Projects Section -->
+       
 
-        <div id="projects" aria-labelledby="projects-title">
+        <!--Projects-->
+        <div id="projects">
             <div class="heading-section">
                 <div class="heading-title">
-                    <h2 id="projects-title">Projects</h2>
+                    <div class="heading-flex">
+                        <h3>Projects</h3>
+                        <button class="view-all-button" id="ProjectBtn-button" onclick="MoreProjects()">
+                            View All <span class="arrow">→</span>
+                        </button>
+                    </div>
                 </div>
                 <div class="heading-content">
                     <p>Projects that I've been working on</p>
-                    <p class="project-count">Viewing 3 / ... (Press View More under the projects to view All Projects)</p>
+                    <p>Viewing 3 / 7</p>
                 </div>
             </div>
-
             <div id="projects-container">
                 <!-- Projects will be loaded here -->
-            </div>
-
-            <div class="ProjectBtnPadding">   
-                <div class="ProjectBtn-padding">
-                    <button class="ProjectBtn-button" id="ProjectBtn-button" onclick="MoreProjects()" aria-label="View more projects">More_Projects</button>
-                </div>  
             </div>
         </div>
 
@@ -490,6 +522,10 @@
             <hr class="section-divider">
 
         </div>
+
+        
+
+        
     </main>
 
     <!-- Add before closing body tag -->
@@ -545,6 +581,6 @@
     <!-- Load projects.js once -->
     <script src="./js/projects.js" defer></script>
 
-    
+
 </body>
 </html>
