@@ -206,6 +206,7 @@
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#Web_Dev">Web_Dev</a></li>
                         <li><a href="#Algorithms">Algorithms</a></li>
+                        <li><a href="#GitHub_Activity">GitHub</a></li>
                     </ul>
                 </div>
                 
@@ -592,5 +593,46 @@
         });
     </script>
 
+  
+    <div id="GitHub_Activity">
+    <!-- GitHub Activity Dashboard -->
+    <section class="github-dashboard">
+        <div class="heading-title">
+            <div class="heading-flex">
+                <h3>GitHub Activity</h3>
+                <button onclick="window.open('https://github.com/JZOnTheGit', '_blank')" class="github-view-button">
+                    View Profile
+                </button>
+            </div>
+        </div>
+        <div class="github-container">
+            <div class="github-stats">
+                <div class="github-stat">
+                    <span class="stat-label">Repositories</span>
+                    <span class="stat-value" id="repo-count">Loading...</span>
+                </div>
+                <div class="github-stat">
+                    <span class="stat-label">Contributions</span>
+                    <span class="stat-value" id="contribution-count">Loading...</span>
+                </div>
+                <div class="github-stat">
+                    <span class="stat-label">Stars</span>
+                    <span class="stat-value" id="stars-count">Loading...</span>
+                </div>
+            </div>
+            <div class="recent-activity" id="recent-activity">
+                <h4>Recent Activity</h4>
+                <div class="activity-list">Loading...</div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 Jainesh Singh (Soon to be Jasstej Singh). All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

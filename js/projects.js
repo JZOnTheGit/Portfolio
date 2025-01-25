@@ -165,7 +165,12 @@ const debouncedLoadProjects = debounce((containerId, start, count) => {
 // Add filter function
 function filterProjects(category) {
     const container = document.getElementById('projects-container');
+    if (!container) return;
+    
     container.innerHTML = '';
+    
+    // Determine if we're on the index page
+    const isIndexPage = window.location.pathname === '/' || window.location.pathname.includes('index.html');
     
     // Update active button state
     const buttons = document.querySelectorAll('.filter-btn');
@@ -180,14 +185,17 @@ function filterProjects(category) {
         ? projects 
         : projects.filter(project => project.categories && project.categories.includes(category));
     
-    filtered.forEach(project => {
+    // Only show first 3 projects on index page
+    const projectsToShow = isIndexPage ? filtered.slice(0, 3) : filtered;
+    
+    projectsToShow.forEach(project => {
         const projectSection = document.createElement('div');
         projectSection.className = 'project-card-section';
         projectSection.innerHTML = generateProjectHTML(project);
         container.appendChild(projectSection);
     });
 
-    // Update only the filtered count, keep total constant
+    // Only update stats if they exist (index page)
     const stats = document.querySelectorAll('.stat-number');
     if (stats.length > 0) {
         stats[0].setAttribute('data-count', '7');
@@ -252,9 +260,24 @@ function generateTimeline() {
 
 // Update the initialization code
 document.addEventListener('DOMContentLoaded', () => {
-    if (document.querySelector('.filter-container')) {
+    // Check if we're on the index page
+    if (window.location.pathname === '/' || window.location.pathname.includes('index.html')) {
         filterProjects('All');
         animateStats();
         generateTimeline();
     }
-}); 
+});
+
+function loadAllProjects() {
+    const container = document.getElementById('projects-container');
+    if (!container) return;
+    
+    // Clear container first to prevent duplicates
+    container.innerHTML = '';
+    
+    // Load all projects
+    projects.forEach(project => {
+        const projectSection = createProjectElement(project);
+        container.appendChild(projectSection);
+    });
+} 

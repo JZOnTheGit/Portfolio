@@ -54,26 +54,21 @@
 </div>
 
 <div class="button-padding">
-    <button class="about-button" id="about-button" onclick="Back_Home()" >Back_Home</button>
+    <button class="about-button" id="about-button" onclick="Back_Home()">Back_Home</button>
     <button class="about-button" onclick="scrollToJourney()">View_Journey</button>
 </div>
 
-
 <hr class="section-divider">
 
-
-
 <!-- Projects Section -->
-
-
 
 <div id="projects">
     <div class="heading-section">
         <div class="heading-title">
-            <h3>All_Projects</h3>
+            <h3>All Projects</h3>
         </div>
         <div class="heading-content">
-            <p>These are projects that I have worked on in the past</p>
+            <p>All Projects that I've worked on</p>
         </div>
     </div>
 
@@ -110,39 +105,32 @@
     </div>
 </div>
 
+<hr class="section-divider">
+
 <!-- Timeline Section -->
 <div class="timeline-section">
     <div class="heading-title">
         <h3>Development Journey</h3>
     </div>
     <div class="timeline">
-        <!-- Remove static timeline items -->
+        <!-- Timeline items will be generated here -->
     </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
 <hr class="section-divider">
 
-
-    
 </body>
 </html>
 
 <!-- Add before closing body tag -->
-<script src="js/projects.js"></script>
+<script src="./js/main.js" defer></script>
+<script src="./js/projects.js" defer></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        loadProjects('projects-container');
+        const container = document.getElementById('projects-container');
+        if (container) {
+            filterProjects('All');
+            generateTimeline();
+        }
     });
 </script>

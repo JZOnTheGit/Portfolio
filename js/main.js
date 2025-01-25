@@ -156,5 +156,113 @@ function scrollToJourney() {
     }
 }
 
+function scrollToGitHub() {
+    const githubSection = document.querySelector('.github-dashboard');
+    if (githubSection) {
+        githubSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// GitHub Activity Dashboard
+async function fetchGitHubActivity() {
+    const username = 'JZOnTheGit';
+    const apiBase = 'https://api.github.com';
+
+    try {
+        // Fetch user data
+        const userData = await fetch(`${apiBase}/users/${username}`).then(r => r.json());
+        
+        // Fetch repositories
+        const repos = await fetch(`${apiBase}/users/${username}/repos?sort=updated`).then(r => r.json());
+        
+        // Calculate total stars
+        const totalStars = repos.reduce((acc, repo) => acc + repo.stargazers_count, 0);
+        
+        // Update enhanced stats
+        document.getElementById('repo-count').textContent = userData.public_repos;
+        document.getElementById('stars-count').textContent = totalStars;
+        document.getElementById('contribution-count').textContent = userData.contributions || '0';
+
+        // Fetch and format recent activity
+        const activity = await fetch(`${apiBase}/users/${username}/events/public`).then(r => r.json());
+        const recentActivity = activity.slice(0, 5).map(event => {
+            const date = new Date(event.created_at).toLocaleDateString();
+            let message = '';
+            let icon = '';
+            
+            switch(event.type) {
+                case 'PushEvent':
+                    icon = '🔨';
+                    message = `Pushed ${event.payload.commits?.length || 0} commits to ${event.repo.name}`;
+                    break;
+                case 'CreateEvent':
+                    icon = '🎉';
+                    message = `Created ${event.payload.ref_type} ${event.payload.ref || ''} in ${event.repo.name}`;
+                    break;
+                case 'ForkEvent':
+                    icon = '🔱';
+                    message = `Forked ${event.repo.name}`;
+                    break;
+                case 'WatchEvent':
+                    icon = '⭐';
+                    message = `Starred ${event.repo.name}`;
+                    break;
+                case 'IssuesEvent':
+                    icon = '📝';
+                    message = `${event.payload.action} issue in ${event.repo.name}`;
+                    break;
+                default:
+                    icon = '📌';
+                    message = `Activity in ${event.repo.name}`;
+            }
+            
+            return `<div class="activity-item">
+                <div class="activity-icon">${icon}</div>
+                <div class="activity-content">
+                    <span class="activity-message">${message}</span>
+                    <span class="activity-date">${date}</span>
+                </div>
+            </div>`;
+        }).join('');
+
+        document.querySelector('.activity-list').innerHTML = recentActivity;
+
+        // Add top repositories section
+        const topRepos = repos
+            .sort((a, b) => b.stargazers_count - a.stargazers_count)
+            .slice(0, 3)
+            .map(repo => `
+                <div class="top-repo">
+                    <h4>${repo.name}</h4>
+                    <p>${repo.description || 'No description'}</p>
+                    <div class="repo-stats">
+                        <span>⭐ ${repo.stargazers_count}</span>
+                        <span>🔄 ${repo.forks_count}</span>
+                        <span>👁️ ${repo.watchers_count}</span>
+                    </div>
+                </div>
+            `).join('');
+
+        // Add this HTML to show top repos
+        document.querySelector('.github-container').insertAdjacentHTML('beforeend', `
+            <div class="top-repositories">
+                <h4>Top Repositories</h4>
+                <div class="repo-grid">${topRepos}</div>
+            </div>
+        `);
+
+    } catch (error) {
+        console.error('Error fetching GitHub data:', error);
+        document.querySelector('.activity-list').innerHTML = 'Failed to load GitHub activity';
+    }
+}
+
+// Initialize GitHub dashboard when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('.github-dashboard')) {
+        fetchGitHubActivity();
+    }
+});
+
 
 
