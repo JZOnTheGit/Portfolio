@@ -81,8 +81,12 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     setTimeout(loadSocialScripts, 2000);
-    animateSkillBars();
-    animateStats();
+    if (document.querySelector('.progress-bar')) {
+        animateSkillBars();
+    }
+    if (document.querySelector('.stat-number')) {
+        animateStats();
+    }
 });
 
 function searchProjects(query) {
