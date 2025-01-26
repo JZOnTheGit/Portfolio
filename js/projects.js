@@ -75,7 +75,7 @@ const projectData = {
         },
         description: `ideaFlow, a project that uses AI to generate content ideas from PDFs and Website Links for content creators<br><br>This is a project that I have been working on for about a week, its a react based web application that uses Coheres AI to generate content indeas for Tiktok, Youtube and Twitter/X from PDFs and Website Links.<br><br> The project uses React, Cohere api, Firebase, Stripe API, Cloudflare and Vercel. <br><br> React is used to create the website, Cohere api is used to generate the content ideas, Firebase is used to store the content ideas and authenticate users, Stripe API is used to handle payments, Vercel is used to host the backend and Cloudflare is used to host the website.<br><br> Check out the website to see how it works.`,
         projectLink: "https://ideaflow.uk",
-        sourceLink: null
+        sourceLink: "https://github.com/JZOnTheGit/ideaFlow"
     }
 };
 
