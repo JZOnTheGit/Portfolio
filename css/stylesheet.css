@@ -222,8 +222,7 @@ html {
 
 /* Socials */
 .social_section {
-    margin: 30px 100px;
-    text-align: left;
+    margin: 20px 100px;
     color: #efefefed;
 }
 .social_nest {
@@ -232,20 +231,47 @@ html {
     margin-bottom: 20px;
     color: #efefefed;
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 2rem;
     align-items: center;
 }
+
+/* Social Media Links */
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 8px 16px;
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: rgba(74, 158, 255, 0.1);
+    transform: translateY(-2px);
+}
+
 .social-icon {
     width: 25px;
     height: 25px;
-    margin-top: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    display: inline-block;
-    justify-content: center;
-    text-align: center;
+    display: block;
     aspect-ratio: 1;
     color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .social_nest {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .social-link {
+        width: calc(50% - 1rem);
+        justify-content: center;
+    }
 }
 
 /* Projects */

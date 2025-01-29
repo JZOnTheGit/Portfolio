@@ -218,7 +218,7 @@
     <main id="main-content" tabindex="-1">
         <header>
             <h1 class="heading">I'm Jasstej Singh, a Software Engineer</h1>
-            <p class="dot">.</p>
+            <!--<p class="dot">.</p> -->
         </header>
 
         <div class="button-padding">
@@ -350,22 +350,26 @@
         </div>
 
         <!--Socials-->
-        <div class="social_section" aria-label="Social Media">
-
+        <h3 class="heading">Social_Media_Profiles</h3>
+        <div class="social_section">
             <div class="social_nest">
-
-                <a href="https://github.com/JZOnTheGit" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   aria-label="Visit Jasstej's GitHub Profile (opens in new tab)">
-                    <img src="./images/social_icons/github.png" alt="Github Icon" class="social-icon">
+                <a href="https://github.com/JZOnTheGit" target="_blank" class="social-link">
+                    <img src="./images/social_icons/github.png" alt="GitHub Icon" class="social-icon">
+                    <span>GitHub</span>
                 </a>
-                <a href="https://www.instagram.com/__jainesh__" target="_blank" style="text-decoration:none"> <img src="./images/social_icons/instagram.png" alt="Instagram Icon" class="social-icon"> </a>
-                <a href="https://www.twitter.com/JZ_On_Top" target="_blank" style="text-decoration:none"> <img src="./images/social_icons/X-social.png" alt="Twitter Icon" class="social-icon"> </a>
-                <a href="mailto:jass150505@gmail.com" target="_blank" style="text-decoration: none;"><img src="./images/social_icons/EmailIcon.png" alt="Email Icon" class="social-icon"> </a>
-
+                <a href="https://uk.linkedin.com/in/jainesh-singh-page" target="_blank" class="social-link">
+                    <img src="./images/social_icons/linkedin.png" alt="LinkedIn Icon" class="social-icon">
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://www.instagram.com/jz_on_top" target="_blank" class="social-link">
+                    <img src="./images/social_icons/instagram.png" alt="Instagram Icon" class="social-icon">
+                    <span>Instagram</span>
+                </a>
+                <a href="mailto:jass150505@gmail.com" target="_blank" class="social-link">
+                    <img src="./images/social_icons/EmailIcon.png" alt="Email Icon" class="social-icon">
+                    <span>Send Email</span>
+                </a>
             </div>
-
         </div>
 
         <hr class="section-divider">
@@ -379,7 +383,7 @@
                     <div class="heading-flex">
                         <h3>Projects</h3>
                         <button class="view-all-button" id="ProjectBtn-button" onclick="MoreProjects()">
-                            View All <span class="arrow">→</span>
+                            View_All <span class="arrow">→</span>
                         </button>
                     </div>
                 </div>
@@ -448,7 +452,7 @@
             <div id="Algorithms" aria-label="Sorting Algorithms Visualized">
                 <div class="heading-section">
                     <div class="heading-title">
-                        <h3>Sorting Algorithms Visualized</h3>
+                        <h3>Sorting_Algorithms_Visualized</h3>
                         </div>
                     
                     <div class="heading-content">
@@ -460,7 +464,7 @@
 
                     <div class="ProjectBtnPadding">   
                         <div class="ProjectBtn-padding">
-                            <button class="ProjectBtn-button" id="WebsiteBtn-button" onclick="SortingAlgorithms()" >View Sorting Algorithms</button>
+                            <button class="ProjectBtn-button" id="WebsiteBtn-button" onclick="SortingAlgorithms()" >View_Sorting_Algorithms</button>
                         </div>  
                     
                     </div>
@@ -469,7 +473,7 @@
 
             <section class="social_section" id="social_section" role="complementary" aria-labelledby="linkedin-title">
                 <div class="heading-title">
-                    <h2 id="linkedin-title">Social Media Profiles</h2>
+                    <h3 class="linkedin-title">Social_Media_Profiles</h3>
                 </div>
                 <div class="linkedin-section">
                     <!-- LinkedIn -->
@@ -480,7 +484,7 @@
                        aria-label="View Jasstej Singh's LinkedIn Profile">
                         <div class="linkedin-custom-badge">
                             <img src="./images/social_icons/linkedin.png" alt="LinkedIn Icon" class="social-icon">
-                            <span>View LinkedIn Profile</span>
+                            <span> LinkedIn </span>
                         </div>
                     </a>
                     
@@ -492,7 +496,7 @@
                        aria-label="Visit Jasstej's GitHub Profile">
                         <div class="linkedin-custom-badge">
                             <img src="./images/social_icons/github.png" alt="GitHub Icon" class="social-icon">
-                            <span>View GitHub Profile</span>
+                            <span> GitHub </span>
                         </div>
                     </a>
                     
@@ -504,7 +508,7 @@
                        aria-label="Follow Jasstej on Instagram">
                         <div class="linkedin-custom-badge">
                             <img src="./images/social_icons/instagram.png" alt="Instagram Icon" class="social-icon">
-                            <span>Follow on Instagram</span>
+                            <span> Instagram </span>
                         </div>
                     </a>
                     
@@ -599,9 +603,9 @@
     <section class="github-dashboard">
         <div class="heading-title">
             <div class="heading-flex">
-                <h3>GitHub Activity</h3>
+                <h3>GitHub_Activity</h3>
                 <button onclick="window.open('https://github.com/JZOnTheGit', '_blank')" class="github-view-button">
-                    View Profile
+                    View_Profile <span class="arrow">→</span>
                 </button>
             </div>
         </div>
@@ -621,7 +625,7 @@
                 </div>
             </div>
             <div class="recent-activity" id="recent-activity">
-                <h4>Recent Activity</h4>
+                <h4>Recent_Activity</h4>
                 <div class="activity-list">Loading...</div>
             </div>
         </div>

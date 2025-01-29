@@ -59,7 +59,7 @@ function SortingAlgorithms() {
     } catch (error) {
         if (button) {
             button.disabled = false;
-            button.textContent = 'View Sorting Algorithms';
+            button.textContent = 'View_Sorting_Algorithms';
         }
         console.error('Navigation failed:', error);
     }
