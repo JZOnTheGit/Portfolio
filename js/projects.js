@@ -76,11 +76,23 @@ const projectData = {
         description: `ideaFlow, a project that uses AI to generate content ideas from PDFs and Website Links for content creators<br><br>This is a project that I have been working on for about a week, its a react based web application that uses Coheres AI to generate content indeas for Tiktok, Youtube and Twitter/X from PDFs and Website Links.<br><br> The project uses React, Cohere api, Firebase, Stripe API, Cloudflare and Vercel. <br><br> React is used to create the website, Cohere api is used to generate the content ideas, Firebase is used to store the content ideas and authenticate users, Stripe API is used to handle payments, Vercel is used to host the backend and Cloudflare is used to host the website.<br><br> Check out the website to see how it works.`,
         projectLink: "https://ideaflow.uk",
         sourceLink: "https://github.com/JZOnTheGit/ideaFlow"
+    },
+    TaskTuner: {
+        title: "TaskTuner",
+        categories: ['Web', 'API'],
+        timeline: {
+            date: '04-02-2025',
+            description: 'Developed a event scheduling system that uses AI to generate events'
+        },
+        description: `TaskTuner, a project that allows you to schedule and manage events with an integrated calendar system.<br><br>This is a project that I have been working on for about a week, it's a React-based web application that syncs all events to a database in real-time. The application includes an AI feature that can auto-generate and fill out event details based on user prompts, making event creation quick and intuitive.<br><br>The project utilizes React.js as the frontend framework, Supabase for the database and user authentication, and is hosted on Vercel.<br><br>I am actively developing new AI-powered features that will be added in the near future to make event scheduling and management even more seamless.<br><br>Check out the website to see how it works.`,
+        projectLink: "https://task-tuner-brown.vercel.app",
+        sourceLink: "https://github.com/JZOnTheGit/TaskTuner"
     }
 };
 
 // Define the order of projects (just reference their keys)
 const projectOrder = [
+    'TaskTuner',
     'ideaFlow',
     'tiktokFinder',
     'discordBot',
