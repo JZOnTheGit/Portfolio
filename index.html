@@ -9,18 +9,52 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         
-        <!-- Link to Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" 
-              rel="stylesheet"
-              media="print" 
-              onload="this.media='all'">
+        <!-- Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Jasstej Singh">
+        <meta name="keywords" content="Jasstej Singh, Jass Singh, Software Engineer, Software Engineering Portfolio, Web Developer, Full Stack Developer, Python Developer, JavaScript Developer, HTML, CSS, Unity Developer, C# Developer, UK Software Engineer, Portfolio Website">
+        <meta name="description" content="Jasstej Singh's Software Engineering Portfolio - Experienced in Web Development, Python, JavaScript, and C#. View my projects including web applications, sorting algorithm visualizations, and game development work.">
+        <meta name="robots" content="index, follow">
+        
+        <!-- Title -->
+        <title>Jasstej Singh | Software Engineer Portfolio | Web Developer</title>
+        
+        <!-- Social Media Meta Tags -->
+        <meta property="og:title" content="Jasstej Singh | Software Engineer | Portfolio">
+        <meta property="og:description" content="Jasstej Singh's Software Engineering Portfolio - View my projects and expertise in web development, programming, and software engineering.">
+        <meta property="og:url" content="https://j-singh.net">
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Jasstej Singh - Software Engineer">
+        <meta name="twitter:description" content="Software Engineering Portfolio showcasing web development and programming projects.">
+        
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://j-singh.net" />
+        
+        <!-- Preload critical resources -->
+        <link rel="preload" href="css/stylesheet.css" as="style">
+        <link rel="preload" href="js/main.js" as="script">
+        <link rel="preload" href="js/projects.js" as="script">
+        <link rel="preload" as="image" href="images/PythonIcon.webp" type="image/webp">
+        <link rel="preload" as="image" href="images/cSharpiCON.webp" type="image/webp">
+        
+        <!-- Optimized Google Fonts loading -->
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" as="style">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" 
+              media="print" onload="this.media='all'">
         <noscript>
-          <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap">
         </noscript>
         
-        <!-- Inline critical CSS -->
+        <!-- Favicon -->
+        <link rel="icon" href="images/Favicon/favicon.ico">
+        
+        <!-- Prefetch other pages -->
+        <link rel="prefetch" href="more_projects.html">
+        <link rel="prefetch" href="algorithms.html">
+        
+        <!-- Critical CSS -->
         <style>
             /* Critical CSS */
             :root {
@@ -90,99 +124,35 @@
             }
         </style>
         
-        <!-- Preload critical CSS -->
-        <link rel="preload" href="css/stylesheet.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="css/stylesheet.css"></noscript>
-        
-        <!-- Meta Tags -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Jasstej Singh">
-        <meta name="keywords" content="Jasstej Singh, Jass Singh, Software Engineer, Software Engineering Portfolio, Web Developer, Full Stack Developer, Python Developer, JavaScript Developer, HTML, CSS, Unity Developer, C# Developer, UK Software Engineer, Portfolio Website">
-        <meta name="description" content="Jasstej Singh's Software Engineering Portfolio - Experienced in Web Development, Python, JavaScript, and C#. View my projects including web applications, sorting algorithm visualizations, and game development work.">
-        <meta name="robots" content="index, follow">
-        
-        <!-- Title -->
-        <title>Jasstej Singh | Software Engineer Portfolio | Web Developer</title>
-        
-        <!-- Deferred Scripts -->
-        <script src="./js/main.js?v=1.0" defer></script>
-
-        <!-- Favicon -->
-        <link rel="icon" href="images/Favicon/favicon.ico">
-        
-        <!-- Add Open Graph tags for social media -->
-        <meta property="og:title" content="Jasstej Singh | Software Engineer | Portfolio">
-        <meta property="og:description" content="Jasstej Singh's Software Engineering Portfolio - View my projects and expertise in web development, programming, and software engineering.">
-        <meta property="og:url" content="https://j-singh.net">
-        <meta property="og:type" content="website">
-
-        <!-- Add Twitter Card tags -->
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="Jasstej Singh - Software Engineer">
-        <meta name="twitter:description" content="Software Engineering Portfolio showcasing web development and programming projects.">
-
-        <!-- Add canonical URL -->
-        <link rel="canonical" href="https://j-singh.net" />
-
-        <!-- Web Vitals Monitoring -->
-        <script>
-        addEventListener('DOMContentLoaded', () => {
-            // Basic performance monitoring
-            const performanceObserver = new PerformanceObserver((list) => {
-                for (const entry of list.getEntries()) {
-                    if (entry.entryType === 'largest-contentful-paint') {
-                        console.log('LCP:', entry.startTime);
-                    }
-                    if (entry.entryType === 'first-input') {
-                        console.log('FID:', entry.processingStart - entry.startTime);
-                    }
-                }
-            });
-            
-            performanceObserver.observe({
-                entryTypes: ['largest-contentful-paint', 'first-input']
-            });
-        });
-        </script>
-
-        <!-- Preload critical images -->
-        <link rel="preload" as="image" href="images/PythonIcon.webp" type="image/webp">
-        <link rel="preload" as="image" href="images/cSharpiCON.webp" type="image/webp">
-
-        <!-- Prefetch other pages -->
-        <link rel="prefetch" href="more_projects.html">
-        <link rel="prefetch" href="algorithms.html">
-
-        <!-- Optimize Google Fonts loading -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" 
-              rel="stylesheet">
-
-        <!-- Preload critical resources -->
-        <link rel="preload" href="css/stylesheet.css" as="style">
-        <link rel="preload" href="js/main.js" as="script">
-        <link rel="preload" href="js/projects.js" as="script">
-
-        <!-- Move non-critical CSS to end of body -->
+        <!-- Non-critical CSS -->
         <link rel="stylesheet" href="css/stylesheet.css" media="print" onload="this.media='all'">
         <noscript>
             <link rel="stylesheet" href="css/stylesheet.css">
         </noscript>
-
-        <!-- Preconnect to Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <!-- Font loading optimization -->
-        <link rel="preload" 
-            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap"
-            as="style"
-            onload="this.onload=null;this.rel='stylesheet'">
-        <noscript>
-            <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" 
-                rel="stylesheet">
-        </noscript>
+        
+        <!-- Deferred Scripts -->
+        <script src="./js/main.js?v=1.0" defer></script>
+        
+        <!-- Web Vitals Monitoring -->
+        <script>
+            addEventListener('DOMContentLoaded', () => {
+                // Basic performance monitoring
+                const performanceObserver = new PerformanceObserver((list) => {
+                    for (const entry of list.getEntries()) {
+                        if (entry.entryType === 'largest-contentful-paint') {
+                            console.log('LCP:', entry.startTime);
+                        }
+                        if (entry.entryType === 'first-input') {
+                            console.log('FID:', entry.processingStart - entry.startTime);
+                        }
+                    }
+                });
+                
+                performanceObserver.observe({
+                    entryTypes: ['largest-contentful-paint', 'first-input']
+                });
+            });
+        </script>
     </head>
 
 <body>
