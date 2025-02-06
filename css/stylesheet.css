@@ -1220,3 +1220,11 @@ a:visited {
         font-size: 0.8rem;
     }
 }
+
+.error-message {
+    color: var(--text-light-transparent);
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 0, 0, 0.1);
+    border-radius: 8px;
+}

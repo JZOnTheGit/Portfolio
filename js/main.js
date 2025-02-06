@@ -167,25 +167,71 @@ function scrollToGitHub() {
 async function fetchGitHubActivity() {
     const username = 'JZOnTheGit';
     const apiBase = 'https://api.github.com';
+    const token = config.githubToken;
+    
+    const headers = {
+        'Authorization': `token ${token}`,
+        'Accept': 'application/vnd.github.v3+json'
+    };
+
+    const fetchWithAuth = (url) => fetch(url, { headers });
 
     try {
         // Fetch user data
-        const userData = await fetch(`${apiBase}/users/${username}`).then(r => r.json());
+        const userResponse = await fetchWithAuth(`${apiBase}/users/${username}`);
+        if (!userResponse.ok) {
+            throw new Error(`Failed to fetch user data: ${userResponse.status}`);
+        }
+        const userData = await userResponse.json();
         
         // Fetch repositories
-        const repos = await fetch(`${apiBase}/users/${username}/repos?sort=updated`).then(r => r.json());
+        const reposResponse = await fetchWithAuth(`${apiBase}/users/${username}/repos?sort=updated`);
+        if (!reposResponse.ok) {
+            throw new Error(`Failed to fetch repos: ${reposResponse.status}`);
+        }
+        const repos = await reposResponse.json();
         
         // Calculate total stars
-        const totalStars = repos.reduce((acc, repo) => acc + repo.stargazers_count, 0);
+        const totalStars = Array.isArray(repos) ? 
+            repos.reduce((acc, repo) => acc + repo.stargazers_count, 0) : 0;
         
-        // Update enhanced stats
-        document.getElementById('repo-count').textContent = userData.public_repos;
-        document.getElementById('stars-count').textContent = totalStars;
-        document.getElementById('contribution-count').textContent = userData.contributions || '0';
-
-        // Fetch and format recent activity
-        const activity = await fetch(`${apiBase}/users/${username}/events/public`).then(r => r.json());
-        const recentActivity = activity.slice(0, 5).map(event => {
+        // Calculate total contributions from commits
+        let totalContributions = 0;
+        if (Array.isArray(repos)) {
+            for (const repo of repos) {
+                try {
+                    const commitsResponse = await fetchWithAuth(
+                        `${apiBase}/repos/${username}/${repo.name}/commits?author=${username}&per_page=100`
+                    );
+                    if (commitsResponse.ok) {
+                        const commits = await commitsResponse.json();
+                        if (Array.isArray(commits)) {
+                            totalContributions += commits.length;
+                        }
+                    }
+                } catch (error) {
+                    console.warn(`Failed to fetch commits for ${repo.name}:`, error);
+                }
+            }
+        }
+        
+        // Update stats immediately with what we have
+        const statsContainer = document.querySelector('.github-stats');
+        if (statsContainer) {
+            document.getElementById('repo-count').textContent = userData.public_repos || '0';
+            document.getElementById('stars-count').textContent = totalStars;
+            document.getElementById('contribution-count').textContent = totalContributions;
+        }
+        
+        // Fetch recent activity
+        const activityResponse = await fetchWithAuth(`${apiBase}/users/${username}/events/public`);
+        if (!activityResponse.ok) {
+            throw new Error(`Failed to fetch activity: ${activityResponse.status}`);
+        }
+        const activity = await activityResponse.json();
+        
+        // Check if activity is an array before using slice
+        const recentActivity = (Array.isArray(activity) ? activity.slice(0, 5) : []).map(event => {
             const date = new Date(event.created_at).toLocaleDateString();
             let message = '';
             let icon = '';
@@ -225,35 +271,28 @@ async function fetchGitHubActivity() {
             </div>`;
         }).join('');
 
-        document.querySelector('.activity-list').innerHTML = recentActivity;
-
-        // Add top repositories section
-        const topRepos = repos
-            .sort((a, b) => b.stargazers_count - a.stargazers_count)
-            .slice(0, 3)
-            .map(repo => `
-                <div class="top-repo">
-                    <h4>${repo.name}</h4>
-                    <p>${repo.description || 'No description'}</p>
-                    <div class="repo-stats">
-                        <span>⭐ ${repo.stargazers_count}</span>
-                        <span>🔄 ${repo.forks_count}</span>
-                        <span>👁️ ${repo.watchers_count}</span>
-                    </div>
-                </div>
-            `).join('');
-
-        // Add this HTML to show top repos
-        document.querySelector('.github-container').insertAdjacentHTML('beforeend', `
-            <div class="top-repositories">
-                <h4>Top Repositories</h4>
-                <div class="repo-grid">${topRepos}</div>
-            </div>
-        `);
+        // Only try to update the DOM if the element exists
+        const activityList = document.querySelector('.activity-list');
+        if (activityList) {
+            activityList.innerHTML = recentActivity;
+        }
 
     } catch (error) {
         console.error('Error fetching GitHub data:', error);
-        document.querySelector('.activity-list').innerHTML = 'Failed to load GitHub activity';
+        // Update UI to show error state
+        const statsContainer = document.querySelector('.github-stats');
+        if (statsContainer) {
+            ['repo-count', 'stars-count', 'contribution-count'].forEach(id => {
+                const element = document.getElementById(id);
+                if (element) element.textContent = '-';
+            });
+        }
+        const activityList = document.querySelector('.activity-list');
+        if (activityList) {
+            activityList.innerHTML = `<div class="error-message">
+                Failed to load GitHub activity. Please try again later.
+            </div>`;
+        }
     }
 }
 
