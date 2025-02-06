@@ -68,7 +68,7 @@ const projectData = {
     },
     ideaFlow: {
         title: "ideaFlow",
-        categories: ['Web', 'API'],
+        categories: ['Web', 'API', 'AI'],
         timeline: {
             date: '24-01-2025',
             description: 'Developed and launched AI-powered content generation platform'
@@ -79,7 +79,7 @@ const projectData = {
     },
     TaskTuner: {
         title: "TaskTuner",
-        categories: ['Web', 'API'],
+        categories: ['Web', 'API', 'AI'],
         timeline: {
             date: '04-02-2025',
             description: 'Developed a event scheduling system that uses AI to generate events'
@@ -87,6 +87,28 @@ const projectData = {
         description: `TaskTuner, a project that allows you to schedule and manage events with an integrated calendar system.<br><br>This is a project that I have been working on for about a week, it's a React-based web application that syncs all events to a database in real-time. The application includes an AI feature that can auto-generate and fill out event details based on user prompts, making event creation quick and intuitive.<br><br>The project utilizes React.js as the frontend framework, Supabase for the database and user authentication, and is hosted on Vercel.<br><br>I am actively developing new AI-powered features that will be added in the near future to make event scheduling and management even more seamless.<br><br>Check out the website to see how it works.`,
         projectLink: "https://task-tuner-brown.vercel.app",
         sourceLink: "https://github.com/JZOnTheGit/TaskTuner"
+    },
+    kremSite: {
+        title: "Krem Cafe Website",
+        categories: ['Web'],
+        timeline: {
+            date: '12-06-2024',
+            description: 'Developed a Frontend website concept for a local cafe'
+        },
+        description: `This is a test website I developed for a small café company, designed to provide customers with a modern and interactive experience.<br><br> Unfortunately, the café has since shut down, so the website was not fully completed, but it can still be viewed. [Best Viewed on Desktop]<br><br> The website is open source.`,
+        projectLink: "https://krem-draft.j-singh.net",
+        sourceLink: null
+    },
+    ZetaClothing:{
+        title: "Zeta Clothing Website",
+        categories: ['Web', 'API'],
+        timeline: {
+            date: '08-11-2024',
+            description: 'Developed the backend and frontend of my personal Clothing company ZETA CLOTHING'
+        },
+        description: `This is a website I created for my personal clothing brand ZETA CLOTHING that will be launching in the near future. <br><br> The website features a clean and visually pleasing design built with HTML, CSS and JavaScript to provide a user-friendly shopping experience. <br><br> I integrated Stripe payment processing to handle secure product purchases. <br><br> The website has a modern, minimalist aesthetic while maintaining full e-commerce functionality for browsing and buying products.`,
+        projectLink: "https://zetaclothing.uk",
+        sourceLink: null
     }
 };
 
@@ -94,7 +116,9 @@ const projectData = {
 const projectOrder = [
     'TaskTuner',
     'ideaFlow',
+    'ZetaClothing',
     'tiktokFinder',
+    'kremSite',
     'discordBot',
     'ninjaParkour',
     'mobileGames',
@@ -123,14 +147,22 @@ function generateProjectHTML(project) {
     </div>`;
 }
 
-// Add this function to projects.js
+
 function updateProjectCount(containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
     
     const countElement = document.querySelector('.project-count');
     if (countElement) {
-        countElement.textContent = `Viewing 3 / ${projects.length} (Press View More under the projects to view All Projects)`;
+        const totalProjects = projectOrder.length;
+        const isIndexPage = window.location.pathname === '/' || window.location.pathname.includes('index.html');
+        const viewingCount = isIndexPage ? 3 : totalProjects;
+        
+        if (isIndexPage) {
+            countElement.textContent = `Viewing ${viewingCount} / ${totalProjects} (Press View More under the projects to view All Projects)`;
+        } else {
+            countElement.textContent = `Viewing all ${totalProjects} projects`;
+        }
     }
 }
 
@@ -207,18 +239,32 @@ function filterProjects(category) {
         container.appendChild(projectSection);
     });
 
-    // Only update stats if they exist (index page)
+    // Update stats for both pages
     const stats = document.querySelectorAll('.stat-number');
     if (stats.length > 0) {
-        stats[0].setAttribute('data-count', '7');
-        if (category === 'Web') {
-            stats[1].setAttribute('data-count', filtered.length);
-        } else if (category === 'Game') {
-            stats[2].setAttribute('data-count', filtered.length);
-        } else if (category === 'API') {
-            stats[3].setAttribute('data-count', filtered.length);
-        }
+        // Total Projects
+        stats[0].setAttribute('data-count', projectOrder.length.toString());
+        
+        // Category counts
+        const webCount = projects.filter(p => p.categories.includes('Web')).length;
+        const gameCount = projects.filter(p => p.categories.includes('Game')).length;
+        const apiCount = projects.filter(p => p.categories.includes('API')).length;
+        const aiCount = projects.filter(p => p.categories.includes('AI')).length;
+        
+        stats[1].setAttribute('data-count', webCount.toString());
+        stats[2].setAttribute('data-count', gameCount.toString());
+        stats[3].setAttribute('data-count', apiCount.toString());
+        stats[4].setAttribute('data-count', aiCount.toString());
+        
         animateStats();
+    }
+    
+    // Update project count text on index page
+    if (isIndexPage) {
+        const countElement = document.querySelector('.project-count');
+        if (countElement) {
+            countElement.textContent = `Viewing 3 / ${projectOrder.length} (Press View More under the projects to view All Projects)`;
+        }
     }
 }
 
@@ -274,6 +320,11 @@ function generateTimeline() {
 document.addEventListener('DOMContentLoaded', () => {
     // Check if we're on the index page
     if (window.location.pathname === '/' || window.location.pathname.includes('index.html')) {
+        // Update initial project count
+        const countElement = document.querySelector('.project-count');
+        if (countElement) {
+            countElement.textContent = `Viewing 3 / ${projectOrder.length} (Press View More under the projects to view All Projects)`;
+        }
         filterProjects('All');
         animateStats();
         generateTimeline();
