@@ -167,16 +167,24 @@ function scrollToGitHub() {
 async function fetchGitHubActivity() {
     const username = 'JZOnTheGit';
     const apiBase = 'https://api.github.com';
-    const token = config.githubToken;
     
-    const headers = {
-        'Authorization': `token ${token}`,
-        'Accept': 'application/vnd.github.v3+json'
-    };
-
-    const fetchWithAuth = (url) => fetch(url, { headers });
-
+    // Fetch token from Cloudflare
     try {
+        const response = await fetch('/api/token');
+        const data = await response.json();
+        const token = data.token;
+        
+        if (!token) {
+            throw new Error('No token available');
+        }
+        
+        const headers = {
+            'Authorization': `token ${token}`,
+            'Accept': 'application/vnd.github.v3+json'
+        };
+
+        const fetchWithAuth = (url) => fetch(url, { headers });
+
         // Fetch user data
         const userResponse = await fetchWithAuth(`${apiBase}/users/${username}`);
         if (!userResponse.ok) {
