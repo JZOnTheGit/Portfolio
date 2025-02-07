@@ -1228,3 +1228,35 @@ a:visited {
     background: rgba(255, 0, 0, 0.1);
     border-radius: 8px;
 }
+
+.github-stats-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(30, 30, 30, 0.5);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.github-stat-card {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.github-stat-card:hover {
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    .github-stats-cards {
+        padding: 10px;
+    }
+    
+    .github-stat-card {
+        width: 100%;
+    }
+}
