@@ -46,7 +46,7 @@ const projectData = {
     },
     botBusiness: {
         title: "Past Discord Bot Business",
-        categories: ['API', 'Web'],
+        categories: ['API'],
         timeline: {
             date: '15-07-2021',
             description: 'Started Discord bot development business serving multiple clients'
@@ -109,6 +109,17 @@ const projectData = {
         description: `This is a website I created for my personal clothing brand ZETA CLOTHING that will be launching in the near future. <br><br> The website features a clean and visually pleasing design built with HTML, CSS and JavaScript to provide a user-friendly shopping experience. <br><br> I integrated Stripe payment processing to handle secure product purchases. <br><br> The website has a modern, minimalist aesthetic while maintaining full e-commerce functionality for browsing and buying products.`,
         projectLink: "https://zetaclothing.uk",
         sourceLink: null
+    },
+    AymanPortfolio: {
+        title: "Ayman Photography Portfolio",
+        categories: ['Web'],
+        timeline: {
+            date: '07-02-2025',
+            description: 'Developed a photography portfolio website for professional photographer Ayman'
+        },
+        description: `A dynamic photography portfolio website showcasing the work of professional photographer Ayman, my second freelance web development client.<br><br>The website features a clean and elegant design built with HTML, CSS and JavaScript, optimized to beautifully display Ayman's diverse portfolio of animal, environmental, editorial, and fashion photography.<br><br>Key features include smooth CSS/JavaScript animations, responsive mobile-friendly design, and optimized image loading through Cloudinary CDN integration.<br><br>The static website was completed in one day while maintaining high standards for performance and visual appeal. The site effectively presents Ayman's work through an intuitive gallery system that allows visitors to explore his photography across different categories.`,
+        projectLink: "https://ayman-portfolio-ruby.vercel.app",
+        sourceLink: "https://github.com/JZOnTheGit/AymanPhotoPortfolio"
     }
 };
 
@@ -117,6 +128,7 @@ const projectOrder = [
     'TaskTuner',
     'ideaFlow',
     'ZetaClothing',
+    'AymanPortfolio',
     'tiktokFinder',
     'kremSite',
     'discordBot',
