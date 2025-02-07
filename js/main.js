@@ -170,7 +170,16 @@ async function fetchGitHubActivity() {
     
     // Fetch token from Cloudflare
     try {
-        const response = await fetch('/api/token');
+        const response = await fetch('/api/token', {
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (!response.ok) {
+            throw new Error(`Failed to fetch token: ${response.status}`);
+        }
+        
         const data = await response.json();
         const token = data.token;
         
