@@ -3,6 +3,7 @@ const CACHE_NAME = 'portfolio-cache-v1';
 const urlsToCache = [
     '/',
     '/css/stylesheet.css',
+    '/js/analytics.js',
     '/js/projects.js',
     '/js/main.js',
     '/images/PythonIcon.webp',

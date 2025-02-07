@@ -1,58 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- DNS prefetch for external domains -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    
+    <!-- Preconnect to required origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jasstej Singh">
+    <meta name="robots" content="noindex, follow">
+    
+    <!-- Title -->
     <title>404 - Page Not Found | Jasstej Singh</title>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/stylesheet.css">
+    
+    <!-- Optimized Google Fonts loading -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" 
+          media="print" onload="this.media='all'">
+    
+    <!-- Critical CSS -->
     <style>
-        .error-container {
+        /* Critical CSS */
+        :root {
+            --primary-color: #4a9eff;
+            --background-dark: #181414;
+            --text-light: #efefef;
+        }
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background-color: var(--background-dark);
+            margin: 0;
+            color: var(--text-light);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 80vh;
+            min-height: 100vh;
             text-align: center;
-            padding: 0 20px;
         }
-
-        .error-code {
-            font-size: 120px;
-            color: var(--primary-color);
-            margin: 0;
-            line-height: 1;
+        .error-title {
+            font-size: 4rem;
+            margin-bottom: 1rem;
         }
-
         .error-message {
-            font-size: 24px;
-            color: var(--text-light);
-            margin: 20px 0;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
         }
-
-        .error-description {
-            color: var(--text-light-transparent);
-            margin-bottom: 30px;
-        }
-
-        .home-button {
-            background-color: transparent;
-            color: var(--text-light);
-            border: 1px solid var(--primary-color);
-            border-radius: 20px;
-            padding: 10px 25px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .home-link {
+            color: var(--primary-color);
             text-decoration: none;
-            display: inline-block;
+            border: 1px solid var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
         }
-
-        .home-button:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-2px);
+        .home-link:hover {
+            background: var(--primary-color);
+            color: var(--background-dark);
         }
     </style>
+    
+    <!-- Non-critical CSS -->
+    <link rel="stylesheet" href="css/stylesheet.css" media="print" onload="this.media='all'">
+    <link rel="icon" href="images/Favicon/favicon.ico">
+    
+    <!-- Analytics -->
+    <script src="js/analytics.js" async></script>
 </head>
 <body>
     <div class="error-container">

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <!-- DNS prefetch for external domains -->
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="dns-prefetch" href="//fonts.gstatic.com">
+        <link rel="dns-prefetch" href="//www.googletagmanager.com">
+        
+        <!-- Preconnect to required origins -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+        
+        <!-- Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Jasstej Singh">
+        <meta name="description" content="Privacy Policy for Jasstej Singh's Portfolio - Learn about how we handle your data and protect your privacy.">
+        <meta name="robots" content="index, follow">
+        
+        <!-- Title -->
+        <title>Privacy Policy | Jasstej Singh</title>
+        
+        <!-- Social Media Meta Tags -->
+        <meta property="og:title" content="Privacy Policy | Jasstej Singh">
+        <meta property="og:description" content="Privacy Policy for Jasstej Singh's Portfolio - Learn about how we handle your data and protect your privacy.">
+        <meta property="og:url" content="https://j-singh.net/privacy-policy">
+        <meta property="og:type" content="website">
+        
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://j-singh.net/privacy-policy" />
+        
+        <!-- Favicon -->
+        <link rel="icon" href="images/Favicon/favicon.ico">
+        
+        <!-- Optimized Google Fonts loading -->
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" as="style">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" 
+              media="print" onload="this.media='all'">
+        <noscript>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+        </noscript>
+        
+        <!-- Critical CSS -->
+        <style>
+            /* Critical CSS */
+            :root {
+                --primary-color: #4a9eff;
+                --background-dark: #181414;
+                --text-light: #efefef;
+            }
+            body {
+                font-family: 'IBM Plex Mono', monospace;
+                background-color: var(--background-dark);
+                margin: 0;
+            }
+            .heading {
+                color: var(--text-light);
+                font-size: 50px;
+                margin: 30px 100px 0;
+            }
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                padding: 15px;
+            }
+        </style>
+        
+        <!-- Non-critical CSS -->
+        <link rel="stylesheet" href="css/stylesheet.css" media="print" onload="this.media='all'">
+        <noscript>
+            <link rel="stylesheet" href="css/stylesheet.css">
+        </noscript>
+        
+        <!-- Web Vitals Monitoring -->
+        <script>
+            addEventListener('DOMContentLoaded', () => {
+                const performanceObserver = new PerformanceObserver((list) => {
+                    for (const entry of list.getEntries()) {
+                        if (entry.entryType === 'largest-contentful-paint') {
+                            console.log('LCP:', entry.startTime);
+                        }
+                    }
+                });
+                performanceObserver.observe({
+                    entryTypes: ['largest-contentful-paint']
+                });
+            });
+        </script>
+        
+        <!-- Analytics -->
+        <script src="js/analytics.js" async></script>
+    </head>
+    <body>
+        <nav>
+            <div class="whole-header">
+                <div class="navbar">
+                    <div class="navbar-left">
+                        <span class="name" onclick="window.location.href='/'">Jass Singh</span>
+                    </div>
+                    <div class="navbar-right">
+                        <button class="hamburger" aria-label="Navigation Button" onclick="toggleMenu()">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <ul class="navigation">
+                            <li><a href="/index.html">Home</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content-container">
+            <h1 class="heading">Privacy_Policy</h1>
+            
+            <div class="privacy-content">
+                <section class="policy-section">
+                    <h2>Analytics and Data Collection</h2>
+                    <p>This website uses Google Analytics and Microsoft Clarity to understand user behavior and improve user experience. These services may collect:</p>
+                    <ul>
+                        <li>Usage data (pages visited, time spent)</li>
+                        <li>Device information</li>
+                        <li>Location data (country level)</li>
+                        <li>Browser type and settings</li>
+                    </ul>
+                </section>
+
+                <section class="policy-section">
+                    <h2>Data Usage</h2>
+                    <p>The collected data is used solely for:</p>
+                    <ul>
+                        <li>Website analytics and performance monitoring</li>
+                        <li>Improving user experience</li>
+                        <li>Understanding visitor preferences</li>
+                    </ul>
+                </section>
+
+                <section class="policy-section">
+                    <h2>Third-Party Services</h2>
+                    <p>This website integrates with:</p>
+                    <ul>
+                        <li>Google Analytics</li>
+                        <li>Microsoft Clarity</li>
+                        <li>GitHub API (for statistics display)</li>
+                    </ul>
+                </section>
+
+                <section class="policy-section">
+                    <h2>Contact</h2>
+                    <p>For any privacy-related questions, please contact:</p>
+                    <p><a href="mailto:jass150505@gmail.com">jass150505@gmail.com</a></p>
+                </section>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>© 2025 Jainesh Singh (Soon to be Jasstej Singh). All rights reserved.</p>
+                <a href="/" class="footer-link">Back to Home</a>
+            </div>
+        </footer>
+    </body>
+</html> 

@@ -1,29 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- DNS prefetch for external domains -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    
+    <!-- Preconnect to required origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/stylesheet.css">
+    <meta name="author" content="Jasstej Singh">
+    <meta name="description" content="Explore all projects by Jasstej Singh - From web development to game design, APIs, and AI projects. View detailed descriptions and live demos.">
+    <meta name="keywords" content="software projects, web development, game development, API projects, AI projects, portfolio, Jasstej Singh">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="All Projects | Jasstej Singh">
+    <meta property="og:description" content="Explore all projects by Jasstej Singh - From web development to game design, APIs, and AI projects.">
+    <meta property="og:url" content="https://j-singh.net/more_projects.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Title -->
+    <title>All Projects | Jasstej Singh</title>
+    
+    <!-- Optimized Google Fonts loading -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" 
+          media="print" onload="this.media='all'">
+    
+    <!-- Critical CSS -->
+    <style>
+        /* Critical CSS */
+        :root {
+            --primary-color: #4a9eff;
+            --background-dark: #181414;
+            --text-light: #efefef;
+        }
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background-color: var(--background-dark);
+            margin: 0;
+        }
+    </style>
+    
+    <!-- Non-critical CSS -->
+    <link rel="stylesheet" href="css/stylesheet.css" media="print" onload="this.media='all'">
     <link rel="icon" href="images/Favicon/favicon.ico">
     <link rel="canonical" href="https://j-singh.net/more_projects.html" />
     
-
-    <script src="./js/main.js"></script>
+    <!-- Deferred Scripts -->
+    <script src="./js/main.js" defer></script>
+    <script src="./js/projects.js" defer></script>
     
+    <!-- Analytics -->
+    <script src="js/analytics.js" async></script>
     
-    
-    <title>Portfolio_More_Projects</title>
+    <!-- Web Vitals Monitoring -->
+    <script>
+        addEventListener('DOMContentLoaded', () => {
+            const performanceObserver = new PerformanceObserver((list) => {
+                for (const entry of list.getEntries()) {
+                    if (entry.entryType === 'largest-contentful-paint') {
+                        console.log('LCP:', entry.startTime);
+                    }
+                }
+            });
+            performanceObserver.observe({
+                entryTypes: ['largest-contentful-paint']
+            });
+        });
+    </script>
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-REH4188X2L"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-REH4188X2L');
-</script>
 
 <body>
 
@@ -127,9 +179,6 @@
 </body>
 </html>
 
-<!-- Add before closing body tag -->
-<script src="./js/main.js" defer></script>
-<script src="./js/projects.js" defer></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById('projects-container');
