@@ -1189,18 +1189,41 @@ a:visited {
 .github-dashboard .heading-flex {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    
     margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
+/* Add styling for medium screens */
 @media (max-width: 768px) {
     .github-dashboard {
         margin: 30px 65px;
     }
     
+    .github-view-button {
+        width: 200px; /* Set a fixed width for medium screens */
+    }
+}
+
+/* Mobile view styling */
+@media (max-width: 600px) {
     .github-dashboard .heading-flex {
-        flex-direction: row;
-        gap: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .github-view-button {
+        width: 100%;
+        text-align: center;
+        padding: 10px 16px;
+        margin-top: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .github-dashboard {
+        margin: 30px 20px;
     }
 }
 
