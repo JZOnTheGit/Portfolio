@@ -73,13 +73,18 @@ const projectData = {
         techStack: ['c#', 'visual-studio']
     },
     ideaFlow: {
-        title: "ideaFlow",
+        title: "ideaFlow - AI Content Platform",
         categories: ['Web', 'API', 'AI'],
         timeline: {
-            date: '24-01-2025',
-            description: 'Developed and launched AI-powered content generation platform'
+            date: '02-02-2025',
+            description: 'Developed AI content generation platform'
         },
-        description: `ideaFlow, a project that uses AI to generate content ideas from PDFs and Website Links for content creators<br><br>This is a project that I have been working on for about a week, its a react based web application that uses Coheres AI to generate content indeas for Tiktok, Youtube and Twitter/X from PDFs and Website Links.<br><br> The project uses React, Cohere api, Firebase, Stripe API, Cloudflare and Vercel. <br><br> React is used to create the website, Cohere api is used to generate the content ideas, Firebase is used to store the content ideas and authenticate users, Stripe API is used to handle payments, Vercel is used to host the backend and Cloudflare is used to host the website.<br><br> Check out the website to see how it works.`,
+        description: `Content generation platform integrating Cohere AI with subscription management.<br><br>
+            Highlights:<br>
+            • Implemented Stripe subscription system<br>
+            • Integrated Cohere AI for content generation<br>
+            • Built secure user authentication<br>
+            • Deployed with Cloudflare/Vercel for optimal performance`,
         projectLink: "https://ideaflow.uk",
         sourceLink: "https://github.com/JZOnTheGit/ideaFlow",
         techStack: ['react', 'firebase', 'cohere', 'stripe', 'cloudflare', 'vercel', 'database']
@@ -87,13 +92,17 @@ const projectData = {
     TaskTuner: {
         title: "TaskTuner",
         categories: ['Web', 'API', 'AI'],
-        techStack: ['react', 'supabase', 'vercel', 'database'],
         timeline: {
             date: '04-02-2025',
             description: 'Launched TaskTuner AI scheduling application'
         },
-        description: `TaskTuner, a project that allows you to schedule and manage events with an integrated calendar system.<br><br>This is a project that I have been working on for about a week, it's a React-based web application that syncs all events to a database in real-time. The application includes an AI feature that can auto-generate and fill out event details based on user prompts, making event creation quick and intuitive.<br><br>The project utilizes React.js as the frontend framework, Supabase for the database and user authentication, and is hosted on Vercel.<br><br>I am actively developing new AI-powered features that will be added in the near future to make event scheduling and management even more seamless.<br><br>Check out the website to see how it works.`,
-        projectLink: "https://task-tuner-brown.vercel.app",
+        description: `AI-powered event scheduling system with real-time database synchronization.<br><br>
+            Features:<br>
+            • Automated event generation using AI<br>
+            • Real-time calendar sync with Supabase<br>
+            • React-based responsive interface<br>
+            • Secure user authentication system`,
+        projectLink: "https://tasktuner.app",
         sourceLink: "https://github.com/JZOnTheGit/TaskTuner",
         techStack: ['react', 'supabase', 'vercel', 'database']
     },
@@ -109,15 +118,20 @@ const projectData = {
         sourceLink: null,
         techStack: ['html', 'css', 'javascript']
     },
-    ZetaClothing:{
-        title: "Zeta Clothing Website",
+    ZetaClothing: {
+        title: "ZETA - E-commerce Platform",
         categories: ['Web', 'API'],
         timeline: {
-            date: '08-11-2024',
-            description: 'Developed the backend and frontend of my personal Clothing company ZETA CLOTHING'
+            date: '01-02-2025',
+            description: 'Built full-featured e-commerce platform'
         },
-        description: `This is a website I created for my personal clothing brand ZETA CLOTHING that will be launching in the near future. <br><br> The website features a clean and visually pleasing design built with HTML, CSS and JavaScript to provide a user-friendly shopping experience. <br><br> I integrated Stripe payment processing to handle secure product purchases. <br><br> The website has a modern, minimalist aesthetic while maintaining full e-commerce functionality for browsing and buying products.`,
-        projectLink: "https://zetaclothing.uk",
+        description: `Modern e-commerce platform with complete payment processing.<br><br>
+            Core Features:<br>
+            • Stripe payment integration<br>
+            • Real-time inventory management<br>
+            • Responsive product catalog<br>
+            • Secure checkout system`,
+        projectLink: "https://zeta-clothing.com",
         sourceLink: null,
         techStack: ['html', 'css', 'javascript', 'stripe', 'database']
     },
@@ -140,21 +154,30 @@ const projectData = {
             date: '10-02-2025',
             description: 'Founded CodeCove, a freelance web development company'
         },
-        description: `CodeCove is my freelance web development company that provides modern solutions for small businesses and individuals.<br><br>
-            Services include:<br>
-            • Custom website development<br>
-            • E-commerce platform integration<br>
-            • AI service implementation<br>
-            • SEO optimization<br>
-            • Modern UI/UX design<br><br>
-            Successfully delivered multiple client projects including:<br>
-            • Ayman Photography Portfolio<br>
-            • ZETA Clothing e-commerce platform<br>
-            • Various small business websites<br><br>
-            Technologies used include React.js, Next.js, Firebase, Stripe, and various AI services for enhanced functionality. Each project is built with a focus on performance, scalability, and user experience.`,
+        description: `Full-stack web development freelance company specializing in modern business solutions.<br><br>
+            Key Achievements:<br>
+            • Delivered multiple e-commerce platforms with Stripe integration<br>
+            • Implemented AI-powered features for content optimization<br>
+            • Built scalable solutions using React.js and Firebase<br>
+            • Achieved 40% faster load times through performance optimization`,
         projectLink: "https://codecove.app",
         sourceLink: null,
         techStack: ['react', 'firebase', 'stripe', 'vercel', 'database']
+    },
+    SortingAlgorithms: {
+        title: "Sorting Algorithms Visualizer",
+        categories: ['Web', 'Algorithms'],
+        description: `Interactive visualization of fundamental sorting algorithms.<br><br>
+            Features:<br>
+            • Real-time visualization of sorting process<br>
+            • Multiple algorithm implementations:<br>
+              - Bubble Sort<br>
+              - Quick Sort<br>
+              - Merge Sort<br>
+            • Custom array size and speed controls`,
+        projectLink: "/algorithms.html",
+        sourceLink: null,
+        techStack: ['javascript']
     },
 };
 
@@ -164,8 +187,9 @@ const projectOrder = [
     'TaskTuner',
     'ideaFlow',
     'ZetaClothing',
-    'AymanPortfolio',
     'tiktokFinder',
+    'SortingAlgorithms',
+    'AymanPortfolio',
     'kremSite',
     'discordBot'
 ];

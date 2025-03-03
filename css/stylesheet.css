@@ -32,20 +32,20 @@ html {
 }
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: #181414;
     padding: 15px;
 }
 .navbar-left {
-    flex: 1;
+    display: none;
 }
 .navbar-right {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
-    margin-right: 50px; /* Matches the left margin of the logo */
+    margin: 0;
+    width: 100%;
 }
 
 .name {
@@ -56,16 +56,24 @@ html {
 }
 .navigation {
     list-style-type: none;
-    margin: 5;
+    margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
 }
 .navigation li {
-    display: inline-block;
-    margin-right: 10px;
+    margin: 0;
 }
 .navigation li a {
     text-decoration: none;
     color: #efefef;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+.navigation li a:hover {
+    color: var(--primary-color);
 }
 
 /* Hamburger button */
@@ -74,16 +82,20 @@ html {
     background: none;
     border: none;
     cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
-    padding: 10px;
+    padding: 8px;
+    z-index: 100;
+    position: fixed;
+    top: 20px;
+    right: 20px;
 }
 
 .hamburger span {
     display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #efefef;
+    width: 20px; /* Smaller lines */
+    height: 2px;
+    background-color: var(--text-light);
+    margin: 4px 0;
+    transition: 0.3s ease-in-out;
 }
 
 /* Header */
@@ -321,13 +333,6 @@ html {
     margin-bottom: 20px;
     background-color: var(--background-dark);
     box-shadow: 0 0 10px rgba(74, 158, 255, 0.1);
-    transition: all 0.3s ease;
-    will-change: transform, box-shadow;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-    content-visibility: auto;
-    contain-intrinsic-size: 0 500px;
 }
 .project-title {
     font-size: 20px;
@@ -344,12 +349,6 @@ html {
 /* Project Button Padding */
 .ProjectBtnPadding {
     padding: 5px 100px;
-}
-
-/* Hover effect for all project cards */
-.project-card:hover {
-    box-shadow: 0 0 20px rgba(74, 158, 255, 0.3);
-    transform: translateY(-2px);
 }
 
 /* Style for the first project card */
@@ -507,33 +506,97 @@ html {
     
 }
 
-/* For smaller screens - hamburger menu */
+/* Hamburger menu styles */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 100;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.hamburger span {
+    display: block;
+    width: 20px; /* Smaller lines */
+    height: 2px;
+    background-color: var(--text-light);
+    margin: 4px 0;
+    transition: 0.3s ease-in-out;
+}
+
+/* Mobile navigation styles - updated for a more compact menu */
 @media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .navbar-right {
+        position: fixed;
+        top: 0;
+        right: -250px; /* Start off-screen */
+        height: auto;
+        width: 200px; /* Smaller width */
+        background-color: rgba(24, 20, 20, 0.95); /* Slightly transparent */
+        padding: 60px 20px 30px;
+        transition: 0.3s ease-in-out;
+        border-radius: 0 0 0 10px;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+    }
+
+    .navbar-right.active {
+        right: 0;
+        transform: translateX(0);
+    }
+
     .navigation {
-        display: flex;
         flex-direction: column;
-        background-color: #181414;
-        position: absolute;
-        top: 60px; /* Adjust based on navbar height */
-        right: 10px;
-        padding: 10px;
-        border-radius: 8px;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease; /* Smooth transition */
+        align-items: flex-start;
+        gap: 1.5rem;
     }
 
     .navigation li {
+        width: 100%;
+        opacity: 0;
+        transform: translateX(20px);
+        transition: 0.3s ease-in-out;
+    }
+
+    .navbar-right.active .navigation li {
+        opacity: 1;
+        transform: translateX(0);
+        transition-delay: calc(0.1s * var(--i));
+    }
+
+    .navigation li a {
+        font-size: 1rem;
         display: block;
-        margin: 10px 0;
+        padding: 8px 0;
+        color: var(--text-light);
+        transition: 0.3s ease;
     }
 
-    .hamburger {
-        display: flex;
+    .navigation li a:hover {
+        color: var(--primary-color);
+        transform: translateX(5px);
     }
 
-    .navigation.show {
-        max-height: 300px; /* Adjust based on expected menu height */
+    /* Hamburger animation */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
     }
 }
 
@@ -728,7 +791,7 @@ a:visited {
     border-radius: 8px;
     color: var(--text-light);
     transition: all 0.3s ease;
-    min-width: 180px;
+    min-width: 10px;
     cursor: pointer;
     text-decoration: none;
 }
@@ -748,7 +811,8 @@ a:visited {
     
     .linkedin-custom-badge {
         font-size: 0.9rem;
-        min-width: 160px;
+        min-width: 10px;
+        
     }
 }
 
@@ -1449,5 +1513,65 @@ a:visited {
 @media (max-width: 768px) {
     .button-padding {
         padding: 20px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .whole-header {
+        padding: 20px 40px;
+    }
+
+    .navigation {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .whole-header {
+        padding: 15px 20px;
+    }
+
+    .navigation {
+        gap: 1.5rem;
+    }
+}
+
+.location-subtitle {
+    color: var(--text-light-transparent);
+    font-size: 1.1rem;
+    margin: 10px 100px 0;
+    font-weight: normal;
+    opacity: 0.8;
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+    .location-subtitle {
+        margin: px 65px 0;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .location-subtitle {
+        margin: 10px 30px 0;
+        font-size: 0.9rem;
+    }
+}
+
+
+.social-section-top{
+    margin: 0 100px;
+}
+
+
+
+@media (max-width: 480px) {
+    .social-section-top {
+        margin: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 }

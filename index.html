@@ -166,26 +166,19 @@
     <nav>
         <div class="whole-header">
             <div class="navbar">
-                <div class="navbar-left">
-                    <span class="name" onclick="Back_Home()">Jass Singh</span>
-                </div>
+                <button class="hamburger" aria-label="Navigation Menu" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <div class="navbar-right">
-                    <button class="hamburger" aria-label="Navigation Button" onclick="toggleMenu()">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
                     <ul class="navigation">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <!--<li><a href="#Web_Dev">Web_Dev</a></li>-->
-                        <li><a href="#Algorithms">Algorithms</a></li>
-                        <!--<li><a href="#GitHub_Activity">GitHub</a></li>-->
+                        <li style="--i:0"><a href="#">Home</a></li>
+                        <li style="--i:1"><a href="#about">About</a></li>
+                        <li style="--i:2"><a href="#projects">Projects</a></li>
+                        <!-- <li style="--i:3"><a href="#Algorithms">Algorithms</a></li> -->
                     </ul>
                 </div>
-                
-                
             </div>
         </div>
     </nav>
@@ -193,13 +186,53 @@
     
         <header>
             <h1 class="heading">I'm Jasstej Singh, a Software Engineer</h1>
-            <!--<p class="dot">.</p> -->
+            <p class="location-subtitle">Based in Wolverhampton | Leicester during academic year</p>
         </header>
 
         <div class="button-padding">
             <button class="about-button" id="about-button" onclick="scrollToAbout()" aria-label="Scroll to contact information">
                 Contact_Me
             </button>
+        </div>
+
+        <div class="social-section-top">
+            <div class="linkedin-section">
+                <!-- LinkedIn -->
+                <a href="https://uk.linkedin.com/in/jainesh-singh-page" 
+                    class="linkedin-link" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    aria-label="View Jasstej Singh's LinkedIn Profile">
+                        <div class="linkedin-custom-badge">
+                            <img src="./images/social_icons/linkedin.png" alt="LinkedIn Icon" class="social-icon">
+                    
+                        </div>
+                </a>
+            
+            <!-- GitHub -->
+                <a href="https://github.com/JZOnTheGit" 
+                    class="linkedin-link" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    aria-label="Visit Jasstej's GitHub Profile">
+                        <div class="linkedin-custom-badge">
+                            <img src="./images/social_icons/github.png" alt="GitHub Icon" class="social-icon">
+                    
+                        </div>
+                    </a>
+            
+            <!-- Email -->
+                <a href="mailto:jass150505@gmail.com" 
+                    class="linkedin-link" 
+                    aria-label="Send email to Jasstej">
+                        <div class="linkedin-custom-badge">
+                            <img src="./images/social_icons/EmailIcon.png" alt="Email Icon" class="social-icon">
+                    
+                        </div>
+                </a>
+
+            </div>
+
         </div>
 
         <hr class="section-divider">
@@ -343,7 +376,7 @@
             </div>
 
             <hr class="section-divider" id="Section_divider" onclick="handleHrClick()">-->
-
+            <!--
             <div id="Algorithms" aria-label="Sorting Algorithms Visualized">
                 <div class="heading-section">
                     <div class="heading-title">
@@ -366,12 +399,14 @@
 
             <hr class="section-divider">
 
+                -->
+        <!--
             <section class="social_section" id="social_section" role="complementary" aria-labelledby="linkedin-title">
                 <div class="heading-title">
                     <h3 class="linkedin-title">Social_Media_Profiles</h3>
                 </div>
                 <div class="linkedin-section">
-                    <!-- LinkedIn -->
+                      
                     <a href="https://uk.linkedin.com/in/jainesh-singh-page" 
                        class="linkedin-link" 
                        target="_blank" 
@@ -379,11 +414,11 @@
                        aria-label="View Jasstej Singh's LinkedIn Profile">
                         <div class="linkedin-custom-badge">
                             <img src="./images/social_icons/linkedin.png" alt="LinkedIn Icon" class="social-icon">
-                            <span> LinkedIn </span>
+                            
                         </div>
                     </a>
                     
-                    <!-- GitHub -->
+                   
                     <a href="https://github.com/JZOnTheGit" 
                        class="linkedin-link" 
                        target="_blank" 
@@ -391,29 +426,17 @@
                        aria-label="Visit Jasstej's GitHub Profile">
                         <div class="linkedin-custom-badge">
                             <img src="./images/social_icons/github.png" alt="GitHub Icon" class="social-icon">
-                            <span> GitHub </span>
+                            
                         </div>
                     </a>
                     
-                    <!-- Instagram 
-                    <a href="https://www.instagram.com/_jasstej_" 
-                       class="linkedin-link" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       aria-label="Follow Jasstej on Instagram">
-                        <div class="linkedin-custom-badge">
-                            <img src="./images/social_icons/instagram.png" alt="Instagram Icon" class="social-icon">
-                            <span> Instagram </span>
-                        </div>
-                    </a>-->
-                    
-                    <!-- Email -->
+                   
                     <a href="mailto:jass150505@gmail.com" 
                        class="linkedin-link" 
                        aria-label="Send email to Jasstej">
                         <div class="linkedin-custom-badge">
                             <img src="./images/social_icons/EmailIcon.png" alt="Email Icon" class="social-icon">
-                            <span>Send Email</span>
+                            
                         </div>
                     </a>
                 </div>
@@ -423,7 +446,7 @@
 
         </div>
 
-        
+    -->
 
         
     

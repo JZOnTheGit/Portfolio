@@ -66,8 +66,27 @@ function SortingAlgorithms() {
 }
 
 function toggleMenu() {
-    const navigation = document.querySelector('.navigation');
-    navigation.classList.toggle('show');
+    const hamburger = document.querySelector('.hamburger');
+    const navbarRight = document.querySelector('.navbar-right');
+    
+    hamburger.classList.toggle('active');
+    navbarRight.classList.toggle('active');
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navbarRight.contains(e.target) && !hamburger.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navbarRight.classList.remove('active');
+        }
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.navigation a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navbarRight.classList.remove('active');
+        });
+    });
 }
 
 // Defer non-critical JavaScript
