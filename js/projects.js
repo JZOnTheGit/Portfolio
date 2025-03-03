@@ -9,7 +9,8 @@ const projectData = {
         },
         description: `This project was started by a user request on "TikTok", it tests my ability to work with binary code and how it can be manipulated to obtain specific data. <br><br> The project works by getting the needed didgits from the "TikTok" URL. <br> Converting them to binary, getting the first 32 didgits of that binary number then converting back to denary. <br> finally converting that denary value to the UNIX Time Code to obtain the exact date the video was uploaded.<br><br> Finally puttting all that into the JavaScript into the website and linking it with the html button then finishing with the css.`,
         projectLink: "https://ttudf.j-singh.net",
-        sourceLink: "https://github.com/JZOnTheGit/TikTokVideoDate"
+        sourceLink: "https://github.com/JZOnTheGit/TikTokVideoDate",
+        techStack: ['html', 'css', 'javascript']
     },
     ninjaParkour: {
         title: "Ninja Parkour Unity Game",
@@ -20,7 +21,8 @@ const projectData = {
         },
         description: `This project was made in 2021 when i was learning how to develop games in the Unity Game Engine. <br><br> This project uses a movement system, grappling system, and a simple UI interface that creates a parkour game where the user jumps through platforms, grapples and completes multiple levels. <br><br> It was created using scripts within unity that were using the C# language. <br> I also was able to integrate daabases and remote features from 3rd party systems like Firebase.`,
         projectLink: "https://d3v1l.itch.io/ninja-parkour",
-        sourceLink: null
+        sourceLink: null,
+        techStack: ['unity', 'c#']
     },
     discordBot: {
         title: "Discord.Js V14.2.0 Multi-Functional Bot (ZETA)",
@@ -31,7 +33,8 @@ const projectData = {
         },
         description: `This project was one of my last bots i developed using discords API (Discord.js V14.2) <br><br> This bot had multiple function and had been updated last in 2022 with slash commands which were recently introduced at the time. <br> The bot could do multple Moderation commands like, ban, kick, unban, mute. Fun commands like, catsay, avatar, 8ball, ping. and many other commands which can be viewed in the source files. <br><br> From previoud bots, i have lerant to integrate multiple APIs like Youtubes and Spotifys. And integradted Databaes like MongoDB and Firebase.<br>The bot is curently offline.`,
         projectLink: null,
-        sourceLink: "https://github.com/JZOnTheGit/ZETA-DiscordBot"
+        sourceLink: "https://github.com/JZOnTheGit/ZETA-DiscordBot",
+        techStack: ['nodejs', 'discord.js', 'mongodb', 'firebase', 'database']
     },
     mobileGames: {
         title: "Mobile 2D Games",
@@ -42,7 +45,8 @@ const projectData = {
         },
         description: `I have created multiple 2D mobile games available for the google play store, however over the course of few years, I havent updated any of the games and lost the source code, therefore losing access to the account. <br><br>One of the games were a simple drag the bottom slider to move the space ship left or right to dodge the obstacles, this was created in a low-code game engine called Buildbox. <br>Another were a infinite horizontal scroller where you tap to make your player jump and dodge obstacles, this was also created on Buildbox.<br> <br>The third game was when I moved to Unity and made a 3D multi-level game where the player walks around the arena eliminating Robots to end up getting to the last level and defeating the final boss.<br>This game was my first 3D game and also included an open world driving simulator. <br><br> I have lost the source code, however I have an OLD WEBSITE that includes my past mobile games. <br>This site was made in 2020 on a website template, before I focused on building my own sites from code<br><br>LINKS IN SITE MIGHT NOT WORK DUE TO OLD RESOURCES <br><br> WEBSITE HAS BEEN MODIFIED TO REMOVE OLD BRANDING AND FIX ISSUES (Might be missing elements)`,
         projectLink: "https://teamghost.webador.co.uk",
-        sourceLink: null
+        sourceLink: null,
+        techStack: ['html', 'css', 'javascript']
     },
     botBusiness: {
         title: "Past Discord Bot Business",
@@ -53,7 +57,8 @@ const projectData = {
         },
         description: `Other than my final Discord Bot, on the home page, I previously started a business where I created Discord Bots for multiple servers. <br><br>These bots were created with Discords API using D.Js V12. <br>These bots each had different and multiple function, fitted for the client in mind.<br><br> Below is an OLD WEBSITE that I have created in 2021 using a web builder. <br>This site showcases the clients I have worked with and proof of an previous independent business experience.<br><br>ELEMENTS MIGHT BE MISSING OR MODIFIED`,
         projectLink: "https://d3v1l-bot-coop.webador.co.uk/?_gl=1*15wdtev*_ga*NTc2OTg3MTUxLjE3MTgyMjY3MTI.*_ga_E6PZPGE4QM*MTcxODIyNjcxMS4xLjEuMTcxODIyODYzNy42MC4wLjA.",
-        sourceLink: null
+        sourceLink: null,
+        techStack: ['html', 'css', 'javascript']
     },
     robloxInjector: {
         title: "Roblox LUA Script Injector (Exploit)",
@@ -64,7 +69,8 @@ const projectData = {
         },
         description: `I have programmed an Windows application using Visual Studio that included a simple compact GUI, where the User can activate the Client, incert the LUA script and inject it into the Roblox Client <br><br>(All exploiting goes againt Roblox ToS)<br><br>This application included an activation key, that resets every certain time limit, where the user goes through a link with Ads to get the new key. <br>(This allowed me to monitize and earn Ad revenue)<br><br>The user then injects the API into the Game Client, Inputs the LUA script, then runs the script.<br><br>This gave me experience in reverse engineering and explointing applications to find vulnerabilities, which then can be reported to the company for them to fix. (Exploit is now patched) <br><br>SOURCE CODE AND PROJECT LINK ARE BEING FOUND, SINCE THE PROJECT IS OLD AND IS ON A PREIVIOUSLY OWNED COMPUTER.`,
         projectLink: null,
-        sourceLink: null
+        sourceLink: null,
+        techStack: ['c#', 'visual-studio']
     },
     ideaFlow: {
         title: "ideaFlow",
@@ -75,18 +81,21 @@ const projectData = {
         },
         description: `ideaFlow, a project that uses AI to generate content ideas from PDFs and Website Links for content creators<br><br>This is a project that I have been working on for about a week, its a react based web application that uses Coheres AI to generate content indeas for Tiktok, Youtube and Twitter/X from PDFs and Website Links.<br><br> The project uses React, Cohere api, Firebase, Stripe API, Cloudflare and Vercel. <br><br> React is used to create the website, Cohere api is used to generate the content ideas, Firebase is used to store the content ideas and authenticate users, Stripe API is used to handle payments, Vercel is used to host the backend and Cloudflare is used to host the website.<br><br> Check out the website to see how it works.`,
         projectLink: "https://ideaflow.uk",
-        sourceLink: "https://github.com/JZOnTheGit/ideaFlow"
+        sourceLink: "https://github.com/JZOnTheGit/ideaFlow",
+        techStack: ['react', 'firebase', 'cohere', 'stripe', 'cloudflare', 'vercel', 'database']
     },
     TaskTuner: {
         title: "TaskTuner",
         categories: ['Web', 'API', 'AI'],
+        techStack: ['react', 'supabase', 'vercel', 'database'],
         timeline: {
             date: '04-02-2025',
-            description: 'Developed a event scheduling system that uses AI to generate events'
+            description: 'Launched TaskTuner AI scheduling application'
         },
         description: `TaskTuner, a project that allows you to schedule and manage events with an integrated calendar system.<br><br>This is a project that I have been working on for about a week, it's a React-based web application that syncs all events to a database in real-time. The application includes an AI feature that can auto-generate and fill out event details based on user prompts, making event creation quick and intuitive.<br><br>The project utilizes React.js as the frontend framework, Supabase for the database and user authentication, and is hosted on Vercel.<br><br>I am actively developing new AI-powered features that will be added in the near future to make event scheduling and management even more seamless.<br><br>Check out the website to see how it works.`,
         projectLink: "https://task-tuner-brown.vercel.app",
-        sourceLink: "https://github.com/JZOnTheGit/TaskTuner"
+        sourceLink: "https://github.com/JZOnTheGit/TaskTuner",
+        techStack: ['react', 'supabase', 'vercel', 'database']
     },
     kremSite: {
         title: "Krem Cafe Website",
@@ -97,7 +106,8 @@ const projectData = {
         },
         description: `This is a test website I developed for a small café company, designed to provide customers with a modern and interactive experience.<br><br> Unfortunately, the café has since shut down, so the website was not fully completed, but it can still be viewed. [Best Viewed on Desktop]<br><br> The website is open source.`,
         projectLink: "https://krem-draft.j-singh.net",
-        sourceLink: null
+        sourceLink: null,
+        techStack: ['html', 'css', 'javascript']
     },
     ZetaClothing:{
         title: "Zeta Clothing Website",
@@ -108,7 +118,8 @@ const projectData = {
         },
         description: `This is a website I created for my personal clothing brand ZETA CLOTHING that will be launching in the near future. <br><br> The website features a clean and visually pleasing design built with HTML, CSS and JavaScript to provide a user-friendly shopping experience. <br><br> I integrated Stripe payment processing to handle secure product purchases. <br><br> The website has a modern, minimalist aesthetic while maintaining full e-commerce functionality for browsing and buying products.`,
         projectLink: "https://zetaclothing.uk",
-        sourceLink: null
+        sourceLink: null,
+        techStack: ['html', 'css', 'javascript', 'stripe', 'database']
     },
     AymanPortfolio: {
         title: "Ayman Photography Portfolio",
@@ -119,24 +130,44 @@ const projectData = {
         },
         description: `A dynamic photography portfolio website showcasing the work of professional photographer Ayman, my second freelance web development client.<br><br>The website features a clean and elegant design built with HTML, CSS and JavaScript, optimized to beautifully display Ayman's diverse portfolio of animal, environmental, editorial, and fashion photography.<br><br>Key features include smooth CSS/JavaScript animations, responsive mobile-friendly design, and optimized image loading through Cloudinary CDN integration.<br><br>The static website was completed in one day while maintaining high standards for performance and visual appeal. The site effectively presents Ayman's work through an intuitive gallery system that allows visitors to explore his photography across different categories.`,
         projectLink: "https://ayman-portfolio-ruby.vercel.app",
-        sourceLink: "https://github.com/JZOnTheGit/AymanPhotoPortfolio"
-    }
+        sourceLink: "https://github.com/JZOnTheGit/AymanPhotoPortfolio",
+        techStack: ['html', 'css', 'javascript', 'cloudinary', 'vercel']
+    },
+    CodeCove: {
+        title: "CodeCove - Web Development Services",
+        categories: ['Web', 'API', 'AI'],
+        timeline: {
+            date: '10-02-2025',
+            description: 'Founded CodeCove, a freelance web development company'
+        },
+        description: `CodeCove is my freelance web development company that provides modern solutions for small businesses and individuals.<br><br>
+            Services include:<br>
+            • Custom website development<br>
+            • E-commerce platform integration<br>
+            • AI service implementation<br>
+            • SEO optimization<br>
+            • Modern UI/UX design<br><br>
+            Successfully delivered multiple client projects including:<br>
+            • Ayman Photography Portfolio<br>
+            • ZETA Clothing e-commerce platform<br>
+            • Various small business websites<br><br>
+            Technologies used include React.js, Next.js, Firebase, Stripe, and various AI services for enhanced functionality. Each project is built with a focus on performance, scalability, and user experience.`,
+        projectLink: "https://codecove.app",
+        sourceLink: null,
+        techStack: ['react', 'firebase', 'stripe', 'vercel', 'database']
+    },
 };
 
 // Define the order of projects (just reference their keys)
 const projectOrder = [
+    'CodeCove',
     'TaskTuner',
     'ideaFlow',
     'ZetaClothing',
     'AymanPortfolio',
     'tiktokFinder',
     'kremSite',
-    'discordBot',
-    'ninjaParkour',
-    'mobileGames',
-    'botBusiness',
-    'robloxInjector'
-    
+    'discordBot'
 ];
 
 // Generate the projects array from the order
@@ -145,11 +176,97 @@ const projects = projectOrder.map((key, index) => ({
     ...projectData[key]
 }));
 
+// Tech stack icon mapping with optimized configuration
+const techStackIcons = {
+    // Frontend
+    react: {
+        icon: 'images/tech_stack/react.png',
+        alt: 'React.js',
+        noInvert: false
+    },
+    nextjs: {
+        icon: 'images/tech_stack/nextjs.png',
+        alt: 'Next.js'
+    },
+    html: {
+        icon: 'images/tech_stack/html.png',
+        alt: 'HTML5'
+    },
+    css: {
+        icon: 'images/tech_stack/css.png',
+        alt: 'CSS3'
+    },
+    javascript: {
+        icon: 'images/tech_stack/javascript.png',
+        alt: 'JavaScript'
+    },
+    
+    // Backend & Databases
+    firebase: {
+        icon: 'images/tech_stack/firebaseIcon.webp',
+        alt: 'Firebase'
+    },
+    supabase: {
+        icon: 'images/tech_stack/supabaseIcon.png',
+        alt: 'Supabase'
+    },
+    mongodb: {
+        icon: 'images/tech_stack/mongoDBIcon.png',
+        alt: 'MongoDB'
+    },
+    database: {
+        icon: 'images/tech_stack/database-storage.png',
+        alt: 'Database Storage'
+    },
+    
+    // Services & APIs
+    stripe: {
+        icon: 'images/tech_stack/stripe.png',
+        alt: 'Stripe Payments'
+    },
+    cohere: {
+        icon: 'images/tech_stack/cohere.png',
+        alt: 'Cohere AI'
+    },
+    
+    // Hosting & Infrastructure
+    vercel: {
+        icon: 'images/tech_stack/cloud.png',
+        alt: 'Vercel Hosting'
+    },
+    cloudflare: {
+        icon: 'images/tech_stack/cloud.png',
+        alt: 'Cloudflare'
+    },
+    cloudinary: {
+        icon: 'images/tech_stack/cloud.png',
+        alt: 'Cloudinary'
+    },
+    
+    // Runtime & Tools
+    nodejs: {
+        icon: 'images/tech_stack/nodejs.png',
+        alt: 'Node.js'
+    }
+};
+
 // Function to generate project HTML
 function generateProjectHTML(project) {
+    const techStackHTML = project.techStack 
+        ? `<div class="tech-stack">
+            ${project.techStack.map(tech => 
+                `<img src="${techStackIcons[tech].icon}" 
+                     alt="${techStackIcons[tech].alt}" 
+                     title="${techStackIcons[tech].alt}"
+                     class="tech-icon${techStackIcons[tech].noInvert ? ' no-invert' : ''}">`
+            ).join('')}
+           </div>`
+        : '';
+
     return `
     <div class="project-card">
         <h3 class="project-title">[${project.id}] ${project.title}</h3>
+        ${techStackHTML}
         <p class="project-description">
             ${project.description}<br><br>
             ${project.projectLink ? `<a href="${project.projectLink}" target="_blank" style="text-decoration: none;">Project Link</a>` : ''}
@@ -292,41 +409,55 @@ function showProjectPreview(projectId) {
 
 // Function to generate timeline HTML
 function generateTimeline() {
-    const timelineEvents = Object.values(projectData)
-        .filter(project => project.timeline)
+    // Filter projects that have timeline data and sort by date
+    const timelineEvents = projects
+        .filter(project => project.timeline && project.timeline.date)
         .map(project => ({
             title: project.title,
-            date: project.timeline.date, // Keep original DD-MM-YYYY format
+            date: project.timeline.date,
             description: project.timeline.description
         }))
         .sort((a, b) => {
+            // Parse dates in DD-MM-YYYY format
             const [dayA, monthA, yearA] = a.date.split('-');
             const [dayB, monthB, yearB] = b.date.split('-');
-            const dateA = new Date(yearA, monthA - 1, dayA);
-            const dateB = new Date(yearB, monthB - 1, dayB);
-            return dateB - dateA;
-        })
-        .slice(0, 4);
+            // Create Date objects (months are 0-based in JavaScript)
+            return new Date(yearB, monthB - 1, dayB) - new Date(yearA, monthA - 1, dayA);
+        });
 
-    const timelineHTML = timelineEvents.map(event => {
-        const [day, month, year] = event.date.split('-');
-        return `
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">${day} ${new Date(year, month - 1).toLocaleString('default', { month: 'long' })} ${year}</div>
-                <div class="timeline-content">
-                    <h3>${event.title}</h3>
-                    <p>${event.description}</p>
+    // Generate HTML only if we have events
+    if (timelineEvents.length > 0) {
+        const timelineHTML = timelineEvents.map(event => {
+            const [day, month, year] = event.date.split('-');
+            const date = new Date(year, month - 1, day);
+            const monthName = date.toLocaleString('default', { month: 'long' });
+            
+            return `
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">${day} ${monthName} ${year}</div>
+                    <div class="timeline-content">
+                        <h3>${event.title}</h3>
+                        <p>${event.description}</p>
+                    </div>
                 </div>
-            </div>
-        `;
-    }).join('');
+            `;
+        }).join('');
 
-    const timelineContainer = document.querySelector('.timeline');
-    if (timelineContainer) {
-        timelineContainer.innerHTML = timelineHTML;
+        const timelineContainer = document.querySelector('.timeline');
+        if (timelineContainer) {
+            timelineContainer.innerHTML = timelineHTML;
+        }
     }
 }
+
+// Make sure the timeline is generated when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    const timelineContainer = document.querySelector('.timeline');
+    if (timelineContainer) {
+        generateTimeline();
+    }
+});
 
 // Update the initialization code
 document.addEventListener('DOMContentLoaded', () => {

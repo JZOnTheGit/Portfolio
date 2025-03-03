@@ -54,8 +54,8 @@
     <link rel="canonical" href="https://j-singh.net/more_projects.html" />
     
     <!-- Deferred Scripts -->
-    <script src="./js/main.js" defer></script>
-    <script src="./js/projects.js" defer></script>
+    <script src="./js/projects.js"></script>
+    <script src="./js/main.js"></script>
     
     <!-- Analytics -->
     <script src="js/analytics.js" async></script>
@@ -127,23 +127,19 @@
     <!-- Project Statistics -->
     <div class="stats-container">
         <div class="stat-item">
-            <span class="stat-number" data-count="0">0</span>
+            <span class="stat-number" data-count="8">0</span>
             <h4>Total Projects</h4>
         </div>
         <div class="stat-item">
-            <span class="stat-number" data-count="0">0</span>
+            <span class="stat-number" data-count="5">0</span>
             <h4>Web Projects</h4>
         </div>
         <div class="stat-item">
-            <span class="stat-number" data-count="0">0</span>
-            <h4>Game Projects</h4>
-        </div>
-        <div class="stat-item">
-            <span class="stat-number" data-count="0">0</span>
+            <span class="stat-number" data-count="4">0</span>
             <h4>API Projects</h4>
         </div>
         <div class="stat-item">
-            <span class="stat-number" data-count="0">0</span>
+            <span class="stat-number" data-count="3">0</span>
             <h4>AI Projects</h4>
         </div>
     </div>
@@ -152,7 +148,6 @@
     <div class="filter-container">
         <button class="filter-btn active" onclick="filterProjects('All')">All</button>
         <button class="filter-btn" onclick="filterProjects('Web')">Web</button>
-        <button class="filter-btn" onclick="filterProjects('Game')">Games</button>
         <button class="filter-btn" onclick="filterProjects('API')">API</button>
         <button class="filter-btn" onclick="filterProjects('AI')">AI</button>
     </div>
@@ -180,10 +175,23 @@
 </html>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    // Wait for both DOM and scripts to be fully loaded
+    window.addEventListener('load', () => {
+        // Initialize projects
         const container = document.getElementById('projects-container');
         if (container) {
             filterProjects('All');
+        }
+        
+        // Initialize stats animation
+        const stats = document.querySelectorAll('.stat-number');
+        if (stats.length) {
+            animateStats();
+        }
+        
+        // Initialize timeline
+        const timelineContainer = document.querySelector('.timeline');
+        if (timelineContainer) {
             generateTimeline();
         }
     });

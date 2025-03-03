@@ -130,23 +130,54 @@ html {
 .button-padding {
     padding: 20px 100px;
     text-align: center;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
 }
+
 .about-button {
-    background-color: transparent;
-    color: rgb(234, 228, 228);
-    border: 1px solid #4a9eff;
-    border-radius: 20px;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease;
+    position: relative;
+    background: transparent;
+    color: var(--text-light);
+    border: 1px solid var(--primary-color);
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    font-family: 'IBM Plex Mono', monospace;
+    z-index: 1;
     min-width: 120px;
     white-space: nowrap;
 }
+
+.about-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background: var(--primary-color);
+    border-radius: 50%;
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: -1;
+    opacity: 0;
+}
+
 .about-button:hover {
-    background-color: lightgrey;
-    color: #333333;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 158, 255, 0.2);
+}
+
+.about-button:hover::before {
+    width: 300px;
+    height: 300px;
+    opacity: 1;
+}
+
+.about-button:active {
+    transform: translateY(0);
 }
 
 /* More Projects Button */
@@ -355,9 +386,16 @@ html {
 }
 
 .skill-name {
-    display: block;
-    color: var(--text-light);
+    display: flex;
+    align-items: center;
     margin-bottom: 5px;
+}
+
+.skill-rating {
+    color: var(--primary-color);
+    font-size: 0.9em;
+    margin-left: 8px;
+    opacity: 0.9;
 }
 
 .progress {
@@ -375,7 +413,18 @@ html {
     transition: transform 1s ease;
 }
 
+.skills-subtitle {
+    color: var(--text-light-transparent);
+    font-size: 0.9rem;
+    margin-top: 5px;
+    font-style: italic;
+    opacity: 0.8;
+}
 
+/* Update existing heading-title styles if needed */
+.heading-title {
+    margin-bottom: 20px;
+}
 
 /* Responsive Styling */
 @media (max-width: 1200px) {
@@ -805,19 +854,14 @@ a:visited {
 
 /* Timeline Styles */
 .timeline-section {
-    margin: 50px 100px;
-    padding: 20px;
-    background: var(--background-dark);
-    border-radius: 10px;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .timeline {
     position: relative;
-    padding: 20px 0;
-    margin-top: 20px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 2rem 0;
 }
 
 .timeline::before {
@@ -828,114 +872,87 @@ a:visited {
     width: 2px;
     height: 100%;
     background: var(--primary-color);
-    z-index: 1;
+    opacity: 0.3;
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 3rem;
     width: 50%;
-    padding: 0 40px;
-    box-sizing: border-box;
+    padding: 0 2rem;
 }
 
 .timeline-item:nth-child(odd) {
     left: 0;
+    text-align: right;
 }
 
 .timeline-item:nth-child(even) {
     left: 50%;
+    text-align: left;
 }
 
 .timeline-dot {
     position: absolute;
-    right: -8px;
     width: 16px;
     height: 16px;
-    border-radius: 50%;
     background: var(--primary-color);
-    border: 2px solid var(--background-dark);
-    z-index: 2;
-    top: 50%;
-    transform: translateY(-50%);
+    border-radius: 50%;
+    top: 0;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -8px;
 }
 
 .timeline-item:nth-child(even) .timeline-dot {
-    left: -7px;
+    left: -8px;
 }
 
 .timeline-date {
     color: var(--primary-color);
     font-size: 0.9rem;
-    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
 }
 
 .timeline-content {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 20px;
+    background: rgba(30, 30, 30, 0.5);
+    padding: 1.5rem;
     border-radius: 8px;
+    border: 1px solid rgba(74, 158, 255, 0.1);
 }
 
 .timeline-content h3 {
+    margin: 0 0 1rem;
     color: var(--text-light);
-    margin: 0 0 10px;
-    font-size: 1.1rem;
 }
 
 .timeline-content p {
-    color: var(--text-light-transparent);
     margin: 0;
-    font-size: 0.9rem;
+    color: var(--text-light-transparent);
 }
 
+/* Mobile responsive timeline */
 @media (max-width: 768px) {
     .timeline::before {
-        left: 16px;
+        left: 30px;
     }
     
     .timeline-item {
         width: 100%;
-        padding-left: 50px;
-        padding-right: 20px;
+        padding-left: 80px;
+        padding-right: 1rem;
     }
     
+    .timeline-item:nth-child(odd),
     .timeline-item:nth-child(even) {
         left: 0;
+        text-align: left;
     }
     
-    .timeline-dot {
-        left: 8px;
-        right: auto;
-        top: 20px;
-        transform: none;
-    }
-
-    .timeline-date {
-        margin-bottom: 5px;
-        font-size: 0.85rem;
-    }
-
-    .timeline-content {
-        padding: 15px;
-    }
-
-    .timeline-content h3 {
-        font-size: 1rem;
-    }
-
-    .timeline-content p {
-        font-size: 0.85rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .timeline-section {
-        margin: 30px 20px;
-    }
-    
-    .timeline-item {
-        padding-left: 40px;
-        padding-right: 10px;
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 22px;
     }
 }
 
@@ -1353,4 +1370,84 @@ a:visited {
 
 .footer-link:hover {
     color: var(--primary-color);
+}
+
+/* Tech Stack Icons */
+.tech-stack {
+    display: flex;
+    gap: 0.75rem;
+    margin: 0.75rem 0;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.tech-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+    filter: grayscale(20%) invert(1);
+    opacity: 0.9;
+}
+
+.tech-icon:hover {
+    transform: scale(1.15);
+    filter: grayscale(0%) invert(1);
+    opacity: 1;
+}
+
+/* For icons that shouldn't be inverted */
+.tech-icon.no-invert {
+    filter: grayscale(20%);
+}
+
+.tech-icon.no-invert:hover {
+    filter: grayscale(0%);
+}
+
+/* Optimized tooltip */
+.tech-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.tech-icon:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    border-radius: 4px;
+    font-size: 11px;
+    white-space: nowrap;
+    z-index: 10;
+    pointer-events: none;
+    backdrop-filter: blur(4px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tech-stack {
+        gap: 0.5rem;
+    }
+    
+    .tech-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Button container styles */
+.button-padding {
+    padding: 20px 100px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .button-padding {
+        padding: 20px 40px;
+    }
 }

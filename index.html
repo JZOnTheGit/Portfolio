@@ -181,7 +181,7 @@
                         <li><a href="#projects">Projects</a></li>
                         <!--<li><a href="#Web_Dev">Web_Dev</a></li>-->
                         <li><a href="#Algorithms">Algorithms</a></li>
-                        <li><a href="#GitHub_Activity">GitHub</a></li>
+                        <!--<li><a href="#GitHub_Activity">GitHub</a></li>-->
                     </ul>
                 </div>
                 
@@ -197,72 +197,9 @@
         </header>
 
         <div class="button-padding">
-            <button 
-                class="about-button" 
-                id="about-button" 
-                onclick="scrollToAbout()" 
-                aria-label="Scroll to contact information">
+            <button class="about-button" id="about-button" onclick="scrollToAbout()" aria-label="Scroll to contact information">
                 Contact_Me
             </button>
-        </div>
-
-        <div class="stackImagesC">
-           
-            <div class="StackImagesM">
-                <picture>
-                    <source 
-                        srcset="images/PythonIcon.webp" 
-                        type="image/webp">
-                    <source 
-                        srcset="images/PythonIcon.png" 
-                        type="image/png">
-                    <img class="SingleStackImages" 
-                        src='images/PythonIcon.png' 
-                        alt="Python Icon" 
-                        loading="lazy"
-                        width="50"
-                        height="50"
-                        decoding="async"
-                        fetchpriority="low">
-                </picture>
-                <img class="SingleStackImages" 
-                    src='images/cSharpiCON.webp' 
-                    alt="C# Icon" 
-                    loading="lazy"
-                    width="50"
-                    height="50"
-                    decoding="async">
-                <img class="SingleStackImages" 
-                    src='images/htmlIcon.webp' 
-                    alt="HTML Icon"
-                    width="50"
-                    height="50"
-                    decoding="async">
-                <img class="SingleStackImages" 
-                    src='images/CSSicon.webp' 
-                    alt="CSS Icon"
-                    width="50"
-                    height="50"
-                    loading="lazy"
-                    decoding="async">
-                <img class="SingleStackImages" 
-                    src='images/JSicon.webp' 
-                    alt="JavaScript Icon"
-                    width="50"
-                    height="50"
-                    loading="lazy"
-                    decoding="async">
-                
-                <img class="SingleStackImages" 
-                    src='images/d.jsLogo-removebg-preview.webp' 
-                    alt="Discord.js Icon"
-                    width="50"
-                    height="50"
-                    loading="lazy"
-                    decoding="async">
-
-            </div>
-
         </div>
 
         <hr class="section-divider">
@@ -278,7 +215,13 @@
                 </div>
             
             <div class="about-content">
-                <p>My name is Jasstej Singh, and I am a Software Engineering student.<br><br> Over the past few years, I have explored a wide range of projects and hobbies, including creating music, launching a YouTube channel, gaming professionally, coaching e-sports, and pursuing various other interests that have helped refine my goals.<br> I have approximately five years of programming experience, including three years focused on website development using HTML, CSS, Javascript and backend services.<br><br> As of late 2024, I am pursuing a Bachelor's degree in Software Engineering, with strong aspirations to continue my education, potentially up to a PhD.<br> I have worked on several projects, many of which are open source and available on my GitHub page, which will be listed below.</p>
+                <p>I am a Software Engineering student with a proven track record in full-stack development and AI integration. With five years of programming experience, I've developed expertise in JavaScript, Python, HTML/CSS, and C#, specializing in web development and AI-powered applications.<br><br>
+
+                As the founder of CodeCove, I provide freelance web development services, having successfully delivered projects for multiple clients including photography portfolios and e-commerce platforms. My recent work includes developing AI-powered applications like ideaFlow (content generation platform) and TaskTuner (intelligent event scheduling system).<br><br>
+
+                I have extensive experience with modern web technologies and APIs, including React.js, Firebase, Stripe integration, and various AI services like Cohere. My projects demonstrate proficiency in both frontend and backend development, with a focus on creating scalable, user-friendly applications.<br><br>
+
+                Currently pursuing a Bachelor's degree in Software Engineering, I am actively seeking opportunities to contribute to innovative projects while continuing my academic journey toward advanced degrees in the field.</p>
 
                 
                 </div>
@@ -292,30 +235,31 @@
         <div class="skills-section">
             <div class="heading-title">
                 <h3>Technical Skills</h3>
+                <p class="skills-subtitle">(Based on personal proficiency assessment)</p>
             </div>
             <div class="skills-grid">
                 <div class="skill-bar">
-                    <span class="skill-name">JavaScript</span>
+                    <span class="skill-name">JavaScript <span class="skill-rating">(83/100)</span></span>
                     <div class="progress">
                         <div class="progress-bar" data-level="83"></div>
                     </div>
                 </div>
                 <div class="skill-bar">
-                    <span class="skill-name">Python</span>
+                    <span class="skill-name">Python <span class="skill-rating">(72/100)</span></span>
                     <div class="progress">
                         <div class="progress-bar" data-level="72"></div>
                     </div>
                 </div>
                 <div class="skill-bar">
-                    <span class="skill-name">HTML/CSS</span>
+                    <span class="skill-name">HTML/CSS <span class="skill-rating">(90/100)</span></span>
                     <div class="progress">
                         <div class="progress-bar" data-level="90"></div>
                     </div>
                 </div>
                 <div class="skill-bar">
-                    <span class="skill-name">C#</span>
+                    <span class="skill-name">React.js <span class="skill-rating">(78/100)</span></span>
                     <div class="progress">
-                        <div class="progress-bar" data-level="65"></div>
+                        <div class="progress-bar" data-level="78"></div>
                     </div>
                 </div>
             </div>
@@ -339,7 +283,7 @@
                     </div>
                 </div>
                 <div class="heading-content">
-                    <p>Projects that I've been working on</p>
+                    
                     <p class="project-count">Viewing 3 / ${projectOrder.length}</p>
                 </div>
             </div>
@@ -451,7 +395,7 @@
                         </div>
                     </a>
                     
-                    <!-- Instagram -->
+                    <!-- Instagram 
                     <a href="https://www.instagram.com/_jasstej_" 
                        class="linkedin-link" 
                        target="_blank" 
@@ -461,7 +405,7 @@
                             <img src="./images/social_icons/instagram.png" alt="Instagram Icon" class="social-icon">
                             <span> Instagram </span>
                         </div>
-                    </a>
+                    </a>-->
                     
                     <!-- Email -->
                     <a href="mailto:jass150505@gmail.com" 
@@ -548,9 +492,9 @@
         });
     </script>
 
-  
+  <!--
     <div id="GitHub_Activity">
-    <!-- GitHub Activity Dashboard -->
+     GitHub Activity Dashboard 
     <section class="github-dashboard">
         <div class="heading-title">
             <div class="heading-flex">
@@ -576,7 +520,7 @@
         </div>
     </section>
     </div>
-
+-->
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
