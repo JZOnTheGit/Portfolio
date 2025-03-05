@@ -590,16 +590,7 @@ a:visited {
     transition: color 0.3s ease;
 }
 
-/* Add a medium breakpoint */
-@media (max-width: 992px) {
-    .project-card-section {
-        padding: 5px 60px;
-    }
-    
-    .whole-header {
-        padding: 20px 60px;
-    }
-}
+
 
 /* Improve mobile layout */
 @media (max-width: 480px) {
@@ -1676,13 +1667,22 @@ a:visited {
     font-size: 1.25rem;
     color: var(--text-light);
     margin: 0;
-    display: inline;
+    margin-bottom: 0.5rem;
 }
 
-.education-item .location {
-    font-size: 1rem;
+.education-details {
+    text-align: right;
+    min-width: 200px;
+}
+
+.education-item .location,
+.education-item .duration {
+    font-size: 0.875rem;
     color: var(--text-light-transparent);
-    display: inline;
+    display: inline-block;
+}
+
+.education-item .duration {
     margin-left: 1rem;
 }
 
@@ -1693,16 +1693,15 @@ a:visited {
     display: block;
 }
 
-.education-item .duration {
-    font-size: 0.875rem;
-    color: var(--text-light-transparent);
-    text-align: right;
+@media (max-width: 1200px) {
+    .education-section {
+        margin: 50px 80px;
+    }
 }
 
-/* Tablet adjustments */
 @media (max-width: 768px) {
     .education-section {
-        margin: 30px 50px;
+        margin: 40px 40px;
     }
 
     .education-item {
@@ -1711,26 +1710,25 @@ a:visited {
 
     .education-item h4 {
         font-size: 1.125rem;
-        display: block;
     }
 
-    .education-item .location {
-        font-size: 0.9rem;
-        display: block;
-        margin-left: 0;
-        margin-top: 0.25rem;
+    .education-details {
+        min-width: 160px;
+    }
+
+    .education-item .location,
+    .education-item .duration {
+        font-size: 0.875rem;
     }
 
     .education-item .institution {
         font-size: 0.9rem;
-        margin-top: 0.5rem;
     }
 }
 
-/* Mobile adjustments */
 @media (max-width: 480px) {
     .education-section {
-        margin: 20px 30px;
+        margin: 30px 30px;
     }
 
     .education-item {
@@ -1738,21 +1736,18 @@ a:visited {
         flex-direction: column;
     }
 
+    .education-details {
+        text-align: left;
+        min-width: auto;
+        margin-top: 0.5rem;
+    }
+
     .education-item h4 {
         font-size: 1rem;
     }
 
-    .education-details {
-        margin-top: 0.5rem;
-        text-align: left;
-    }
-
-    .education-item .duration {
-        text-align: left;
-        margin-top: 0.25rem;
-    }
-
     .education-item .location,
+    .education-item .duration,
     .education-item .institution {
         font-size: 0.875rem;
     }
