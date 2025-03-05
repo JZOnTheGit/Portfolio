@@ -6,7 +6,7 @@ const urlsToCache = [
     '/js/analytics.js',
     '/js/projects.js',
     '/js/main.js',
-    '/images/PythonIcon.webp',
+    
     // Add other critical assets
 ];
 
