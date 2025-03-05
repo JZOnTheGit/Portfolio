@@ -258,7 +258,7 @@ body {
     color: var(--primary-color);
 }
 .about-content {
-    font-size: 15px;
+    font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 20px;
     color: #efefefed;
@@ -418,7 +418,7 @@ body {
 
 @media (max-width: 768px) {
     .skills-section {
-        margin: 30px 50px;
+        margin: 30px 40px;
     }
     
     .skills-grid {
@@ -484,7 +484,7 @@ body {
         margin: 20px 65px;
     }
     .heading-section {
-        margin: 10px 65px;
+        margin: 10px 40px;
     }
     .project-card-section {
         padding: 5px 40px;
