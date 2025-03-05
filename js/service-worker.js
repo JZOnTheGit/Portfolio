@@ -1,5 +1,5 @@
 // Cache static assets
-const CACHE_NAME = 'portfolio-cache-v2';
+const CACHE_NAME = 'portfolio-cache-v3';
 const urlsToCache = [
     '/',
     '/css/stylesheet.css',
