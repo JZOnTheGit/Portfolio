@@ -140,8 +140,11 @@ body {
 
 /* About Button */
 .button-padding {
-    padding: 20px 100px;
     text-align: center;
+    padding: 20px 0 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
 
 .about-button {
@@ -154,11 +157,8 @@ body {
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    overflow: hidden;
     font-family: 'IBM Plex Mono', monospace;
-    z-index: 1;
-    min-width: 120px;
-    white-space: nowrap;
+    overflow: hidden;
 }
 
 .about-button::before {
@@ -177,9 +177,10 @@ body {
 }
 
 .about-button:hover {
-    color: white;
+    background: rgba(74, 158, 255, 0.1);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(74, 158, 255, 0.2);
+    border-radius: 25px;
 }
 
 .about-button:hover::before {
@@ -359,11 +360,11 @@ body {
 }
 
 /* Hover effect for the first card */
-.project-card-section:first-child .project-card:hover {
+/* .project-card-section:first-child .project-card:hover {
     border: 1px solid var(--primary-hover);
     box-shadow: 0 0 25px rgba(74, 158, 255, 0.4);
     transform: translateY(-2px);
-}
+} */
 
 /* Skills Section */
 .skills-section {
@@ -393,7 +394,7 @@ body {
     border: 1px solid var(--primary-color);
     border-radius: 15px;
     padding: 6px 12px;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--text-light);
     background: transparent;
     transition: all 0.3s ease;
@@ -434,7 +435,7 @@ body {
 
 /* Update existing heading-title styles if needed */
 .heading-title {
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 
 /* Responsive Styling */
@@ -456,6 +457,7 @@ body {
     }
     .heading {
         font-size: 40px;
+        margin: 20px 80px;
     }
     .dot {
         font-size: 40px;
@@ -492,6 +494,7 @@ body {
     }
     .heading {
         font-size: 30px;
+        margin: 10px 40px;
     }
     .dot {
         font-size: 30px;
@@ -505,9 +508,10 @@ body {
     }
     
     .about-button {
-        padding: 8px 16px;
-        min-width: auto;
-        font-size: 0.9rem;
+        width: 180px;  /* Slightly smaller width */
+        margin: 0 auto;
+        padding: 10px 25px;  /* Reduced padding */
+        font-size: 0.9rem;  /* Smaller font */
     }
     .ProjectBtnPadding {
         padding: 5px 65px;
@@ -601,19 +605,21 @@ a:visited {
 @media (max-width: 480px) {
     .heading {
         font-size: 24px;
-        margin: 20px 30px 0;
+        margin: 20px 40px 0;
     }
     
     .project-card {
         padding: 15px;
     }
     .button-padding {
-        padding: 20px 20px;
+        padding: 15px 0 60px;  /* Even more bottom padding for smaller screens */
         flex-direction: column;
     }
     
     .about-button {
-        width: 100%;
+        width: 160px;  /* Even smaller for mobile */
+        padding: 8px 20px;  /* Further reduced padding */
+        font-size: 0.85rem;  /* Slightly smaller font */
     }
 
     .whole-header {
@@ -786,34 +792,71 @@ a:visited {
     to { transform: scaleX(1); }
 }
 
-/* Project Statistics */
+/* Stats container */
 .stats-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin: 20px 100px 40px;
-    padding: 20px;
-    background: var(--background-dark);
-    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 30px 0;
+    flex-wrap: wrap;
 }
 
 .stat-item {
     text-align: center;
-    padding: 1rem;
+    min-width: 120px;
 }
 
 .stat-number {
     font-size: 2.5rem;
     color: var(--primary-color);
-    font-weight: bold;
-    display: block;
-    margin-bottom: 0.5rem;
+    font-weight: 600;
 }
 
 .stat-item h4 {
-    color: var(--text-light);
-    margin: 0;
+    margin: 5px 0 0;
     font-size: 1rem;
+    color: var(--text-light);
+    font-weight: normal;
+}
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+    .stats-container {
+        gap: 2rem;
+        margin: 25px 0;
+    }
+
+    .stat-item {
+        min-width: 100px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-item h4 {
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+    .stats-container {
+        gap: 1.5rem;
+        margin: 20px 0;
+    }
+
+    .stat-item {
+        min-width: 80px;
+    }
+
+    .stat-number {
+        font-size: 1.75rem;
+    }
+
+    .stat-item h4 {
+        font-size: 0.8rem;
+    }
 }
 
 /* Project Filters */
@@ -1363,7 +1406,7 @@ a:visited {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin: 4px 0 10px;  /* Keep consistent with reduced title spacing */
+    margin: 4px 0 10px;
 }
 
 .tech-item {
@@ -1374,6 +1417,35 @@ a:visited {
     color: var(--text-light);
     background: transparent;
     opacity: 0.8;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .tech-stack {
+        gap: 0.4rem;
+        margin: 4px 0 8px;
+    }
+
+    .tech-item {
+        font-size: 0.75rem;
+        padding: 2px 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-stack {
+        gap: 0.3rem;
+    }
+
+    .tech-item {
+        font-size: 0.7rem;
+        padding: 1px 5px;
+        border-radius: 10px;
+    }
+
+    .project-card {
+        padding: 15px;  /* Reduce card padding on mobile */
+    }
 }
 
 /* Remove old tech stack styles */
@@ -1404,47 +1476,31 @@ a:visited {
     backdrop-filter: blur(4px);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .tech-stack {
-        gap: 0.5rem;
-    }
-    
-    .tech-item {
-        width: 18px;
-        height: 18px;
-    }
-}
-
-/* Button container styles */
-.button-padding {
-    padding: 20px 100px;
-    text-align: center;
-}
-
+/* Mobile adjustments for button padding */
 @media (max-width: 768px) {
     .button-padding {
-        padding: 20px 40px;
-    }
-}
-
-@media (max-width: 768px) {
-    .whole-header {
-        padding: 20px 40px;
+        flex-direction: column;
+        padding: 20px 0 50px;
+        gap: 15px;
     }
 
-    .navigation {
-        gap: 2rem;
+    .about-button {
+        width: 180px;  /* Slightly smaller width */
+        margin: 0 auto;
+        padding: 10px 25px;  /* Reduced padding */
+        font-size: 0.9rem;  /* Smaller font */
     }
 }
 
 @media (max-width: 480px) {
-    .whole-header {
-        padding: 15px 20px;
+    .button-padding {
+        padding: 15px 0 60px;
     }
 
-    .navigation {
-        gap: 1.5rem;
+    .about-button {
+        width: 160px;  /* Even smaller for mobile */
+        padding: 8px 20px;  /* Further reduced padding */
+        font-size: 0.85rem;  /* Slightly smaller font */
     }
 }
 
@@ -1456,17 +1512,23 @@ a:visited {
     opacity: 0.8;
 }
 
+@media (max-width: 1200px) {
+    .location-subtitle {
+        margin: 10px 80px 0;
+    }
+}
+
 /* Make it responsive */
 @media (max-width: 768px) {
     .location-subtitle {
-        margin: px 65px 0;
+        margin: 10px 40px 0;
         font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
     .location-subtitle {
-        margin: 10px 30px 0;
+        margin: 10px 40px 0;
         font-size: 0.9rem;
     }
 }
@@ -1497,5 +1559,201 @@ a:visited {
     #projects,
     .skills-section {
         scroll-margin-top: 80px; /* Slightly smaller offset for mobile */
+    }
+}
+
+/* Title styles - for main section titles */
+.about-title h2,
+.heading-title h3,
+.skills-section .heading-title h3 {
+    font-size: 1.875rem;  /* 30px */
+    font-weight: 500;
+    margin-bottom: 1.25rem;  /* 20px */
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--primary-color);
+}
+
+/* Content text styles */
+.about-content p,
+.project-description,
+.skills-subtitle {
+    font-size: 1rem;  /* 16px */
+    line-height: 1.6;
+    color: var(--text-light);
+}
+
+/* Heading styles */
+.heading {
+    font-size: 2.5rem;  /* 40px */
+    
+}
+
+/* Location subtitle */
+.location-subtitle {
+    font-size: 1.125rem;  /* 18px */
+}
+
+/* Skills items */
+.skill-item {
+    font-size: 1rem;  /* 14px */
+    
+}
+
+/* Project title */
+.project-title {
+    font-size: 1.25rem;  /* 20px */
+}
+
+/* Button text */
+.about-button {
+    font-size: 1rem;  /* 16px */
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .about-title h2,
+    .heading-title h3,
+    .skills-section .heading-title h3 {
+        font-size: 1.625rem;  /* 26px */
+    }
+
+    .about-content p,
+    .project-description,
+    .skills-subtitle {
+        font-size: 0.9375rem;  /* 15px */
+    }
+
+    .heading {
+        font-size: 1.875rem;  /* 30px */
+    }
+}
+
+@media (max-width: 480px) {
+    .about-title h2,
+    .heading-title h3,
+    .skills-section .heading-title h3 {
+        font-size: 1.5rem;  /* 24px */
+    }
+
+    .about-content p,
+    .project-description,
+    .skills-subtitle {
+        font-size: 0.875rem;  /* 14px */
+    }
+
+    .heading {
+        font-size: 1.5rem;  /* 24px */
+    }
+
+    .location-subtitle {
+        font-size: 0.875rem;  /* 14px */
+    }
+}
+
+/* Education Section */
+.education-section {
+    margin: 50px 100px;
+    background: var(--background-dark);
+    border-radius: 10px;
+}
+
+.education-content {
+    padding: 1rem 0;
+}
+
+.education-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+}
+
+.education-main {
+    flex: 1;
+}
+
+.education-item h4 {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin: 0;
+    display: inline;
+}
+
+.education-item .location {
+    font-size: 1rem;
+    color: var(--text-light-transparent);
+    display: inline;
+    margin-left: 1rem;
+}
+
+.education-item .institution {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+    display: block;
+}
+
+.education-item .duration {
+    font-size: 0.875rem;
+    color: var(--text-light-transparent);
+    text-align: right;
+}
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+    .education-section {
+        margin: 30px 50px;
+    }
+
+    .education-item {
+        padding: 1rem 1.5rem;
+    }
+
+    .education-item h4 {
+        font-size: 1.125rem;
+        display: block;
+    }
+
+    .education-item .location {
+        font-size: 0.9rem;
+        display: block;
+        margin-left: 0;
+        margin-top: 0.25rem;
+    }
+
+    .education-item .institution {
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+    .education-section {
+        margin: 20px 30px;
+    }
+
+    .education-item {
+        padding: 1rem;
+        flex-direction: column;
+    }
+
+    .education-item h4 {
+        font-size: 1rem;
+    }
+
+    .education-details {
+        margin-top: 0.5rem;
+        text-align: left;
+    }
+
+    .education-item .duration {
+        text-align: left;
+        margin-top: 0.25rem;
+    }
+
+    .education-item .location,
+    .education-item .institution {
+        font-size: 0.875rem;
     }
 }

@@ -180,7 +180,7 @@
     
         <header>
             <h1 class="heading">I'm Jasstej Singh, a Software Engineer</h1>
-            <p class="location-subtitle">London, UK</p>
+            <p class="location-subtitle">London, UK | Remote/Willing to relocate</p>
         </header>
 
         <div class="button-padding">
@@ -244,9 +244,7 @@
             <div class="about-content">
                 <p>Full-stack developer with five years of experience, specializing in web development and AI integration. Currently pursuing a Bachelor's degree in Software Engineering.<br><br>
 
-                Founded CodeCove, delivering custom web solutions including e-commerce platforms and AI-powered applications for multiple clients. Recent projects include ideaFlow (content generation) and TaskTuner (intelligent scheduling).<br><br>
-
-                Proficient in React.js, Firebase, and modern web technologies. Experienced in implementing AI services, payment systems, and building scalable applications. Actively seeking opportunities in innovative tech companies.</p>
+                Founded CodeCove, delivering custom web solutions including e-commerce platforms and AI-powered applications for multiple clients. Recent projects include ideaFlow (content generation) and TaskTuner (intelligent scheduling).</p>
 
                 
                 </div>
@@ -290,7 +288,31 @@
                 <div class="skill-item">
                     Cloud Services
                 </div>
+                <div class="skill-item">
+                    Python
+                </div>
+                <div class="skill-item">
+                    C#
+                </div>
+                <div class="skill-item">
+                    MongoDB
+                </div>
+                <div class="skill-item">
+                    REST APIs
+                </div>
+                <div class="skill-item">
+                    Git
+                </div>
+                <div class="skill-item">
+                    SQL
+                </div>
+                <div class="skill-item">
+                    TypeScript
+                </div>
                 
+                <div class="skill-item">
+                    Stripe Integration
+                </div>
             </div>
         </div>
 
@@ -447,69 +469,7 @@
         
     
 
-    <!-- Add before closing body tag -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            loadProjects('projects-container', 0, 3);
-        });
-    </script>
-
-    <!-- Add structured data -->
-    <script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "Person",
-        "name": "Jasstej Singh",
-        "jobTitle": "Software Engineer",
-        "url": "https://j-singh.net",
-        "sameAs": [
-            "https://uk.linkedin.com/in/jainesh-singh-page",
-            "https://github.com/JZOnTheGit"
-        ],
-        "knowsAbout": [
-            "Web Development",
-            "Software Engineering",
-            "Python",
-            "JavaScript",
-            "HTML",
-            "CSS",
-            "Unity",
-            "C#",
-            "Sorting Algorithms"
-        ],
-        "hasOccupation": {
-            "@type": "Occupation",
-            "name": "Software Engineer",
-            "skills": "Web Development, Programming, Python, JavaScript, HTML, CSS, Unity, C#"
-        },
-        "mainEntity": {
-            "@type": "WebSite",
-            "name": "Jasstej Singh Portfolio",
-            "url": "https://j-singh.net",
-            "description": "Discover Jasstej's portfolio showcasing web development, Front/Backend, and programming in Python, JavaScript, and C#. Explore projects and tech expertise."
-        }
-    }
-    </script>
-
-    <script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/js/service-worker.js');
-    }
-    </script>
-
-    <!-- Load projects.js once -->
-    <script src="./js/projects.js" defer></script>
-
-    <script>
-        window.addEventListener('load', function() {
-            if (document.querySelector('.progress-bar')) {
-                animateSkillBars();
-            }
-            if (document.querySelector('.stat-number')) {
-                animateStats();
-            }
-        });
-    </script>
+  
 
   <!--
     <div id="GitHub_Activity">
@@ -540,6 +500,27 @@
     </section>
     </div>
 -->
+    <!-- Education Section -->
+    <div class="education-section">
+        <div class="heading-title">
+            <h3>Education</h3>
+        </div>
+        <div class="education-content">
+            <div class="education-item">
+                <div class="education-main">
+                    <h4>Bachelor of Science in Software Engineering</h4>
+                    <p class="location">Leicester, United Kingdom</p>
+                    <p class="institution">University of Leicester</p>
+                </div>
+                <div class="education-details">
+                    <p class="duration">2023 - 2027</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
@@ -549,5 +530,74 @@
             </div>
         </div>
     </footer>
+
+
+
+
+  <!-- Add before closing body tag -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        loadProjects('projects-container', 0, 3);
+    });
+</script>
+
+<!-- Add structured data -->
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": "Jasstej Singh",
+    "jobTitle": "Software Engineer",
+    "url": "https://j-singh.net",
+    "sameAs": [
+        "https://uk.linkedin.com/in/jainesh-singh-page",
+        "https://github.com/JZOnTheGit"
+    ],
+    "knowsAbout": [
+        "Web Development",
+        "Software Engineering",
+        "Python",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Unity",
+        "C#",
+        "Sorting Algorithms"
+    ],
+    "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Software Engineer",
+        "skills": "Web Development, Programming, Python, JavaScript, HTML, CSS, Unity, C#"
+    },
+    "mainEntity": {
+        "@type": "WebSite",
+        "name": "Jasstej Singh Portfolio",
+        "url": "https://j-singh.net",
+        "description": "Discover Jasstej's portfolio showcasing web development, Front/Backend, and programming in Python, JavaScript, and C#. Explore projects and tech expertise."
+    }
+}
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/js/service-worker.js');
+}
+</script>
+
+<!-- Load projects.js once -->
+<script src="./js/projects.js" defer></script>
+
+<script>
+    window.addEventListener('load', function() {
+        if (document.querySelector('.progress-bar')) {
+            animateSkillBars();
+        }
+        if (document.querySelector('.stat-number')) {
+            animateStats();
+        }
+    });
+</script>
+
+
 </body>
 </html>
