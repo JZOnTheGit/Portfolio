@@ -166,17 +166,11 @@
     <nav>
         <div class="whole-header">
             <div class="navbar">
-                <button class="hamburger" aria-label="Navigation Menu" onclick="toggleMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
                 <div class="navbar-right">
                     <ul class="navigation">
-                        <li style="--i:0"><a href="#">Home</a></li>
-                        <li style="--i:1"><a href="#about">About</a></li>
-                        <li style="--i:2"><a href="#projects">Projects</a></li>
-                        <!-- <li style="--i:3"><a href="#Algorithms">Algorithms</a></li> -->
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
                     </ul>
                 </div>
             </div>
@@ -186,12 +180,12 @@
     
         <header>
             <h1 class="heading">I'm Jasstej Singh, a Software Engineer</h1>
-            <p class="location-subtitle">Based in Wolverhampton | Leicester during academic year</p>
+            <p class="location-subtitle">London, UK</p>
         </header>
 
         <div class="button-padding">
-            <button class="about-button" id="about-button" onclick="scrollToAbout()" aria-label="Scroll to contact information">
-                Contact_Me
+            <button class="about-button" id="about-button" onclick="window.location.href='more_projects.html'" aria-label="View all projects">
+                My Work
             </button>
         </div>
 
@@ -244,17 +238,15 @@
         <div id="about" aria-labelledby="about-title">
         <div class="about-section">
             <div class="about-title">
-                <h2 id="about-title">About_Me</h2>
+                <h2 id="about-title">About Me</h2>
                 </div>
             
             <div class="about-content">
-                <p>I am a Software Engineering student with a proven track record in full-stack development and AI integration. With five years of programming experience, I've developed expertise in JavaScript, Python, HTML/CSS, and C#, specializing in web development and AI-powered applications.<br><br>
+                <p>Full-stack developer with five years of experience, specializing in web development and AI integration. Currently pursuing a Bachelor's degree in Software Engineering.<br><br>
 
-                As the founder of CodeCove, I provide freelance web development services, having successfully delivered projects for multiple clients including photography portfolios and e-commerce platforms. My recent work includes developing AI-powered applications like ideaFlow (content generation platform) and TaskTuner (intelligent event scheduling system).<br><br>
+                Founded CodeCove, delivering custom web solutions including e-commerce platforms and AI-powered applications for multiple clients. Recent projects include ideaFlow (content generation) and TaskTuner (intelligent scheduling).<br><br>
 
-                I have extensive experience with modern web technologies and APIs, including React.js, Firebase, Stripe integration, and various AI services like Cohere. My projects demonstrate proficiency in both frontend and backend development, with a focus on creating scalable, user-friendly applications.<br><br>
-
-                Currently pursuing a Bachelor's degree in Software Engineering, I am actively seeking opportunities to contribute to innovative projects while continuing my academic journey toward advanced degrees in the field.</p>
+                Proficient in React.js, Firebase, and modern web technologies. Experienced in implementing AI services, payment systems, and building scalable applications. Actively seeking opportunities in innovative tech companies.</p>
 
                 
                 </div>
@@ -268,33 +260,37 @@
         <div class="skills-section">
             <div class="heading-title">
                 <h3>Technical Skills</h3>
-                <p class="skills-subtitle">(Based on personal proficiency assessment)</p>
+                <!--<p class="skills-subtitle">(Based on personal proficiency assessment)</p>-->
             </div>
             <div class="skills-grid">
-                <div class="skill-bar">
-                    <span class="skill-name">JavaScript <span class="skill-rating">(83/100)</span></span>
-                    <div class="progress">
-                        <div class="progress-bar" data-level="83"></div>
-                    </div>
+                <div class="skill-item">
+                    JavaScript
                 </div>
-                <div class="skill-bar">
-                    <span class="skill-name">Python <span class="skill-rating">(72/100)</span></span>
-                    <div class="progress">
-                        <div class="progress-bar" data-level="72"></div>
-                    </div>
+                <div class="skill-item">
+                    React.js
                 </div>
-                <div class="skill-bar">
-                    <span class="skill-name">HTML/CSS <span class="skill-rating">(90/100)</span></span>
-                    <div class="progress">
-                        <div class="progress-bar" data-level="90"></div>
-                    </div>
+                <div class="skill-item">
+                    Node.js
                 </div>
-                <div class="skill-bar">
-                    <span class="skill-name">React.js <span class="skill-rating">(78/100)</span></span>
-                    <div class="progress">
-                        <div class="progress-bar" data-level="78"></div>
-                    </div>
+                <div class="skill-item">
+                    HTML/CSS
                 </div>
+                <div class="skill-item">
+                    Firebase
+                </div>
+                <div class="skill-item">
+                    API Development
+                </div>
+                <div class="skill-item">
+                    AI Integration
+                </div>
+                <div class="skill-item">
+                    Web Development
+                </div>
+                <div class="skill-item">
+                    Cloud Services
+                </div>
+                
             </div>
         </div>
 
@@ -311,7 +307,7 @@
                     <div class="heading-flex">
                         <h3>Projects</h3>
                         <button class="view-all-button" id="ProjectBtn-button" onclick="MoreProjects()">
-                            View_All <span class="arrow">→</span>
+                            View All <span class="arrow">→</span>
                         </button>
                     </div>
                 </div>
@@ -547,7 +543,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p>© 2025 Jainesh Singh (Soon to be Jasstej Singh). All rights reserved.</p>
+            <p>© 2025 Jasstej Singh. All rights reserved.</p>
             <div class="footer-links">
                 <a href="/privacy-policy.html" class="footer-link">Privacy Policy</a>
             </div>

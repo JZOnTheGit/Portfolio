@@ -10,7 +10,7 @@ const projectData = {
         description: `This project was started by a user request on "TikTok", it tests my ability to work with binary code and how it can be manipulated to obtain specific data. <br><br> The project works by getting the needed didgits from the "TikTok" URL. <br> Converting them to binary, getting the first 32 didgits of that binary number then converting back to denary. <br> finally converting that denary value to the UNIX Time Code to obtain the exact date the video was uploaded.<br><br> Finally puttting all that into the JavaScript into the website and linking it with the html button then finishing with the css.`,
         projectLink: "https://ttudf.j-singh.net",
         sourceLink: "https://github.com/JZOnTheGit/TikTokVideoDate",
-        techStack: ['html', 'css', 'javascript']
+        techStack: ['JavaScript', 'HTML', 'CSS', 'REST API']
     },
     ninjaParkour: {
         title: "Ninja Parkour Unity Game",
@@ -34,7 +34,7 @@ const projectData = {
         description: `This project was one of my last bots i developed using discords API (Discord.js V14.2) <br><br> This bot had multiple function and had been updated last in 2022 with slash commands which were recently introduced at the time. <br> The bot could do multple Moderation commands like, ban, kick, unban, mute. Fun commands like, catsay, avatar, 8ball, ping. and many other commands which can be viewed in the source files. <br><br> From previoud bots, i have lerant to integrate multiple APIs like Youtubes and Spotifys. And integradted Databaes like MongoDB and Firebase.<br>The bot is curently offline.`,
         projectLink: null,
         sourceLink: "https://github.com/JZOnTheGit/ZETA-DiscordBot",
-        techStack: ['nodejs', 'discord.js', 'mongodb', 'firebase', 'database']
+        techStack: ['Node.js', 'Discord.js', 'MongoDB', 'REST API']
     },
     mobileGames: {
         title: "Mobile 2D Games",
@@ -46,7 +46,7 @@ const projectData = {
         description: `I have created multiple 2D mobile games available for the google play store, however over the course of few years, I havent updated any of the games and lost the source code, therefore losing access to the account. <br><br>One of the games were a simple drag the bottom slider to move the space ship left or right to dodge the obstacles, this was created in a low-code game engine called Buildbox. <br>Another were a infinite horizontal scroller where you tap to make your player jump and dodge obstacles, this was also created on Buildbox.<br> <br>The third game was when I moved to Unity and made a 3D multi-level game where the player walks around the arena eliminating Robots to end up getting to the last level and defeating the final boss.<br>This game was my first 3D game and also included an open world driving simulator. <br><br> I have lost the source code, however I have an OLD WEBSITE that includes my past mobile games. <br>This site was made in 2020 on a website template, before I focused on building my own sites from code<br><br>LINKS IN SITE MIGHT NOT WORK DUE TO OLD RESOURCES <br><br> WEBSITE HAS BEEN MODIFIED TO REMOVE OLD BRANDING AND FIX ISSUES (Might be missing elements)`,
         projectLink: "https://teamghost.webador.co.uk",
         sourceLink: null,
-        techStack: ['html', 'css', 'javascript']
+        techStack: ['JavaScript', 'HTML', 'CSS', 'Responsive Design']
     },
     botBusiness: {
         title: "Past Discord Bot Business",
@@ -87,7 +87,7 @@ const projectData = {
             • Deployed with Cloudflare/Vercel for optimal performance`,
         projectLink: "https://ideaflow.uk",
         sourceLink: "https://github.com/JZOnTheGit/ideaFlow",
-        techStack: ['react', 'firebase', 'cohere', 'stripe', 'cloudflare', 'vercel', 'database']
+        techStack: ['React', 'Firebase', 'Cohere AI', 'Stripe', 'REST API']
     },
     TaskTuner: {
         title: "TaskTuner",
@@ -104,7 +104,7 @@ const projectData = {
             • Secure user authentication system`,
         projectLink: "https://tasktuner.app",
         sourceLink: "https://github.com/JZOnTheGit/TaskTuner",
-        techStack: ['react', 'supabase', 'vercel', 'database']
+        techStack: ['React', 'Supabase', 'Node.js', 'OpenAI']
     },
     kremSite: {
         title: "Krem Cafe Website",
@@ -116,7 +116,7 @@ const projectData = {
         description: `This is a test website I developed for a small café company, designed to provide customers with a modern and interactive experience.<br><br> Unfortunately, the café has since shut down, so the website was not fully completed, but it can still be viewed. [Best Viewed on Desktop]<br><br> The website is open source.`,
         projectLink: "https://krem-draft.j-singh.net",
         sourceLink: null,
-        techStack: ['html', 'css', 'javascript']
+        techStack: ['JavaScript', 'HTML', 'CSS', 'Responsive Design']
     },
     ZetaClothing: {
         title: "ZETA - E-commerce Platform",
@@ -133,7 +133,7 @@ const projectData = {
             • Secure checkout system`,
         projectLink: "https://zeta-clothing.com",
         sourceLink: null,
-        techStack: ['html', 'css', 'javascript', 'stripe', 'database']
+        techStack: ['React', 'Node.js', 'Stripe', 'MongoDB']
     },
     AymanPortfolio: {
         title: "Ayman Photography Portfolio",
@@ -145,7 +145,7 @@ const projectData = {
         description: `A dynamic photography portfolio website showcasing the work of professional photographer Ayman, my second freelance web development client.<br><br>The website features a clean and elegant design built with HTML, CSS and JavaScript, optimized to beautifully display Ayman's diverse portfolio of animal, environmental, editorial, and fashion photography.<br><br>Key features include smooth CSS/JavaScript animations, responsive mobile-friendly design, and optimized image loading through Cloudinary CDN integration.<br><br>The static website was completed in one day while maintaining high standards for performance and visual appeal. The site effectively presents Ayman's work through an intuitive gallery system that allows visitors to explore his photography across different categories.`,
         projectLink: "https://ayman-portfolio-ruby.vercel.app",
         sourceLink: "https://github.com/JZOnTheGit/AymanPhotoPortfolio",
-        techStack: ['html', 'css', 'javascript', 'cloudinary', 'vercel']
+        techStack: ['JavaScript', 'HTML', 'CSS', 'Cloudinary']
     },
     CodeCove: {
         title: "CodeCove - Web Development Services",
@@ -162,7 +162,7 @@ const projectData = {
             • Achieved 40% faster load times through performance optimization`,
         projectLink: "https://codecove.app",
         sourceLink: null,
-        techStack: ['react', 'firebase', 'stripe', 'vercel', 'database']
+        techStack: ['React', 'Firebase', 'Stripe', 'Node.js', 'Freelance']
     },
     SortingAlgorithms: {
         title: "Sorting Algorithms Visualizer",
@@ -177,7 +177,7 @@ const projectData = {
             • Custom array size and speed controls`,
         projectLink: "/algorithms.html",
         sourceLink: null,
-        techStack: ['javascript']
+        techStack: ['JavaScript', 'HTML', 'CSS']
     },
 };
 
@@ -200,89 +200,11 @@ const projects = projectOrder.map((key, index) => ({
     ...projectData[key]
 }));
 
-// Tech stack icon mapping with optimized configuration
-const techStackIcons = {
-    // Frontend
-    react: {
-        icon: 'images/tech_stack/react.png',
-        alt: 'React.js',
-        noInvert: false
-    },
-    nextjs: {
-        icon: 'images/tech_stack/nextjs.png',
-        alt: 'Next.js'
-    },
-    html: {
-        icon: 'images/tech_stack/html.png',
-        alt: 'HTML5'
-    },
-    css: {
-        icon: 'images/tech_stack/css.png',
-        alt: 'CSS3'
-    },
-    javascript: {
-        icon: 'images/tech_stack/javascript.png',
-        alt: 'JavaScript'
-    },
-    
-    // Backend & Databases
-    firebase: {
-        icon: 'images/tech_stack/firebaseIcon.webp',
-        alt: 'Firebase'
-    },
-    supabase: {
-        icon: 'images/tech_stack/supabaseIcon.png',
-        alt: 'Supabase'
-    },
-    mongodb: {
-        icon: 'images/tech_stack/mongoDBIcon.png',
-        alt: 'MongoDB'
-    },
-    database: {
-        icon: 'images/tech_stack/database-storage.png',
-        alt: 'Database Storage'
-    },
-    
-    // Services & APIs
-    stripe: {
-        icon: 'images/tech_stack/stripe.png',
-        alt: 'Stripe Payments'
-    },
-    cohere: {
-        icon: 'images/tech_stack/cohere.png',
-        alt: 'Cohere AI'
-    },
-    
-    // Hosting & Infrastructure
-    vercel: {
-        icon: 'images/tech_stack/cloud.png',
-        alt: 'Vercel Hosting'
-    },
-    cloudflare: {
-        icon: 'images/tech_stack/cloud.png',
-        alt: 'Cloudflare'
-    },
-    cloudinary: {
-        icon: 'images/tech_stack/cloud.png',
-        alt: 'Cloudinary'
-    },
-    
-    // Runtime & Tools
-    nodejs: {
-        icon: 'images/tech_stack/nodejs.png',
-        alt: 'Node.js'
-    }
-};
-
-// Function to generate project HTML
 function generateProjectHTML(project) {
     const techStackHTML = project.techStack 
         ? `<div class="tech-stack">
             ${project.techStack.map(tech => 
-                `<img src="${techStackIcons[tech].icon}" 
-                     alt="${techStackIcons[tech].alt}" 
-                     title="${techStackIcons[tech].alt}"
-                     class="tech-icon${techStackIcons[tech].noInvert ? ' no-invert' : ''}">`
+                `<span class="tech-item">${tech}</span>`
             ).join('')}
            </div>`
         : '';
@@ -300,7 +222,6 @@ function generateProjectHTML(project) {
     </div>`;
 }
 
-
 function updateProjectCount(containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -312,7 +233,7 @@ function updateProjectCount(containerId) {
         const viewingCount = isIndexPage ? 3 : totalProjects;
         
         if (isIndexPage) {
-            countElement.textContent = `Viewing ${viewingCount} / ${totalProjects} (Press View More under the projects to view All Projects)`;
+            countElement.textContent = `Viewing ${viewingCount} / ${totalProjects}`;
         } else {
             countElement.textContent = `Viewing all ${totalProjects} projects`;
         }
@@ -416,7 +337,7 @@ function filterProjects(category) {
     if (isIndexPage) {
         const countElement = document.querySelector('.project-count');
         if (countElement) {
-            countElement.textContent = `Viewing 3 / ${projectOrder.length} (Press View More under the projects to view All Projects)`;
+            countElement.textContent = `Viewing 3 / ${projectOrder.length}`;
         }
     }
 }
