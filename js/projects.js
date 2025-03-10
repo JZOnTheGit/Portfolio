@@ -102,7 +102,7 @@ const projectData = {
             • Real-time calendar sync with Supabase<br>
             • React-based responsive interface<br>
             • Secure user authentication system`,
-        projectLink: "https://tasktuner.app",
+        projectLink: "task-tuner-brown.vercel.app",
         sourceLink: "https://github.com/JZOnTheGit/TaskTuner",
         techStack: ['React', 'Supabase', 'Node.js', 'OpenAI']
     },
