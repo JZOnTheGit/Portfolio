@@ -280,40 +280,59 @@ body {
     align-items: center;
 }
 
-/* Social Media Links */
-.social-link {
+/* Social Icons Section */
+.linkedin-section {
     display: flex;
+    gap: 1.5rem;
+    justify-content: flex-start;
     align-items: center;
-    gap: 0.5rem;
-    padding: 8px 16px;
-    border: 1px solid var(--primary-color);
-    border-radius: 20px;
-    color: var(--text-light);
-    text-decoration: none;
-    transition: all 0.3s ease;
 }
 
-.social-link:hover {
-    background-color: rgba(74, 158, 255, 0.1);
-    transform: translateY(-2px);
+.linkedin-link {
+    text-decoration: none;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.linkedin-custom-badge {
+    background: transparent;
+    padding: 8px;
+    border-radius: 12px;
+    border: 1px solid rgba(74, 158, 255, 0.2);
+    transition: all 0.3s ease;
 }
 
 .social-icon {
     width: 25px;
     height: 25px;
     display: block;
-    aspect-ratio: 1;
-    color: #ffffff;
+    filter: brightness(0.9);
+    transition: all 0.3s ease;
 }
 
+/* Hover Effects */
+.linkedin-link:hover {
+    transform: translateY(-2px);
+}
+
+.linkedin-link:hover .linkedin-custom-badge {
+    background: rgba(74, 158, 255, 0.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(74, 158, 255, 0.15);
+}
+
+.linkedin-link:hover .social-icon {
+    filter: brightness(1.1);
+}
+
+/* Mobile adjustments */
 @media (max-width: 768px) {
-    .social_nest {
-        justify-content: center;
+    .linkedin-section {
         gap: 1rem;
     }
+}
 
-    .social-link {
-        width: calc(50% - 1rem);
+@media (max-width: 480px) {
+    .linkedin-section {
         justify-content: center;
     }
 }
@@ -345,6 +364,7 @@ body {
     font-size: 15px;
     line-height: 1.5;
     margin-bottom: 20px;
+    margin-top: 5px;
     color: #ffffff;
 }
 
@@ -393,7 +413,7 @@ body {
 .skill-item {
     border: 1px solid var(--primary-color);
     border-radius: 15px;
-    padding: 6px 12px;
+    padding: 6px 15px;
     font-size: 1rem;
     color: var(--text-light);
     background: transparent;
@@ -1397,7 +1417,7 @@ a:visited {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin: 4px 0 10px;
+    margin: 6px 0 6px;
 }
 
 .tech-item {
@@ -1689,14 +1709,13 @@ a:visited {
 
 .education-item .location,
 .education-item .duration {
+    margin-top: 0px;
     font-size: 0.875rem;
     color: var(--text-light-transparent);
     display: inline-block;
 }
 
-.education-item .duration {
-    margin-left: 1rem;
-}
+
 
 .education-item .institution {
     font-size: 1rem;

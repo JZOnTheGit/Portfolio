@@ -186,12 +186,9 @@ const projectOrder = [
     'CodeCove',
     'TaskTuner',
     'ideaFlow',
-    'ZetaClothing',
     'tiktokFinder',
-    'SortingAlgorithms',
-    'AymanPortfolio',
-    'kremSite',
-    'discordBot'
+    'SortingAlgorithms'
+    
 ];
 
 // Generate the projects array from the order
@@ -222,33 +219,17 @@ function generateProjectHTML(project) {
     </div>`;
 }
 
-function updateProjectCount(containerId) {
+function loadProjects(containerId, start = 0) {
     const container = document.getElementById(containerId);
     if (!container) return;
+
+    // Clear container first to prevent duplicates
+    container.innerHTML = '';
     
-    const countElement = document.querySelector('.project-count');
-    if (countElement) {
-        const totalProjects = projectOrder.length;
-        const isIndexPage = window.location.pathname === '/' || window.location.pathname.includes('index.html');
-        const viewingCount = isIndexPage ? 3 : totalProjects;
-        
-        if (isIndexPage) {
-            countElement.textContent = `Viewing ${viewingCount} / ${totalProjects}`;
-        } else {
-            countElement.textContent = `Viewing all ${totalProjects} projects`;
-        }
-    }
-}
-
-// Modify the loadProjects function to call updateProjectCount
-function loadProjects(containerId, start = 0, count = null) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-
-    // Create document fragment for better performance
     const fragment = document.createDocumentFragment();
     
-    const projectsToShow = count ? projects.slice(start, start + count) : projects.slice(start);
+    // Show all projects
+    const projectsToShow = projects.slice(start);
     
     projectsToShow.forEach(project => {
         const projectSection = document.createElement('div');
@@ -257,28 +238,16 @@ function loadProjects(containerId, start = 0, count = null) {
         fragment.appendChild(projectSection);
     });
     
-    // Single DOM update
     container.appendChild(fragment);
-    updateProjectCount(containerId);
 }
 
-// Debounce the project loading for better performance
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Use it for loading projects
-const debouncedLoadProjects = debounce((containerId, start, count) => {
-    loadProjects(containerId, start, count);
-}, 150);
+// Keep only one DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', () => {
+    loadProjects('projects-container', 0);
+    if (document.querySelector('.timeline')) {
+        generateTimeline();
+    }
+});
 
 // Add filter function
 function filterProjects(category) {
@@ -287,59 +256,17 @@ function filterProjects(category) {
     
     container.innerHTML = '';
     
-    // Determine if we're on the index page
-    const isIndexPage = window.location.pathname === '/' || window.location.pathname.includes('index.html');
-    
-    // Update active button state
-    const buttons = document.querySelectorAll('.filter-btn');
-    buttons.forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.textContent.trim() === category) {
-            btn.classList.add('active');
-        }
-    });
-    
     const filtered = category === 'All' 
         ? projects 
         : projects.filter(project => project.categories && project.categories.includes(category));
     
-    // Only show first 3 projects on index page
-    const projectsToShow = isIndexPage ? filtered.slice(0, 3) : filtered;
-    
-    projectsToShow.forEach(project => {
+    // Show all filtered projects
+    filtered.forEach(project => {
         const projectSection = document.createElement('div');
         projectSection.className = 'project-card-section';
         projectSection.innerHTML = generateProjectHTML(project);
         container.appendChild(projectSection);
     });
-
-    // Update stats for both pages
-    const stats = document.querySelectorAll('.stat-number');
-    if (stats.length > 0) {
-        // Total Projects
-        stats[0].setAttribute('data-count', projectOrder.length.toString());
-        
-        // Category counts
-        const webCount = projects.filter(p => p.categories.includes('Web')).length;
-        const gameCount = projects.filter(p => p.categories.includes('Game')).length;
-        const apiCount = projects.filter(p => p.categories.includes('API')).length;
-        const aiCount = projects.filter(p => p.categories.includes('AI')).length;
-        
-        stats[1].setAttribute('data-count', webCount.toString());
-        stats[2].setAttribute('data-count', gameCount.toString());
-        stats[3].setAttribute('data-count', apiCount.toString());
-        stats[4].setAttribute('data-count', aiCount.toString());
-        
-        animateStats();
-    }
-    
-    // Update project count text on index page
-    if (isIndexPage) {
-        const countElement = document.querySelector('.project-count');
-        if (countElement) {
-            countElement.textContent = `Viewing 3 / ${projectOrder.length}`;
-        }
-    }
 }
 
 function showProjectPreview(projectId) {
@@ -394,41 +321,4 @@ function generateTimeline() {
             timelineContainer.innerHTML = timelineHTML;
         }
     }
-}
-
-// Make sure the timeline is generated when the page loads
-document.addEventListener('DOMContentLoaded', () => {
-    const timelineContainer = document.querySelector('.timeline');
-    if (timelineContainer) {
-        generateTimeline();
-    }
-});
-
-// Update the initialization code
-document.addEventListener('DOMContentLoaded', () => {
-    // Check if we're on the index page
-    if (window.location.pathname === '/' || window.location.pathname.includes('index.html')) {
-        // Update initial project count
-        const countElement = document.querySelector('.project-count');
-        if (countElement) {
-            countElement.textContent = `Viewing 3 / ${projectOrder.length} (Press View More under the projects to view All Projects)`;
-        }
-        filterProjects('All');
-        animateStats();
-        generateTimeline();
-    }
-});
-
-function loadAllProjects() {
-    const container = document.getElementById('projects-container');
-    if (!container) return;
-    
-    // Clear container first to prevent duplicates
-    container.innerHTML = '';
-    
-    // Load all projects
-    projects.forEach(project => {
-        const projectSection = createProjectElement(project);
-        container.appendChild(projectSection);
-    });
 } 

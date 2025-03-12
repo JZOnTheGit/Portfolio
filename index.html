@@ -171,6 +171,7 @@
                         <li><a href="#">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#projects">Projects</a></li>
+                        <li><a href="#education-section">Education</a></li>
                     </ul>
                 </div>
             </div>
@@ -184,9 +185,10 @@
         </header>
 
         <div class="button-padding">
-            <button class="about-button" id="about-button" onclick="window.location.href='more_projects.html'" aria-label="View all projects">
+            <!-- Remove this button -->
+            <!--<button class="about-button" id="about-button" onclick="window.location.href='more_projects.html'" aria-label="View all projects">
                 My Projects
-            </button>
+            </button>-->
         </div>
 
         <div class="social-section-top">
@@ -273,21 +275,15 @@
                 <div class="skill-item">
                     HTML/CSS
                 </div>
-                <div class="skill-item">
-                    Firebase
-                </div>
-                <div class="skill-item">
-                    API Development
-                </div>
+                
+                
                 <div class="skill-item">
                     AI Integration
                 </div>
                 <div class="skill-item">
                     Web Development
                 </div>
-                <div class="skill-item">
-                    Cloud Services
-                </div>
+                
                 <div class="skill-item">
                     Python
                 </div>
@@ -297,9 +293,7 @@
                 <div class="skill-item">
                     MongoDB
                 </div>
-                <div class="skill-item">
-                    REST APIs
-                </div>
+                
                 <div class="skill-item">
                     Git
                 </div>
@@ -310,9 +304,7 @@
                     TypeScript
                 </div>
                 
-                <div class="skill-item">
-                    Stripe Integration
-                </div>
+                
             </div>
         </div>
 
@@ -328,18 +320,11 @@
                 <div class="heading-title">
                     <div class="heading-flex">
                         <h3>Projects</h3>
-                        <button class="view-all-button" id="ProjectBtn-button" onclick="MoreProjects()">
-                            View All <span class="arrow">→</span>
-                        </button>
                     </div>
-                </div>
-                <div class="heading-content">
-                    
-                    <p class="project-count">Viewing 3 / ${projectOrder.length}</p>
                 </div>
             </div>
             <div id="projects-container">
-                <!-- Projects will be loaded here -->
+                <!-- All projects will be loaded here -->
             </div>
         </div>
         
@@ -501,7 +486,7 @@
     </div>
 -->
     <!-- Education Section -->
-    <div class="education-section">
+    <div class="education-section" id="education-section">
         <div class="heading-title">
             <h3>Education</h3>
         </div>
@@ -510,9 +495,10 @@
                 <div class="education-main">
                     <h4>Bachelor of Science in Software Engineering</h4>
                     <p class="institution">University of Leicester</p>
+                    <p class="location">Leicester, United Kingdom</p>
                 </div>
                 <div class="education-details">
-                    <p class="location">Leicester, United Kingdom</p>
+                    
                     <p class="duration">2023 - 2027</p>
                 </div>
             </div>
@@ -526,7 +512,7 @@
         <div class="footer-content">
             <p>© 2025 Jasstej Singh. All rights reserved.</p>
             <div class="footer-links">
-                <a href="/privacy-policy.html" class="footer-link">Privacy Policy</a>
+                <!--<a href="/privacy-policy.html" class="footer-link">Privacy Policy</a>-->
             </div>
         </div>
     </footer>
@@ -537,7 +523,7 @@
   <!-- Add before closing body tag -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-        loadProjects('projects-container', 0, 3);
+        loadProjects('projects-container', 0);
     });
 </script>
 
