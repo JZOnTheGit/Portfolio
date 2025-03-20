@@ -180,7 +180,7 @@ const projectData = {
         techStack: ['JavaScript', 'HTML', 'CSS']
     },
     ButtonGame: {
-        title: "Interactive Button Game",
+        title: "Interactive Fun Question Game",
         categories: ['Web'],
         timeline: {
             date: '20-03-2025',
