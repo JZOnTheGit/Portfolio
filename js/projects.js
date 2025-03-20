@@ -179,6 +179,23 @@ const projectData = {
         sourceLink: null,
         techStack: ['JavaScript', 'HTML', 'CSS']
     },
+    ButtonGame: {
+        title: "Interactive Button Game",
+        categories: ['Web'],
+        timeline: {
+            date: '20-03-2025',
+            description: 'Created an interactive yes/no button game'
+        },
+        description: `A playful web interaction experiment featuring a question with two buttons.<br><br>
+            Features:<br>
+            • Interactive "Yes" and "No" buttons<br>
+            • Dynamic button movement on hover<br>
+            • Smooth animations and transitions<br>
+            • Simple and engaging user experience`,
+        projectLink: "https://moving-survey.vercel.app",
+        sourceLink: "https://github.com/JZOnTheGit/MovingSurvey",
+        techStack: ['JavaScript', 'HTML', 'CSS']
+    },
 };
 
 // Define the order of projects (just reference their keys)
@@ -187,8 +204,8 @@ const projectOrder = [
     'TaskTuner',
     'ideaFlow',
     'tiktokFinder',
+    'ButtonGame',
     'SortingAlgorithms'
-    
 ];
 
 // Generate the projects array from the order
