@@ -1,5 +1,26 @@
 // Separate project definitions from their order
 const projectData = {
+    JizzLang: {
+        title: "JIZZ Programming Language",
+        categories: ['Language', 'API'],
+        timeline: {
+            date: '24-03-2025',
+            description: 'Created my own custom programming language from scratch'
+        },
+        description: `A modern programming language that I designed and developed from the ground up, focusing on simplicity and expressiveness.<br><br>
+            Core Features:<br>
+            • Custom-built compiler and interpreter<br>
+            • Clean and intuitive syntax designed by me<br>
+            • Strong type inference system<br>
+            • Built-in string manipulation functions<br>
+            • Interactive REPL environment<br>
+            • Detailed error handling with line numbers<br>
+            • Rich standard library<br>
+            • Published as NPM package`,
+        projectLink: "https://www.npmjs.com/package/jizz-lang",
+        sourceLink: "https://github.com/JZOnTheGit/.jizz",
+        techStack: ['TypeScript', 'Node.js', 'NPM', 'Compiler']
+    },
     tiktokFinder: {
         title: "TikTok Video 'Upload Date Finder'",
         categories: ['Web'],
@@ -200,11 +221,12 @@ const projectData = {
 
 // Define the order of projects (just reference their keys)
 const projectOrder = [
+    'JizzLang',
     'CodeCove',
     'TaskTuner',
     'ideaFlow',
     'tiktokFinder',
-    'ButtonGame',
+    
     'SortingAlgorithms'
 ];
 
